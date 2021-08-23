@@ -1,0 +1,35 @@
+# home
+  Hello,
+  I am Tony Kieling,
+  a web developer.
+
+  be welcome to my webpage and feel free to browse and know a bit about myself
+
+# about
+  professional
+    web developer
+    professional summary
+      In my professional history I have been doing different jobs, most of them related to IT but I also worked in out of this field. I used to be a IT instructor and a college IT security teacher. I also worked as general services, such as inventory maintenance, warehouse positions and truck driver. But most of my laborer years, I have been working with IT, also in differnet areas, such as customer service, infraestucture, processes and managment and latelly I have been dedicated my efforts in software development. All my proessional experiences allowed me to see and feel (experience) how is like to be in other position and I am sure that all of that give me more maturity and flexibility to face life's challenges in general.
+
+      Besides being a web developer, I hold a professional history that involves other IT areas.
+  personal
+    my wife and I came from a wonderful place in Brazil called Rio Grande do Sul and we have been living in the Beautiful Vancouver since 2017.
+    We love hiking and spend time enjoying British Columbia natural resources.
+    (place some pictures)
+
+# projects
+  github is an excellent environment where I have my codes shared and available to be used
+ showing clockinjs
+ code demonstration (some hackerranks chalenges being showed up and running)
+ tutorial (redux)
+
+# contact
+  web form (leave your message)
+  Or, if you prefer, I am also available to be contacted via email or linkedin - icons for linkedin, email
+
+
+
+FUTURE:
+- have a npm projects (projects)
+- see how to implement chat that integrates with whatsapp (contact and also around the whole webpage)
+- "let's have fun" section where it is possible to play 

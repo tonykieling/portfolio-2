@@ -1,0 +1,5 @@
+node -v   = v.16.7
+npm -v    = 7.20.3
+
+after receiving error when creating the project and executing "npx create-react-app app", I updated nvm, node, npm but nothing. 
+So, I followed a slackoverflow and installed locally create-react-app and runned again npx. It worked. After creating the project, it is possible remove after running npx create-react-app.
