@@ -1,3 +1,6 @@
+import { useLayoutEffect } from 'react';
+
+/*
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -6,9 +9,16 @@ import Home from "./components/Home.js";
 import About from "./components/About.js";
 import Contact from "./components/Contact.js";
 import Projects from "./components/Projects.js";
+*/
 
 function App() {
+  useLayoutEffect(() => {
+      window.location.href = "https://clockin.tkwebdev.ca/contact";
+  }, []);
+
   return (
+    <div></div>
+    /*
     <Router>
       <Header />
       <Switch>
@@ -28,6 +38,8 @@ function App() {
         </div>
       </Switch>
     </Router>
+    */
+
     // <div className="App">
     //   <header className="App-header">
     //     <p>
