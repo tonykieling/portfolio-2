@@ -4,3 +4,6 @@
 - first deploy: redirecting to https://clockin.tkwebdev.ca/contact
     it is a temporary forward just to make https://tkwebdev.ca public
 - for SEO purposes, description added in index.html
+
+- dev branch
+ started writting some content plus working on a header definition
