@@ -2,7 +2,7 @@
 
 
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import Header from "./components/Header.js";
 import Home from "./components/Home.js";
@@ -12,7 +12,8 @@ import Projects from "./components/Projects.js";
 
 function App() {
   // useLayoutEffect(() => {
-  //     window.location.href = "https://clockin.tkwebdev.ca/contact";
+  //     // window.location.href = "https://clockin.tkwebdev.ca/contact";
+  //     console.log("test");
   // }, []);
 
   return (
@@ -20,14 +21,16 @@ function App() {
     <div className="app-settings">
       <Router>
         <Header />
-        <Switch>
-          <div className="body-settings">
+
+        <div className="body-settings">
+          <Switch>
             <Route exact path = "/">
               <Home />
             </Route>
 
             <Route exact path = "/home">
-              <Home />
+              {/* <Home /> */}
+              <Redirect to="/" />
             </Route>
 
             <Route exact path = "/about">
@@ -41,8 +44,9 @@ function App() {
             <Route exact path = "/projects">
               <Projects />
             </Route>
-          </div>
-        </Switch>
+          </Switch>
+        </div>
+
       </Router>
     </div>
   );

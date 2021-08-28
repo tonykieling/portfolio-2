@@ -29,6 +29,28 @@ html, body {
   flex-direction: row; }
 
 .nav-link:hover {
-  background-color: brown; }
+  background-color: gray;
+  border-radius: 6px; }
+
+.active-link {
+  border-radius: 6px;
+  border: gray 2px solid;
+  background-color: gray;
+  font-weight: bolder; }
+
+.social-media-box {
+  margin: 0 8rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid gray;
+  background-color: wheat;
+  border-radius: 5px; }
+
+.icon-settings {
+  height: 30px;
+  width: 30px;
+  opacity: 0.9;
+  margin: 1rem 0; }
 
 /*# sourceMappingURL=App.css.map */

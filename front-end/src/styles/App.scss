@@ -1,3 +1,6 @@
+$back-color   : #282c34;
+$active-color : gray;
+
 html, body {
   height: 100%;
   margin: 0;
@@ -15,7 +18,7 @@ html, body {
 
 .body-settings {
   flex-grow: 1;
-  background-color: #282c34;
+  background-color: $back-color;
   font-size: calc(10px + 2vmin);
   color: rgba(255, 255, 255, 0.87);
 }
@@ -26,7 +29,7 @@ html, body {
   padding: 2rem 1rem;
   border-bottom: solid black 1px;
   margin: 0;
-  background-color: #282c34;
+  background-color: $back-color;
 }
 
 .header-right {
@@ -35,9 +38,30 @@ html, body {
 }
 
 .nav-link:hover {
-  background-color: brown;
+  background-color: $active-color;
+  border-radius: 6px;
 }
 
-// .nav > .active {
-//   background-color: chartreuse;
-// }
+.active-link {
+  border-radius: 6px;
+  border: $active-color 2px solid;
+  background-color: $active-color;
+  font-weight: bolder;
+}
+
+.social-media-box {
+  margin: 0 8rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid gray;
+  background-color: wheat;
+  border-radius: 5px;
+}
+
+.icon-settings {
+  height: 30px;
+  width: 30px;
+  opacity: 0.9;
+  margin: 1rem 0;
+}
