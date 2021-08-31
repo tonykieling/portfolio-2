@@ -1,7 +1,7 @@
 export default function Projects() {
 
   return(
-    <div>
+    <div className="card card-container">
       <p>GitHub is an awesome tool and the place where I repo my projects and codes.</p>
       <p>I wanted to mention and share a couple of them because they are... </p>
 

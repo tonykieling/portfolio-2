@@ -19,9 +19,8 @@ html, body {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 2rem 5rem;
   border-bottom: solid black 1px;
-  margin: 0;
   background-color: #282c34; }
 
 .header-right {
@@ -39,8 +38,8 @@ html, body {
   font-weight: bolder; }
 
 .social-media-box {
-  margin: 0 8rem;
-  margin-top: 3rem;
+  margin: 0 15rem 3rem;
+  padding: 0 10rem;
   display: flex;
   justify-content: space-around;
   border: 2px solid gray;
@@ -52,5 +51,35 @@ html, body {
   width: 30px;
   opacity: 0.9;
   margin: 1rem 0; }
+
+.card-container {
+  background-color: #cfd9af;
+  margin: 3rem 15rem 0;
+  color: #4f5138; }
+
+.card-inner {
+  margin: 2rem; }
+
+.header > a {
+  border: 1px solid green;
+  padding: 0;
+  border-radius: 50%;
+  width: 65px; }
+
+.home-container {
+  display: flex;
+  flex-direction: row; }
+  .home-container .cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 0 4rem 3rem; }
+  .home-container .cont1 {
+    flex: 1 1 55%; }
+  .home-container .cont2 {
+    flex: 1 1 45%; }
+  .home-container .picture {
+    width: 100%;
+    opacity: 45%; }
 
 /*# sourceMappingURL=App.css.map */

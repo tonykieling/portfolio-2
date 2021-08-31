@@ -1,5 +1,7 @@
-$back-color   : #282c34;
-$active-color : gray;
+$main-back-color  : #282c34;
+$active-color     : gray;
+$card-back-color  : #cfd9af;
+$card-font-color  : #4f5138;
 
 html, body {
   height: 100%;
@@ -18,7 +20,7 @@ html, body {
 
 .body-settings {
   flex-grow: 1;
-  background-color: $back-color;
+  background-color: $main-back-color;
   font-size: calc(10px + 2vmin);
   color: rgba(255, 255, 255, 0.87);
 }
@@ -26,10 +28,9 @@ html, body {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 2rem 5rem;
   border-bottom: solid black 1px;
-  margin: 0;
-  background-color: $back-color;
+  background-color: $main-back-color;
 }
 
 .header-right {
@@ -50,8 +51,9 @@ html, body {
 }
 
 .social-media-box {
-  margin: 0 8rem;
-  margin-top: 3rem;
+  margin: 0 15rem 3rem;
+  // margin-top: 3rem;
+  padding: 0 10rem;
   display: flex;
   justify-content: space-around;
   border: 2px solid gray;
@@ -64,4 +66,45 @@ html, body {
   width: 30px;
   opacity: 0.9;
   margin: 1rem 0;
+}
+
+.card-container {
+  background-color: $card-back-color;
+  margin: 3rem 15rem 0;
+  color: $card-font-color;
+}
+
+.card-inner {
+  margin: 2rem;
+}
+
+.header {
+  > a {
+    border: 1px solid green;
+    padding: 0;
+    border-radius: 50%;
+    width: 65px;
+  }
+}
+
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  .cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 0 4rem 3rem;
+  }
+  .cont1 {
+    flex: 1 1 55%;
+  }
+  .cont2 {
+    flex: 1 1 45%;
+  }
+  .picture {
+    width: 100%;
+    opacity: 45%;
+  }
 }

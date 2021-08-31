@@ -7,3 +7,5 @@
 
 - dev branch
  started writting some content plus working on a header definition
+
+ react routes changed (cleanup with no /home) plus styling and doing ico and logo

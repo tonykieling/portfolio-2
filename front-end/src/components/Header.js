@@ -1,17 +1,23 @@
-
+import Logo from "../graphics/logo192.png";
 import { NavLink } from "react-router-dom";
 
 
 function Header() {
   return(
-    <div className="navbar header">
+    <div className="navbar header sticky-top">
       <NavLink 
         to="/" 
         exact={true}
         className="nav-link"
         activeClassName="active-link"
       >
-        Home
+        <img 
+          src={Logo} 
+          title="Home" 
+          alt="TK's logo" 
+          width="65px"
+          className="logo"
+        />
       </NavLink>
 
       <div className="nav">

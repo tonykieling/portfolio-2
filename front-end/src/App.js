@@ -28,11 +28,6 @@ function App() {
               <Home />
             </Route>
 
-            <Route exact path = "/home">
-              {/* <Home /> */}
-              <Redirect to="/" />
-            </Route>
-
             <Route exact path = "/about">
               <About />
             </Route>
@@ -43,6 +38,10 @@ function App() {
             
             <Route exact path = "/projects">
               <Projects />
+            </Route>
+
+            <Route>
+              <Redirect to="/" />
             </Route>
           </Switch>
         </div>
