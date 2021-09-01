@@ -15,8 +15,8 @@ function Header() {
           src={Logo} 
           title="Home" 
           alt="TK's logo" 
-          width="65px"
-          className="logo"
+          width="100%"
+          // className="logo"
         />
       </NavLink>
 
@@ -30,19 +30,19 @@ function Header() {
         </NavLink>
 
         <NavLink
-          to="/contact"
-          className="nav-link"
-          activeClassName="active-link"
-        >
-          Contact
-        </NavLink>
-
-        <NavLink
           to="/projects"
           className="nav-link"
           activeClassName="active-link"
           >
           Projects
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          className="nav-link"
+          activeClassName="active-link"
+        >
+          Contact
         </NavLink>
       </div>
     </div>

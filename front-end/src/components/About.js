@@ -15,9 +15,9 @@ export default function About() {
         <p></p>
         <br />
         <h1>#Personal</h1>
-        <p>Tony and his wife love spent time together and enjoying British Columbia natural Resources as the pictures below can show it. ;)</p>
+        <p>Tony and his wife love spending time together and enjoying British Columbia natural resources as the pictures below can show it. ;)</p>
       </div>
-      <div style={{margin: "3rem 0 0"}}></div>
+      {/* <div style={{margin: "3rem 0 0"}}></div> */}
     </div>
   );
 }

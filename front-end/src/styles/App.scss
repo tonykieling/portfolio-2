@@ -51,13 +51,13 @@ html, body {
 }
 
 .social-media-box {
-  margin: 0 15rem 3rem;
-  // margin-top: 3rem;
-  padding: 0 10rem;
+  width: 70%;
+  margin: -3rem auto 3rem;
+  padding: 0 20rem;
   display: flex;
   justify-content: space-around;
   border: 2px solid gray;
-  background-color: wheat;
+  background-color: $card-back-color;
   border-radius: 5px;
 }
 
@@ -70,20 +70,19 @@ html, body {
 
 .card-container {
   background-color: $card-back-color;
-  margin: 3rem 15rem 0;
+  padding: 3rem;
+  margin: 3rem auto;
+  width: 70%;
   color: $card-font-color;
 }
 
-.card-inner {
-  margin: 2rem;
-}
 
 .header {
   > a {
     border: 1px solid green;
     padding: 0;
     border-radius: 50%;
-    width: 65px;
+    width: 55px;
   }
 }
 
@@ -98,13 +97,33 @@ html, body {
     padding: 3rem 0 4rem 3rem;
   }
   .cont1 {
-    flex: 1 1 55%;
+    flex: 1 1 60%;
   }
   .cont2 {
-    flex: 1 1 45%;
+    flex: 1 1 40%;
   }
   .picture {
     width: 100%;
     opacity: 45%;
   }
+}
+
+
+.form-text, .form-textarea {
+  min-width: 50%;
+  max-width: 100px;
+  margin: 0.5rem auto;
+  padding-left: 1rem;
+  border-radius: 7px;
+  border: 1px solid wheat;
+  font-size: 14px;
+}
+
+.form-textarea {
+  height: 7rem;
+  margin-bottom: 3rem;
+}
+
+.card-bottom-offset {
+  padding: 3rem 3rem 0;
 }

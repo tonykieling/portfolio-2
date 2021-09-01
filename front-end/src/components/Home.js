@@ -4,7 +4,7 @@ export default function Home() {
 
   return(
     <div className="card card-container">
-      <div className="card-inner home-container">
+      <div className="home-container">
         <div className="cont1 cont">
           <div>
             <h1>Tony Kieling</h1>
@@ -17,9 +17,9 @@ export default function Home() {
         </div>
         <div className="cont2">
           <img 
-            src={ TK } 
-            alt="TK"
-            className="picture"
+            className = "picture"
+            src       = { TK } 
+            alt       = "TK"
           />
         </div>
       </div>
