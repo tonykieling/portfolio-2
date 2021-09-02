@@ -4,7 +4,7 @@ export default function Contact() {
 
   return(
     <div>
-      <div className="card card-container card-bottom-offset">
+      <div className="card card-container card-contact">
         <p>Please, feel free to contact me using the form below. </p> 
 
         {/* <label className="form-label">Name:</label> */}
@@ -20,21 +20,28 @@ export default function Contact() {
 
         {/* <label className="form-label">Email:</label> */}
         <input 
-          className       ="form-text" 
-          placeholder     ="Your email"
+          className       = "form-text" 
+          placeholder     = "Your email"
           data-bs-toggle  = "tooltip" 
           title           = "Insert your email"
         />
 
         {/* <label className="form-label">Leave your message:</label> */}
         <textarea 
-          className       ="form-textarea" 
-          placeholder     ="Please, leave your message" 
+          className       = "form-textarea" 
+          placeholder     = "Please, leave your message" 
           data-bs-toggle  = "tooltip" 
           title           = "Insert your message"
         />
 
-        <p>It is also possible to reach out through the social medias as follow.</p>
+        <button
+          type = "button"
+          className = "btn btn-primary btn-sm"
+        >
+          Send message
+        </button>
+
+        <p className = "last-line">It is also possible to reach out through the social medias as follow.</p>
       </div>
       <Footer />
     </div>

@@ -25,68 +25,69 @@ html, body {
   color: rgba(255, 255, 255, 0.87);
 }
 
+// header settings
 .header {
   display: flex;
   justify-content: space-between;
   padding: 2rem 5rem;
   border-bottom: solid black 1px;
   background-color: $main-back-color;
-}
 
-.header-right {
-  display: flex;
-  flex-direction: row;
-}
+  .nav-link:hover {
+    background-color: $card-back-color;
+    border-radius: 6px;
+    font-weight: bold;
+  }
 
-.nav-link:hover {
-  background-color: $active-color;
-  border-radius: 6px;
-}
+  .active-link {
+    border-radius: 6px;
+    background-color: $card-back-color;
+    font-weight: bolder;
+  }
 
-.active-link {
-  border-radius: 6px;
-  border: $active-color 2px solid;
-  background-color: $active-color;
-  font-weight: bolder;
-}
-
-.social-media-box {
-  width: 70%;
-  margin: -3rem auto 3rem;
-  padding: 0 20rem;
-  display: flex;
-  justify-content: space-around;
-  border: 2px solid gray;
-  background-color: $card-back-color;
-  border-radius: 5px;
-}
-
-.icon-settings {
-  height: 30px;
-  width: 30px;
-  opacity: 0.9;
-  margin: 1rem 0;
-}
-
-.card-container {
-  background-color: $card-back-color;
-  padding: 3rem;
-  margin: 3rem auto;
-  width: 70%;
-  color: $card-font-color;
-}
-
-
-.header {
-  > a {
-    border: 1px solid green;
+  .logo {
     padding: 0;
     border-radius: 50%;
     width: 55px;
+
+    .active-link:hover, .nav-link:hover {
+      background-color: transparent;
+    }
   }
 }
 
 
+// social-media-box settings
+.social-media-box {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 20rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: $card-back-color;
+  border-top: 1px solid gray;
+  border-radius: 0 0px 20px 20px;
+
+  .icon-settings {
+    height: 30px;
+    width: 30px;
+    opacity: 0.9;
+    margin: 1rem 0;
+  }
+}
+
+
+.card-container {
+  background-color: $card-back-color;;
+  padding: 3rem;
+  margin: 3rem auto;
+  width: 70%;
+  color: $card-font-color;
+  border-radius: 20px;
+}
+
+
+// it applies only for home component
 .home-container {
   display: flex;
   flex-direction: row;
@@ -94,7 +95,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 3rem 0 4rem 3rem;
+    padding: 2rem 0 4rem 2rem;
   }
   .cont1 {
     flex: 1 1 60%;
@@ -105,25 +106,40 @@ html, body {
   .picture {
     width: 100%;
     opacity: 45%;
+    border-radius: 10px;
   }
 }
 
 
-.form-text, .form-textarea {
-  min-width: 50%;
-  max-width: 100px;
-  margin: 0.5rem auto;
-  padding-left: 1rem;
-  border-radius: 7px;
-  border: 1px solid wheat;
-  font-size: 14px;
-}
-
-.form-textarea {
-  height: 7rem;
-  margin-bottom: 3rem;
-}
-
-.card-bottom-offset {
+// contact settings
+.card-contact {
+  //it gives an offset only for this component (Contact)
   padding: 3rem 3rem 0;
+  margin-bottom: 0;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+
+  .form-text, .form-textarea {
+    border-radius: 7px;
+    border: 1px solid wheat;
+    font-size: 14px;
+    min-width: 50%;
+    max-width: 100px;
+    margin: 0.5rem auto;
+    padding-left: 1rem;
+  }
+
+  .form-textarea {
+    height: 7rem;
+  }
+
+  > button {
+    font-size: 14px;
+    min-width: 50%;
+    max-width: 100px;
+    margin: 0.5rem auto;
+  }
+   > .last-line {
+     margin-top: 3rem;
+   }
 }

@@ -12,7 +12,9 @@ export default function Home() {
             <h1>Developer</h1>
           </div>
           <div>
-            <h2>Welcome to my Web site.</h2>
+            <h2>Welcome to my Web Site</h2>
+            <h3><a 
+                  href = "https://tkwebdev.ca">tkwebdev.ca</a></h3>
           </div>
         </div>
         <div className="cont2">

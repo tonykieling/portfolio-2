@@ -22,49 +22,43 @@ html, body {
   padding: 2rem 5rem;
   border-bottom: solid black 1px;
   background-color: #282c34; }
-
-.header-right {
-  display: flex;
-  flex-direction: row; }
-
-.nav-link:hover {
-  background-color: gray;
-  border-radius: 6px; }
-
-.active-link {
-  border-radius: 6px;
-  border: gray 2px solid;
-  background-color: gray;
-  font-weight: bolder; }
+  .header .nav-link:hover {
+    background-color: #cfd9af;
+    border-radius: 6px;
+    font-weight: bold; }
+  .header .active-link {
+    border-radius: 6px;
+    background-color: #cfd9af;
+    font-weight: bolder; }
+  .header .logo {
+    padding: 0;
+    border-radius: 50%;
+    width: 55px; }
+    .header .logo .active-link:hover, .header .logo .nav-link:hover {
+      background-color: transparent; }
 
 .social-media-box {
   width: 70%;
-  margin: -3rem auto 3rem;
+  margin: 0 auto;
   padding: 0 20rem;
   display: flex;
   justify-content: space-around;
-  border: 2px solid gray;
   background-color: #cfd9af;
-  border-radius: 5px; }
-
-.icon-settings {
-  height: 30px;
-  width: 30px;
-  opacity: 0.9;
-  margin: 1rem 0; }
+  border-top: 1px solid gray;
+  border-radius: 0 0px 20px 20px; }
+  .social-media-box .icon-settings {
+    height: 30px;
+    width: 30px;
+    opacity: 0.9;
+    margin: 1rem 0; }
 
 .card-container {
   background-color: #cfd9af;
   padding: 3rem;
   margin: 3rem auto;
   width: 70%;
-  color: #4f5138; }
-
-.header > a {
-  border: 1px solid green;
-  padding: 0;
-  border-radius: 50%;
-  width: 55px; }
+  color: #4f5138;
+  border-radius: 20px; }
 
 .home-container {
   display: flex;
@@ -73,29 +67,37 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 3rem 0 4rem 3rem; }
+    padding: 2rem 0 4rem 2rem; }
   .home-container .cont1 {
     flex: 1 1 60%; }
   .home-container .cont2 {
     flex: 1 1 40%; }
   .home-container .picture {
     width: 100%;
-    opacity: 45%; }
+    opacity: 45%;
+    border-radius: 10px; }
 
-.form-text, .form-textarea {
-  min-width: 50%;
-  max-width: 100px;
-  margin: 0.5rem auto;
-  padding-left: 1rem;
-  border-radius: 7px;
-  border: 1px solid wheat;
-  font-size: 14px; }
-
-.form-textarea {
-  height: 7rem;
-  margin-bottom: 3rem; }
-
-.card-bottom-offset {
-  padding: 3rem 3rem 0; }
+.card-contact {
+  padding: 3rem 3rem 0;
+  margin-bottom: 0;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0; }
+  .card-contact .form-text, .card-contact .form-textarea {
+    border-radius: 7px;
+    border: 1px solid wheat;
+    font-size: 14px;
+    min-width: 50%;
+    max-width: 100px;
+    margin: 0.5rem auto;
+    padding-left: 1rem; }
+  .card-contact .form-textarea {
+    height: 7rem; }
+  .card-contact > button {
+    font-size: 14px;
+    min-width: 50%;
+    max-width: 100px;
+    margin: 0.5rem auto; }
+  .card-contact > .last-line {
+    margin-top: 3rem; }
 
 /*# sourceMappingURL=App.css.map */
