@@ -3,7 +3,7 @@ import resumeIcon from "../icons/resume.svg";
 import linkedinIcon from "../icons/linkedin.png";
 import githubIcon from "../icons/github.png";
 
-export default function Footer() {
+export default function SocialMediasBox() {
   return(
     <div className="social-media-box">
     <a href="mailto:tony.kieling@gmail.com" target="_top" >

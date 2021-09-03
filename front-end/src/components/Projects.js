@@ -1,21 +1,23 @@
-import Temp from "./Temp";
 import { Link } from "react-router-dom";
+
+// this is temporary. As sson as I finish the content, it will be gone
+import Temp from "./Temp";
 
 export default function Projects() {
 
-  const temp = {
-    text: 
-      <div>
-        <p> This part of the site is under construction.</p>
-        <p> Meanwhile, please feel free to check</p>
-        <p> <Link to="/projects">Projects</Link> and <Link to="/contact">Contact</Link>.</p>
-        <p> and also <a href="https://tkwebdev.ca" target="_blank" rel="noreferrer"> ClockinJS </a></p>
-      </div>
-  };
-console.log("sending temp", temp, typeof temp);
+  // sending HTML as props
+  // this is temporary. As sson as I finish the content, it will be gone
+  const Text = () => (
+      <>
+        <p> <a href="https://clockin.tkwebdev.ca" target="_blank" rel="noreferrer"> ClockinJS </a></p>
+        <p> or <Link to="/contact">Contact</Link>.</p>
+      </>
+  );
+
   return(
+    // this is temporary. As sson as I finish the content, it will be gone
     <div>
-      <Temp props = { temp }/>
+      <Temp text = { <Text/> }/>
     </div>
 
     // <div className="card card-container">

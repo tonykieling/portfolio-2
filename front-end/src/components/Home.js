@@ -1,4 +1,5 @@
 import TK from "../graphics/tk-picture.jpg";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -13,8 +14,7 @@ export default function Home() {
           </div>
           <div>
             <h2>Welcome to my Web Site</h2>
-            <h3><a 
-                  href = "https://tkwebdev.ca">tkwebdev.ca</a></h3>
+            <h3><Link to = "/home">tkwebdev.ca</Link></h3>
           </div>
         </div>
         <div className="cont2">

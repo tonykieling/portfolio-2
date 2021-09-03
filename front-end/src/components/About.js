@@ -1,9 +1,12 @@
+
+// this is temporary. As sson as I finish the content, it will be gone
 import Temp from "./Temp.js";
 
 export default function About() {
 
   return(
-    <div style = {{height: "100%"}}>
+    // this is temporary. As sson as I finish the content, it will be gone
+    <div>
       <Temp />
     </div>
 

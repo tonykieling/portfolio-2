@@ -80,7 +80,7 @@ html, body {
 .card-container {
   background-color: $card-back-color;;
   padding: 3rem;
-  margin: 3rem auto;
+  margin: 2rem auto;
   width: 70%;
   color: $card-font-color;
   border-radius: 20px;
@@ -120,13 +120,21 @@ html, body {
   border-radius: 20px 20px 0 0;
 
   .form-text, .form-textarea {
-    border-radius: 7px;
+    // border-radius: 7px;
+    border-radius: .25rem;
     border: 1px solid wheat;
     font-size: 14px;
     min-width: 50%;
     max-width: 100px;
     margin: 0.5rem auto;
     padding-left: 1rem;
+  }
+
+  .form-text-muted {
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   .form-textarea {
@@ -142,4 +150,19 @@ html, body {
    > .last-line {
      margin-top: 3rem;
    }
+  
+  .redBox {
+    border: 3px solid red;
+  }
+
+  .button-sending {
+    color: $main-back-color;
+    background-color: aquamarine;
+  }
+
+  .button-thanks {
+    background-color: mediumseagreen;
+    color: navy;
+    font-weight: bold;
+  }
 }

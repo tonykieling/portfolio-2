@@ -7,5 +7,14 @@
 
 - dev branch
  started writting some content plus working on a header definition
-
  react routes changed (cleanup with no /home) plus styling and doing ico and logo
+ temp component is working fine and passing html as props, also, fe for sendmessage is done
+
+ missing
+  be message and send me an email
+  footer (Tony Kieling - 2021)
+  mobile settings
+  content and styling for
+   about
+   projects
+

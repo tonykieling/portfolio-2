@@ -55,7 +55,7 @@ html, body {
 .card-container {
   background-color: #cfd9af;
   padding: 3rem;
-  margin: 3rem auto;
+  margin: 2rem auto;
   width: 70%;
   color: #4f5138;
   border-radius: 20px; }
@@ -83,13 +83,18 @@ html, body {
   border-bottom: none;
   border-radius: 20px 20px 0 0; }
   .card-contact .form-text, .card-contact .form-textarea {
-    border-radius: 7px;
+    border-radius: .25rem;
     border: 1px solid wheat;
     font-size: 14px;
     min-width: 50%;
     max-width: 100px;
     margin: 0.5rem auto;
     padding-left: 1rem; }
+  .card-contact .form-text-muted {
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0.5rem; }
   .card-contact .form-textarea {
     height: 7rem; }
   .card-contact > button {
@@ -99,5 +104,14 @@ html, body {
     margin: 0.5rem auto; }
   .card-contact > .last-line {
     margin-top: 3rem; }
+  .card-contact .redBox {
+    border: 3px solid red; }
+  .card-contact .button-sending {
+    color: #282c34;
+    background-color: aquamarine; }
+  .card-contact .button-thanks {
+    background-color: mediumseagreen;
+    color: navy;
+    font-weight: bold; }
 
 /*# sourceMappingURL=App.css.map */
