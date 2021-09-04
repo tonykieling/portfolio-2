@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return(
     <div className="navbar header sticky-top">
-      <div className = "logo">
+      <div className = "circ">
         <NavLink 
           to              = "/" 
           exact           = {true}

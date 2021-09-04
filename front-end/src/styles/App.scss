@@ -54,6 +54,15 @@ html, body {
       background-color: transparent;
     }
   }
+
+  .circ {
+    // outline: 3px solid red;
+    // outtli-radius: 50%; // NOT EXISTS
+  }
+  .circ:hover {
+    outline: 5px solid $card-back-color;
+    // border-radius: 50%;
+  }
 }
 
 

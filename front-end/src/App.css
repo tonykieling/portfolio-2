@@ -36,6 +36,8 @@ html, body {
     width: 55px; }
     .header .logo .active-link:hover, .header .logo .nav-link:hover {
       background-color: transparent; }
+  .header .circ:hover {
+    outline: 5px solid #cfd9af; }
 
 .social-media-box {
   width: 70%;

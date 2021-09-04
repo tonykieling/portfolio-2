@@ -9,6 +9,7 @@
  started writting some content plus working on a header definition
  react routes changed (cleanup with no /home) plus styling and doing ico and logo
  temp component is working fine and passing html as props, also, fe for sendmessage is done
+ be for send email is pretty done, missibg integration with fe and settings user/password for sending email
 
  missing
   be message and send me an email
