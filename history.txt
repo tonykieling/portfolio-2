@@ -10,8 +10,12 @@
  react routes changed (cleanup with no /home) plus styling and doing ico and logo
  temp component is working fine and passing html as props, also, fe for sendmessage is done
  be for send email is pretty done, missibg integration with fe and settings user/password for sending email
-
  new component for code samples + styling and a bit of integration btw fe and me - send email
+
+ contact message styling, error handling and integration, plus vercel routes fixed
+  (?my picture still not uploading...?)
+  need to make passwordcode for sending message
+
 
  missing
   be message and send me an email

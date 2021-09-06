@@ -106,8 +106,6 @@ html, body {
     font-size: 12px;
     text-align: center;
     margin-bottom: 0.5rem; }
-  .card-contact .form-textarea {
-    height: 7rem; }
   .card-contact > button {
     font-size: 14px;
     min-width: 50%;

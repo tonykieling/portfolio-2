@@ -2,6 +2,15 @@ import { useState, useRef, useEffect } from "react";
 import SocialMediasBox from "./SocialMediasBox";
 
 export default function Contact() {
+
+  const BadMessage = () => (
+    <>
+      <p>Something bad happened. :/</p>
+      <p>Please try it later or</p> 
+      <p>email to <b><a href="mailto:tony.kieling@gmail.com"> tony.kieling@gmail.com </a></b></p>
+    </>
+);
+
   useEffect(() => {
     console.log("useffecttt");
     window.scroll({
@@ -10,7 +19,7 @@ export default function Contact() {
       behavior: 'smooth'
     });
   }, []);
-  
+
   const [state, setState] = useState({
     name    : "",
     email   : "",
@@ -67,8 +76,15 @@ export default function Contact() {
 
 
   const sendMessage = async event => {
-    console.log("inside send message", !!state.name);
     event.preventDefault();
+
+    if (buttonType === "btn-warning") {
+      setButtonType("btn-primary");
+      setButtonMessage("Send message");
+      refMessage.current.focus();
+      return;
+    }
+
     let flag = false;
     let tempObj = {};
     if (!state.name) {
@@ -97,40 +113,61 @@ export default function Contact() {
       setRedBoxClass(tempObj);
       return;
     } else {
-      const url = "/api";
-      const body = {
-        person  : state.name,
-        email   : state.email, 
-        message : state.message,
-        password: process.env.pass
-      };
-console.log("body=", body);
-      const email = await fetch(
-        url,
-        {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json'
+
+      try {
+        const url = "/api";
+        const body = {
+          person  : state.name,
+          email   : state.email, 
+          message : state.message,
+          password: process.env.pass
+        };
+  console.log("body=", body);
+
+        setButtonMessage("sending message...");
+        setButtonType("button-sending");
+
+        const email = await fetch(
+          url,
+          {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
           },
-          body: JSON.stringify(body)
-        },
-      );
-      console.log("email:::", email);
+        );
 
+        console.log("email:::", email);
+        const res = await email.json();
+        console.log("rRES:::", res);
+
+        if (res.message) {
+          setTimeout(() => {
+            setButtonMessage("Thank you for your message! :)");
+            setButtonType("button-thanks");
+
+            setTimeout(() => {
+              setButtonMessage("Send message");
+              setButtonType("btn-primary");
+              setState({
+                ...state,
+                name    : "",
+                email   : "",
+                message : ""
+              });
+
+              refName.current.focus();
+            }, 3000);
+          }, 2000);
+        } else
+          throw new Error();
+
+      } catch(error) {
+        setButtonType("btn-warning");
+        setButtonMessage(<BadMessage />);
+      }
     }
-
-    // setButtonMessage("sending message...");
-    // setButtonType("button-sending");
-
-    // setTimeout(() => {
-    //   setButtonMessage("Thank you for your message! :)");
-    //   setButtonType("button-thanks");
-
-    //   setTimeout(() => {
-    //     setButtonMessage("Send message");
-    //     setButtonType("btn-primary");
-    //   }, 3000);
-    // }, 2000);
   };
 
 
@@ -154,6 +191,7 @@ console.log("body=", body);
           onChange    = { handleChange }
           onKeyPress  = { handleChange }
           ref         = { refName}
+          disabled  = { buttonMessage === "sending message..." ? true : false }
           // tooltip stylling is not working because the place where it is the element. It it positioned on <body>, it works. Check it in the future
         />
 
@@ -171,16 +209,21 @@ console.log("body=", body);
             onChange    = { handleChange }
             onKeyPress  = { handleChange }
             ref         = { refEmail }
+            disabled  = { buttonMessage === "sending message..." ? true : false }
           />
           {/* <p className="form-text-muted">We'll never share your email with anyone else.</p> */}
         </div>
 
         {/* <label className="form-label">Leave your message:</label> */}
+        {/* <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> */}
+
         <textarea 
-          className       = {`form-textarea ${redBoxClass.message}`}
+          // className       = {`form-textarea ${redBoxClass.message}`}
+          className       = {`form-control form-textarea ${redBoxClass.message}`}
           placeholder     = "Please, leave your message" 
           data-bs-toggle  = "tooltip" 
           title           = "Insert your message"
+          rows            = "5"
 
           type        = "text"
           name        = "message"
@@ -188,6 +231,7 @@ console.log("body=", body);
           onChange    = { handleChange }
           onKeyPress  = { handleChange }
           ref         = { refMessage}
+          disabled  = { buttonMessage === "sending message..." ? true : false }
         />
 
         <button
@@ -195,6 +239,10 @@ console.log("body=", body);
           onClick   = { sendMessage }
           className = {`btn btn-sm ${ buttonType }`}
           ref       = { refButton }
+          disabled  = { buttonMessage === "sending message..." ? true : false }
+
+          data-bs-toggle  = "tooltip" 
+          title           = { buttonType === "btn-warning" ? "Click to renew" : "Send your message" }
         >
           { buttonMessage }
         </button>

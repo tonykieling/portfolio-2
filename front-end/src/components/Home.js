@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import TK from "../graphics/tk-picture.jpg";
+import TK from "../graphics/tk.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       behavior: 'smooth'
     });
   }, []);
-  
+
   return(
     <div className="card card-container">
       <div className="home-container">

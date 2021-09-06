@@ -93,7 +93,7 @@ module.exports = async (req, res) => {
 
     // if (password !== process.env.senderPassword) {
     //   console.log("password issues");
-    //   return res.json({ error: true });
+      return res.json({ error: true });
     // }
 
     const emailSuccess = await sendEmail(person, email, message);
