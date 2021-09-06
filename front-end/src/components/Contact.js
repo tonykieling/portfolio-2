@@ -1,7 +1,16 @@
+import { useState, useRef, useEffect } from "react";
 import SocialMediasBox from "./SocialMediasBox";
-import { useState, useRef } from "react";
 
 export default function Contact() {
+  useEffect(() => {
+    console.log("useffecttt");
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+  }, []);
+  
   const [state, setState] = useState({
     name    : "",
     email   : "",
@@ -57,7 +66,7 @@ export default function Contact() {
   };
 
 
-  const sendMessage = event => {
+  const sendMessage = async event => {
     console.log("inside send message", !!state.name);
     event.preventDefault();
     let flag = false;
@@ -87,20 +96,41 @@ export default function Contact() {
     if (flag) {
       setRedBoxClass(tempObj);
       return;
+    } else {
+      const url = "/api";
+      const body = {
+        person  : state.name,
+        email   : state.email, 
+        message : state.message,
+        password: process.env.pass
+      };
+console.log("body=", body);
+      const email = await fetch(
+        url,
+        {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        },
+      );
+      console.log("email:::", email);
+
     }
 
-    setButtonMessage("sending message...");
-    setButtonType("button-sending");
+    // setButtonMessage("sending message...");
+    // setButtonType("button-sending");
 
-    setTimeout(() => {
-      setButtonMessage("Thank you for your message! :)");
-      setButtonType("button-thanks");
+    // setTimeout(() => {
+    //   setButtonMessage("Thank you for your message! :)");
+    //   setButtonType("button-thanks");
 
-      setTimeout(() => {
-        setButtonMessage("Send message");
-        setButtonType("btn-primary");
-      }, 3000);
-    }, 2000);
+    //   setTimeout(() => {
+    //     setButtonMessage("Send message");
+    //     setButtonType("btn-primary");
+    //   }, 3000);
+    // }, 2000);
   };
 
 

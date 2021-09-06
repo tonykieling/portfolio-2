@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import TK from "../graphics/tk-picture.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-
+  useEffect(() => {
+    console.log("useffecttt");
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+  }, []);
+  
   return(
     <div className="card card-container">
       <div className="home-container">

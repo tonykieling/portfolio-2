@@ -5,7 +5,8 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return(
     <div className="navbar header sticky-top">
-      <div className = "circ">
+      {/* <div className = "circ"> */}
+      <div className="logo">
         <NavLink 
           to              = "/" 
           exact           = {true}
@@ -13,7 +14,7 @@ function Header() {
           activeClassName = "active-link"
         >
           <img 
-            src     = {Logo} 
+            src     = { Logo } 
             alt     = "TK's logo" 
             title   = "Home" 
             width   = "100%"
@@ -39,12 +40,21 @@ function Header() {
         </NavLink>
 
         <NavLink
+          to              = "/samples"
+          className       = "nav-link"
+          activeClassName = "active-link"
+        >
+          Code Samples
+        </NavLink>
+        
+        <NavLink
           to              = "/contact"
           className       = "nav-link"
           activeClassName = "active-link"
         >
           Contact
         </NavLink>
+
       </div>
     </div>
   );

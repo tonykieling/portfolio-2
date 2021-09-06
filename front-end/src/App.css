@@ -19,7 +19,7 @@ html, body {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 5rem;
+  padding: 1rem 5rem;
   border-bottom: solid black 1px;
   background-color: #282c34; }
   .header .nav-link:hover {
@@ -33,11 +33,16 @@ html, body {
   .header .logo {
     padding: 0;
     border-radius: 50%;
-    width: 55px; }
+    width: 70px;
+    background-color: transparent; }
+    .header .logo img {
+      border: 7px solid transparent;
+      border-radius: 50%; }
+      .header .logo img:hover {
+        border: 3px solid #cfd9af;
+        background-color: #cfd9af; }
     .header .logo .active-link:hover, .header .logo .nav-link:hover {
       background-color: transparent; }
-  .header .circ:hover {
-    outline: 5px solid #cfd9af; }
 
 .social-media-box {
   width: 70%;
@@ -64,14 +69,18 @@ html, body {
 
 .home-container {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  height: 100%; }
   .home-container .cont {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem 0 4rem 2rem; }
+    padding: 1rem 0 2rem 2rem; }
   .home-container .cont1 {
     flex: 1 1 60%; }
+    .home-container .cont1 h1 {
+      margin: 0;
+      font-size: 230%; }
   .home-container .cont2 {
     flex: 1 1 40%; }
   .home-container .picture {

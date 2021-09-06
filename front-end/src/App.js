@@ -4,11 +4,12 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
-import Header from "./components/Header.js";
-import Home from "./components/Home.js";
-import About from "./components/About.js";
-import Contact from "./components/Contact.js";
+import Header   from "./components/Header.js";
+import Home     from "./components/Home.js";
+import About    from "./components/About.js";
+import Contact  from "./components/Contact.js";
 import Projects from "./components/Projects.js";
+import Samples  from "./components/Samples.js"
 
 function App() {
   // useLayoutEffect(() => {
@@ -38,6 +39,10 @@ function App() {
             
             <Route exact path = "/projects">
               <Projects />
+            </Route>
+
+            <Route exact path = "/samples">
+              <Samples />
             </Route>
 
             <Route>

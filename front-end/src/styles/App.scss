@@ -29,7 +29,7 @@ html, body {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 5rem;
+  padding: 1rem 5rem;
   border-bottom: solid black 1px;
   background-color: $main-back-color;
 
@@ -48,20 +48,25 @@ html, body {
   .logo {
     padding: 0;
     border-radius: 50%;
-    width: 55px;
+    width: 70px;
+    background-color: transparent;
+    // background-size: cover;
+
+    img {
+      border: 7px solid transparent;
+      border-radius: 50%;
+
+      &:hover {
+        // border: 11px solid $card-back-color;
+        // border: 7px solid $card-back-color;
+        border: 3px solid $card-back-color;
+        background-color: $card-back-color;
+      }
+    }
 
     .active-link:hover, .nav-link:hover {
       background-color: transparent;
     }
-  }
-
-  .circ {
-    // outline: 3px solid red;
-    // outtli-radius: 50%; // NOT EXISTS
-  }
-  .circ:hover {
-    outline: 5px solid $card-back-color;
-    // border-radius: 50%;
   }
 }
 
@@ -100,14 +105,21 @@ html, body {
 .home-container {
   display: flex;
   flex-direction: row;
+  height: 100%;
+
   .cont {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem 0 4rem 2rem;
+    padding: 1rem 0 2rem 2rem;
   }
   .cont1 {
     flex: 1 1 60%;
+
+    h1 {
+      margin: 0;
+      font-size: 230%;
+    }
   }
   .cont2 {
     flex: 1 1 40%;
