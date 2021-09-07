@@ -1,18 +1,12 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { goTop } from "../helpers/goTop";
 
 // this is temporary. As sson as I finish the content, it will be gone
 import Temp from "./Temp";
 
 export default function Projects() {
-  useEffect(() => {
-    console.log("useffecttt");
-    window.scroll({
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth'
-    });
-  }, []);
+  useEffect(() => goTop(), []);
 
   // sending HTML as props
   // this is temporary. As sson as I finish the content, it will be gone

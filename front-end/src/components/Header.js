@@ -44,7 +44,7 @@ function Header() {
           className       = "nav-link"
           activeClassName = "active-link"
         >
-          Code Samples
+          Snippet Samples
         </NavLink>
         
         <NavLink

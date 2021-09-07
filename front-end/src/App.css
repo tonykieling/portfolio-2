@@ -85,7 +85,7 @@ html, body {
     flex: 1 1 40%; }
   .home-container .picture {
     width: 100%;
-    opacity: 45%;
+    opacity: 0.45;
     border-radius: 10px; }
 
 .card-contact {

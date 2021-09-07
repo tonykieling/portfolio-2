@@ -46,6 +46,8 @@ const sendEmail = async (person, email, message) => {
 
         <p>Kind regards from</p>
         <h3>Tony Kieling</h3>
+        <h2>https://tkwebdev.ca</h2>
+        <h2>tony.kieling@gmail.com</h2>
       </div>
 
       <div>
@@ -93,7 +95,7 @@ module.exports = async (req, res) => {
 
     // if (password !== process.env.senderPassword) {
     //   console.log("password issues");
-      return res.json({ error: true });
+      return res.json({ message: true });
     // }
 
     const emailSuccess = await sendEmail(person, email, message);

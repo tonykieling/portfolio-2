@@ -11,14 +11,16 @@
  temp component is working fine and passing html as props, also, fe for sendmessage is done
  be for send email is pretty done, missibg integration with fe and settings user/password for sending email
  new component for code samples + styling and a bit of integration btw fe and me - send email
-
  contact message styling, error handling and integration, plus vercel routes fixed
   (?my picture still not uploading...?)
-  need to make passwordcode for sending message
+
+ picture fixed, goTop organization, and message is working fine, need to test with password
+  (as soon as i get the mobile I'll test within the vercel env)
 
 
  missing
   be message and send me an email
+    need to make passwordcode for sending message
   footer (Tony Kieling - 2021)
   mobile settings
   content and styling for

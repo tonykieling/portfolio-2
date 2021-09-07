@@ -1,29 +1,26 @@
 import { useState, useRef, useEffect } from "react";
 import SocialMediasBox from "./SocialMediasBox";
+import { goTop } from "../helpers/goTop";
 
 export default function Contact() {
 
   const BadMessage = () => (
     <>
-      <p>Something bad happened. :/</p>
-      <p>Please try it later or</p> 
-      <p>email to <b><a href="mailto:tony.kieling@gmail.com"> tony.kieling@gmail.com </a></b></p>
+      <p><b>Something bad happened. :/</b></p>
+      <p><b>Please try it later or</b></p>
+      <p><b>email to <a style={{color: "blue"}} href="mailto:tony.kieling@gmail.com"> tony.kieling@gmail.com </a></b></p>
     </>
 );
 
-  useEffect(() => {
-    console.log("useffecttt");
-    window.scroll({
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth'
-    });
-  }, []);
+  useEffect(() => goTop(), []);
 
   const [state, setState] = useState({
-    name    : "",
-    email   : "",
-    message : ""
+    // name    : "",
+    // email   : "",
+    // message : ""
+    name    : "test",
+    email   : "test@email.ca",
+    message : "msg test"
   });
 
   const [redBoxClass, setRedBoxClass] = useState({
@@ -78,6 +75,8 @@ export default function Contact() {
   const sendMessage = async event => {
     event.preventDefault();
 
+    // it checks if there was an error and the form was set with the BadMessage
+    // if so, this if will enable the form again
     if (buttonType === "btn-warning") {
       setButtonType("btn-primary");
       setButtonMessage("Send message");
@@ -85,6 +84,8 @@ export default function Contact() {
       return;
     }
 
+    //  it checks if the form is filled okay
+    // if not, the flag binder gets on (true) and it will set the form to get attention from the user
     let flag = false;
     let tempObj = {};
     if (!state.name) {
@@ -114,6 +115,7 @@ export default function Contact() {
       return;
     } else {
 
+      // if everything is okay, the form will be sent
       try {
         const url = "/api";
         const body = {
@@ -164,6 +166,7 @@ export default function Contact() {
           throw new Error();
 
       } catch(error) {
+        console.log("checking error:::", error);
         setButtonType("btn-warning");
         setButtonMessage(<BadMessage />);
       }
