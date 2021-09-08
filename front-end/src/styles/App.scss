@@ -32,7 +32,7 @@ html, body {
   padding: 1rem 5rem;
   border-bottom: solid black 1px;
   background-color: $main-back-color;
-
+  
   .nav-link:hover {
     background-color: $card-back-color;
     border-radius: 6px;
@@ -48,7 +48,7 @@ html, body {
   .logo {
     padding: 0;
     border-radius: 50%;
-    width: 70px;
+    // width: 70px;
     background-color: transparent;
     // background-size: cover;
 

@@ -33,7 +33,6 @@ html, body {
   .header .logo {
     padding: 0;
     border-radius: 50%;
-    width: 70px;
     background-color: transparent; }
     .header .logo img {
       border: 7px solid transparent;

@@ -11,6 +11,10 @@ export default function Home() {
       <div className="home-container">
         <div className="cont1 cont">
           <div>
+            {/* 
+            check poppins font 
+            at fonts.google.com
+            */}
             <h1>Tony Kieling</h1>
             <h1>Web</h1>
             <h1>Developer</h1>

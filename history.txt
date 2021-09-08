@@ -28,3 +28,14 @@
    projects
    code samples
 
+#Bootstrap5 video (https://www.youtube.com/watch?v=1nxSE0R27Gg)
+(it also shows how to deploy at hostinger.com)
+large screens and small ones at 50min
+  col-md-6 col-lg-4 (meaning at medium screens, col=6 AND at large ones, col=4), sm (small)
+card and container at 40min
+sandwich menu see nav
+set spaces use: padding class p-1, p-5, also margin m-3 => pt-3 means paddin-top 3
+fw-bold for bold font
+for diff sizes of img in the same row at 55min
+
+
