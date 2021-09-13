@@ -13,10 +13,9 @@
  new component for code samples + styling and a bit of integration btw fe and me - send email
  contact message styling, error handling and integration, plus vercel routes fixed
   (?my picture still not uploading...?)
-
  picture fixed, goTop organization, and message is working fine, need to test with password
   (as soon as i get the mobile I'll test within the vercel env)
-
+ redoing header in order to accomodate hamburguer menu
 
  missing
   be message and send me an email

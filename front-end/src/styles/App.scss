@@ -29,6 +29,7 @@ html, body {
 .header {
   display: flex;
   justify-content: space-between;
+  // align-items: center;
   padding: 1rem 5rem;
   border-bottom: solid black 1px;
   background-color: $main-back-color;
@@ -48,13 +49,13 @@ html, body {
   .logo {
     padding: 0;
     border-radius: 50%;
-    // width: 70px;
+    width: 70px;
     background-color: transparent;
-    // background-size: cover;
+    background-size: cover;
 
     img {
-      border: 7px solid transparent;
       border-radius: 50%;
+      border: 7px solid transparent;
 
       &:hover {
         // border: 11px solid $card-back-color;
@@ -67,6 +68,18 @@ html, body {
     .active-link:hover, .nav-link:hover {
       background-color: transparent;
     }
+  }
+
+  .nav {
+    .text-items {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .sub-container {
+    display: flex;
+    justify-content: center;
   }
 }
 

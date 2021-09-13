@@ -1,0 +1,8 @@
+- hamburguer menu running independently
+  based in a great article at https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
+  missing to set the hamburguer and the menu relatively to the screen other than fixed - it will follow the screen when it is a long height
+  send to npm the whole componenent
+    see
+      https://zellwk.com/blog/publish-to-npm/
+      https://levelup.gitconnected.com/publish-react-components-as-an-npm-package-7a671a2fb7f
+      https://www.topcoder.com/thrive/articles/publish-your-react-component-to-npm-registry
