@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { ThemeProvider } from 'styled-components'; // ok - it needs to install the library
 import { useOnClickOutside } from './burguer-menu/helpers/hooks'; // ok
 import { theme } from './burguer-menu/helpers/theme.js'; // ok
@@ -6,7 +6,6 @@ import { Burger, Menu } from './burguer-menu'; // OK
 import FocusLock from 'react-focus-lock'; // ok - it needs to intall the library
 
 function App() {
-  useEffect(() => console.log("ATTA boy!"), []);
   const [open, setOpen] = useState(false);
   const node = useRef();
   const menuId = "main-menu";

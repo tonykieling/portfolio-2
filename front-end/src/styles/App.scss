@@ -28,11 +28,34 @@ html, body {
 // header settings
 .header {
   display: flex;
-  justify-content: space-between;
-  // align-items: center;
-  padding: 1rem 5rem;
+  width: 100%;
   border-bottom: solid black 1px;
   background-color: $main-back-color;
+
+  .one-3rd, .three-3rd{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+
+  .two-3rd {
+    width: 70%;
+    display: flex;
+
+    &-1 {
+      width: 30%;
+    }
+
+    &-2 {
+      width: 70%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
   
   .nav-link:hover {
     background-color: $card-back-color;
@@ -58,8 +81,6 @@ html, body {
       border: 7px solid transparent;
 
       &:hover {
-        // border: 11px solid $card-back-color;
-        // border: 7px solid $card-back-color;
         border: 3px solid $card-back-color;
         background-color: $card-back-color;
       }
@@ -77,10 +98,6 @@ html, body {
     }
   }
 
-  .sub-container {
-    display: flex;
-    justify-content: center;
-  }
 }
 
 
