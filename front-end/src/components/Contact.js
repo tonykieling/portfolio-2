@@ -187,7 +187,7 @@ export default function Contact() {
           data-bs-html      = "true"
           title             = "Insert your name"
           
-          autoFocus   = { true }
+          // autoFocus   = { true }
           type        = "text"
           name        = "name"
           value       = { state.name }

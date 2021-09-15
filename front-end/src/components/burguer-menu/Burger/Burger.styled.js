@@ -4,7 +4,7 @@ export const StyledBurger = styled.button`
   // position: absolute;
   position: relative;
   top: 5%;
-  left: 2rem;
+  // left: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

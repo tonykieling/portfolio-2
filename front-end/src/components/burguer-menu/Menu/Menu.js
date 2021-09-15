@@ -2,7 +2,6 @@ import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
 import { Link } from 'react-router-dom';
-// import { useState } from 'react';
 
 const Menu = ({ open, ...props }) => {
   
@@ -16,46 +15,48 @@ const Menu = ({ open, ...props }) => {
   // so, I will create an array an each time the screen is load, it gets a new one to show up
   
   const homes = [
-    "🏠",
-    "🏡"
+    "🏠 ",
+    "🏡 "
   ];
 
   const abouts = [
-    "🐸",
-    "🕺",
-    "🐵",
-    "🏊‍♂️",
-    "🐨",
-    "🐧",
-    "🦆",
-    "🦉",
-    "🦖",
+    "🐸 ",
+    "🕺 ",
+    "🐵 ",
+    // "🐨",
+    "🐜 ",
+    "🐧 ",
+    // "🦆",
+    "🦉 ",
+    "🦖 ",
     // "🐙",
-    "🐠",
-    "🌻",
-    "🐝"
+    "🐝 ",
+    // "🐠",
+    "🏊‍♂️ ",
+    // "🌻",
   ];
 
   const projects = [
-    "🚧",
-    "🗄️",
-    "💻",
-    "🧮"
+    "🚧 ",
+    "🗄️ ",
+    "💻 ",
+    "🧮 "
   ];
 
   const samples = [
-    "🤖",
-    "👨‍💻",
-    "🛠️"
+    "🤖 ",
+    "👨‍💻 ",
+    "🛠️ "
   ];
 
   const contacts = [
-    "📝",
-    "✉️",
-    "📩"
+    "📝 ",
+    "✉️ ",
+    "📩 "
   ];
 
   // thinking about avoiding repetition
+  // it will need to presist state (not now)
   // const [emoji, setEmoji] = useState(null)
   // const getHome = options => {
   //   const index = Math.floor(Math.random() * options.length);
@@ -99,7 +100,7 @@ const Menu = ({ open, ...props }) => {
           { getEmoji(samples) }
         </span>
           {/* ⌨️ */}
-        Snippet Samples
+        Snippets
       </Link>
 
       <Link to="/contact" tabIndex={tabIndex} onClick={hideMenu}>

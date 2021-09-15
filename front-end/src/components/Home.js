@@ -9,8 +9,9 @@ export default function Home() {
   return(
     <div className="card card-container">
       <div className="home-container">
-        <div className="cont1 cont">
-          <div>
+
+        <div className="cont1">
+          <div className="cont1-1">
             {/* 
             check poppins font 
             at fonts.google.com
@@ -19,11 +20,12 @@ export default function Home() {
             <h1>Web</h1>
             <h1>Developer</h1>
           </div>
-          <div>
-            <h2>Welcome to my Web Site</h2>
+          <div className="cont1-2">
+            <h2>Welcome to my Website</h2>
             <h3><Link to = "/home">tkwebdev.ca</Link></h3>
           </div>
         </div>
+
         <div className="cont2">
           <img 
             className = "picture"

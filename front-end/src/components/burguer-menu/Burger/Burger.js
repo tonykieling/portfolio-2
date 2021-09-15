@@ -7,6 +7,7 @@ const Burger = ({ open, setOpen, ...props }) => {
   const isExpanded = open ? true : false;
 
   return (
+    // <div style={{border: "3px solid red"}}>
     <StyledBurger 
       aria-label="Toggle menu" 
       aria-expanded={isExpanded} 
@@ -18,6 +19,7 @@ const Burger = ({ open, setOpen, ...props }) => {
       <span />
       <span />
     </StyledBurger>
+    // </div>
   );
 }
 

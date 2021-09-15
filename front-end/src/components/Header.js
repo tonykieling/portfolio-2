@@ -1,11 +1,9 @@
 import Logo from "../graphics/logo192.png";
 import ToTurnOn from "../graphics/hamburguer.png";
 import ToTurnOff from "../graphics/hamburguer-banned.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import BurguerMenu from "./BurguerMenu.js";
-// import { Burger } from "./burguer-menu";
-// import { Burger } from "./burguer-menu";
 
 // it defines the minumum width's screen to show the burguer option
 const minimumWidth = 750;
@@ -28,12 +26,14 @@ function Header() {
 
       <div className="two-3rd">
         <div className="two-3rd-1">
-          <div className="logo">
+          <div 
+            className="logo"
+          >
             <NavLink 
               to              = "/" 
               exact           = {true}
               className       = "nav-link logo"
-              activeClassName = "active-link"
+              // activeClassName = "active-link"
             >
               <img 
                 src     = { Logo } 
@@ -71,7 +71,7 @@ function Header() {
                     className       = "nav-link"
                     activeClassName = "active-link"
                   >
-                    Snippet Samples
+                    Snippets
                   </NavLink>
                   
                   <NavLink
