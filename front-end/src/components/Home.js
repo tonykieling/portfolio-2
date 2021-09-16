@@ -8,7 +8,7 @@ export default function Home() {
 
   return(
     <div className="card card-container">
-      <div className="home-container">
+      <div className="home-container d-flex flex-direction-row m-auto">
 
         <div className="cont1">
           <div className="cont1-1">

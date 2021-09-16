@@ -16,6 +16,7 @@
  picture fixed, goTop organization, and message is working fine, need to test with password
   (as soon as i get the mobile I'll test within the vercel env)
  redoing header in order to accomodate hamburguer menu
+ doing CSS for mobile
 
  missing
   be message and send me an email

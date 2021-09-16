@@ -175,9 +175,9 @@ export default function Contact() {
 
 
   return(
-    <div>
-      <div className="card card-container card-contact">
-        <p>Please, feel free to contact me using the form below. </p> 
+      // {/* <div className="card card-container card-contact"> */}
+      <div className="card card-container">
+        <p className="text-center">Please, feel free to contact me using the form below. </p> 
 
         <input 
           className         = {`form-control form-text ${redBoxClass.name}`}
@@ -187,7 +187,7 @@ export default function Contact() {
           data-bs-html      = "true"
           title             = "Insert your name"
           
-          // autoFocus   = { true }
+          autoFocus   = { window.innerWidth > 700 && true }
           type        = "text"
           name        = "name"
           value       = { state.name }
@@ -250,9 +250,9 @@ export default function Contact() {
           { buttonMessage }
         </button>
 
-        <p className = "last-line">It is also possible to reach out through the social medias as follow.</p>
+        <p className = "mt-5 text-center">It is also possible to reach out through the social medias as follow.</p>
+        
+        <SocialMediasBox className="mb-0"/>
       </div>
-      <SocialMediasBox />
-    </div>
   );
 }

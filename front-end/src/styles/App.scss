@@ -29,7 +29,6 @@ html, body {
 
 // header settings
 .header {
-  display: flex;
   width: 100%;
   border-bottom: solid black 1px;
   background-color: $main-back-color;
@@ -48,7 +47,6 @@ html, body {
 
   .two-3rd {
     width: 70%;
-    display: flex;
 
     &-1 {
       width: 30%;
@@ -58,6 +56,13 @@ html, body {
       width: 70%;
       display: flex;
       justify-content: flex-end;
+    }
+
+    @media (max-width: $mobile-width) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
     }
   }
   
@@ -88,18 +93,15 @@ html, body {
         border: 3px solid $card-back-color;
         background-color: $card-back-color;
       }
-      // @media (max-width: $mobile-width) {
-      //   &:hover {
-      //     // display: none;
-      //     border: none;
-      //     // background-color: transparent;
-      //   }
-      // }
     }
 
     .active-link:hover, .nav-link:hover {
       background-color: transparent;
     }
+  }
+
+  .logo-mobile {
+    width: 2.5rem;
   }
 
   .nav {
@@ -109,25 +111,32 @@ html, body {
     }
   }
 
+  @media (max-width: $mobile-width) {
+    padding: 1rem 0;
+  }
 }
 
 
 // social-media-box settings
 .social-media-box {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 20rem;
+  padding: 0 17rem;
   display: flex;
   justify-content: space-around;
   background-color: $card-back-color;
   border-top: 1px solid gray;
-  border-radius: 0 0px 20px 20px;
+  border-bottom: 1px solid gray;
 
   .icon-settings {
     height: 30px;
     width: 30px;
     opacity: 0.9;
     margin: 1rem 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0 3rem;
   }
 }
 
@@ -139,21 +148,74 @@ html, body {
   width: 70%;
   color: $card-font-color;
   border-radius: 20px;
+  height: 78vh;
+  // height: 100%;
 
+  .form-text, .form-textarea {
+    border-radius: .25rem;
+    border: 1px solid wheat;
+    font-size: 14px;
+    margin: 0.5rem auto;
+    padding-left: 1rem;
+  }
+  
+  // .form-text-muted {
+    //   color: gray;
+    //   font-size: 12px;
+    //   text-align: center;
+    //   margin-bottom: 0.5rem;
+    // }
+    
+  button {
+    font-size: 14px;
+    width: 50%;
+    margin: 0.5rem auto;
+  }
+ 
+  .form-text, .form-textarea, button {
+    width: 50%;
+    min-width: 25rem;
+  }
+
+  .last-line {
+     margin-top: 3rem;
+   }
+  
+  .redBox {
+    border: 3px solid red;
+  }
+
+  .button-sending {
+    color: $main-back-color;
+    background-color: aquamarine;
+  }
+
+  .button-thanks {
+    background-color: mediumseagreen;
+    color: navy;
+    font-weight: bold;
+  }
+
+  
   @media (max-width: $mobile-width) {
+    // display: flex;
+    // flex-direction: column;
     padding: 1rem;
-    margin: 1rem auto;
+    margin: 10% auto;
     width: 80%;
     border-radius: 10px;
+    // height: 100vh;
+    min-height: 75vh;
+
+    .form-text, .form-textarea, button {
+      min-width: 100%;
+    }
   }
 }
 
 
 // it applies only for home component
 .home-container {
-  display: flex;
-  flex-direction: row;
-
   .cont1 {
     display: flex;
     flex-direction: column;
@@ -183,6 +245,14 @@ html, body {
     justify-content: center;
     align-content: center;
 
+    @media (max-width: $mobile-width) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      align-content: center;
+    }
+
     .picture {
       width: 100%;
       opacity: 0.45;
@@ -192,13 +262,13 @@ html, body {
 
   @media (max-width: $mobile-width) {
     flex-direction: column;
-
+    height: 100%;
     padding: 0;
     
     .cont1 {
       width: 100%;
       padding: 1.5rem;
-      // flex: 1 1 30%;
+      height: 50%;
 
       h1 {
         font-size: 200%;
@@ -214,8 +284,14 @@ html, body {
     }
 
     .cont2 {
-      width: 75%;
-      margin: 1rem auto;
+      width: 70%;
+      margin: 0 auto 1rem;
+    }
+
+    .picture {
+      width: 80%;
+      margin: auto;
+      margin-bottom: 0;
     }
   }
 }
@@ -230,32 +306,30 @@ html, body {
   border-radius: 20px 20px 0 0;
 
   .form-text, .form-textarea {
-    // border-radius: 7px;
     border-radius: .25rem;
     border: 1px solid wheat;
     font-size: 14px;
-    min-width: 50%;
-    max-width: 100px;
     margin: 0.5rem auto;
     padding-left: 1rem;
   }
-
-  .form-text-muted {
-    color: gray;
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-
-  > button {
+  
+  // .form-text-muted {
+    //   color: gray;
+    //   font-size: 12px;
+    //   text-align: center;
+    //   margin-bottom: 0.5rem;
+    // }
+    
+  button {
     font-size: 14px;
-    min-width: 50%;
-    max-width: 100px;
+    width: 50%;
     margin: 0.5rem auto;
   }
-   > .last-line {
-     margin-top: 3rem;
-   }
+ 
+  .form-text, .form-textarea, button {
+    width: 50%;
+    min-width: 25rem;
+  }
   
   .redBox {
     border: 3px solid red;
@@ -271,4 +345,50 @@ html, body {
     color: navy;
     font-weight: bold;
   }
+
+  @media (max-width: $mobile-width) {
+    .form-text, .form-textarea, button {
+      min-width: 100%;
+    }
+  }
 }
+
+
+
+// it is a temporary CSS class just for setting TEMP component
+.temp {
+  height: 100%;
+
+  .temp1, .temp2 {
+    width: 50%;
+    text-align: center;
+
+    .cp {
+      margin: 3rem 0;
+    }
+  }
+
+  .temp2 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+    .temp1 {
+      margin: 0;
+      width: 100%;
+    }
+
+    .temp2 {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
+

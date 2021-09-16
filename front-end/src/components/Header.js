@@ -16,15 +16,15 @@ function Header() {
     burguerON, 
     setBurguerON] = useState(screenWidth > minimumWidth ? true : false);
 
-  return(
-    <div className="header">
+  const LargeScreenHeader = () => (
+    <>
       <div className="one-3rd">
-        { ((screenWidth < minimumWidth) || !burguerON) &&
+        { (!burguerON) &&
           <BurguerMenu />
         }
       </div>
 
-      <div className="two-3rd">
+      <div className="two-3rd d-flex">
         <div className="two-3rd-1">
           <div 
             className="logo"
@@ -45,68 +45,95 @@ function Header() {
           </div>
         </div>
 
+        <div className="nav two-3rd-2">
+          { burguerON &&
+            <div className="text-items">
+              <NavLink
+                to              = "/about" 
+                className       = "nav-link"
+                activeClassName = "active-link"
+              >
+                About
+              </NavLink>
 
-        { (screenWidth > minimumWidth) &&
-            <div className="nav two-3rd-2">
-              { burguerON &&
-                <div className="text-items">
-                  <NavLink
-                    to              = "/about" 
-                    className       = "nav-link"
-                    activeClassName = "active-link"
-                  >
-                    About
-                  </NavLink>
+              <NavLink
+                to              = "/projects"
+                className       = "nav-link"
+                activeClassName = "active-link"
+                >
+                Projects
+              </NavLink>
 
-                  <NavLink
-                    to              = "/projects"
-                    className       = "nav-link"
-                    activeClassName = "active-link"
-                    >
-                    Projects
-                  </NavLink>
-
-                  <NavLink
-                    to              = "/samples"
-                    className       = "nav-link"
-                    activeClassName = "active-link"
-                  >
-                    Snippets
-                  </NavLink>
-                  
-                  <NavLink
-                    to              = "/contact"
-                    className       = "nav-link"
-                    activeClassName = "active-link"
-                  >
-                    Contact
-                  </NavLink>
-                </div>
-              }
+              <NavLink
+                to              = "/samples"
+                className       = "nav-link"
+                activeClassName = "active-link"
+              >
+                Snippets
+              </NavLink>
+              
+              <NavLink
+                to              = "/contact"
+                className       = "nav-link"
+                activeClassName = "active-link"
+              >
+                Contact
+              </NavLink>
             </div>
-        }
-
-
+          }
+        </div>
       </div>
 
       <div className="three-3rd">
-        { (screenWidth > minimumWidth) &&
-          <div className="logo">
-            <img
-              src={burguerON ? ToTurnOn : ToTurnOff}
-              alt="Turn Hamburguer menu ON and OFF"
-              title={
-                burguerON
-                ? "Turn Hamburguer Menu ON"
-                : "Turn Hamburguer Menu OFF"
-              }
-              width="100%"
-              onClick={ () => setBurguerON(!burguerON) }
+        <div className="logo">
+          <img
+            src={burguerON ? ToTurnOn : ToTurnOff}
+            alt="Turn Hamburguer menu ON and OFF"
+            title={
+              burguerON
+              ? "Turn Hamburguer Menu ON"
+              : "Turn Hamburguer Menu OFF"
+            }
+            width="100%"
+            onClick={ () => setBurguerON(!burguerON) }
+          />
+        </div>
+      </div>
+    </>
+  );
+
+  const ThinScreeHeader = () => (
+    <>
+      <div className="one-3rd"></div>
+
+      <div className="two-3rd">
+        <div className="two-3rd-1">
+          <BurguerMenu />
+        </div>
+        <div className="two-3rd-2 logo-mobile">
+          <Link to="/">
+            <img 
+              src     = { Logo } 
+              alt     = "TK's logo" 
+              title   = "Home" 
+              width   = "100%"
             />
-          </div>
-        }
+          </Link>
+        </div>
       </div>
 
+      <div className="three-3rd"></div>
+    </>
+  );
+
+  return(
+    <div className="header d-flex">
+      { screenWidth > minimumWidth
+        ?
+          <LargeScreenHeader />
+        :
+          <ThinScreeHeader />
+      }
     </div>
   );
 }
