@@ -250,7 +250,7 @@ export default function Contact() {
           { buttonMessage }
         </button>
 
-        <p className = "mt-5 text-center">It is also possible to reach out through the social medias as follow.</p>
+        <p className = "mt-5 text-center mb-5">It is also possible to reach out through the social medias as follow.</p>
         
         <SocialMediasBox className="mb-0"/>
       </div>

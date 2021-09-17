@@ -124,13 +124,14 @@ html, body {
     font-weight: bold; }
   @media (max-width: 790px) {
     .card-container {
-      padding: 1rem;
+      padding: 1.5rem;
       margin: 10% auto;
       width: 80%;
       border-radius: 10px;
       min-height: 75vh; }
       .card-container .form-text, .card-container .form-textarea, .card-container button {
-        min-width: 100%; } }
+        min-width: 0;
+        width: 80%; } }
 
 .home-container .cont1 {
   display: flex;
