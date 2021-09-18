@@ -1,15 +1,45 @@
 import { useEffect } from "react";
-// this is temporary. As sson as I finish the content, it will be gone
-import Temp from "./Temp.js";
 import { goTop } from "../helpers/goTop.js";
+
+// this is temporary. As soon as I finish the content, it will be gone
+import Temp from "./Temp.js";
+import TK from "../graphics/tk.jpg";
+// import Magnifying from "../graphics/searching.gif";
+// import Doing from "../graphics/doing.gif";
 
 export default function About() {
   useEffect(() => goTop(), []);
 
+  // const Image = () => (
+  //   <div>
+  //     <img
+  //       src={TK}
+  //       width="20%"
+  //     />
+  //     <img
+  //       style={{position: "relative"}}
+  //       src={Magnifying}
+  //     />
+  //   </div>
+  // );
+
+
   return(
     // this is temporary. As sson as I finish the content, it will be gone
     <div>
-      <Temp />
+      {/* <Image /> */}
+      <Temp 
+        // about={true} 
+        About={TK}
+        Style={{
+          border: "1px red solid", 
+          borderRadius: "20px",
+          filter: "blur(7px)",
+          opacity: 0.3,
+          width: "75%"
+        }}
+        // Overlay={Magnifying}
+      />
     </div>
 
     // <div>

@@ -198,7 +198,7 @@ export default function Contact() {
           // tooltip stylling is not working because the place where it is the element. It it positioned on <body>, it works. Check it in the future
         />
 
-        <div className="form-group">
+        {/* <div className="form-group"> */}
           <input 
             className         = {`form-control form-text ${redBoxClass.email}`}
             placeholder     = "Your email"
@@ -215,7 +215,7 @@ export default function Contact() {
             disabled  = { buttonMessage === "sending message..." ? true : false }
           />
           {/* <p className="form-text-muted">We'll never share your email with anyone else.</p> */}
-        </div>
+        {/* </div> */}
 
         {/* <label className="form-label">Leave your message:</label> */}
         {/* <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> */}
@@ -250,9 +250,11 @@ export default function Contact() {
           { buttonMessage }
         </button>
 
-        <p className = "mt-5 text-center mb-5">It is also possible to reach out through the social medias as follow.</p>
+        <p className = "mt-5 text-center mb-1 contact-last-line">It is also possible to reach out through the social medias as follow.</p>
         
-        <SocialMediasBox className="mb-0"/>
+        <SocialMediasBox 
+          // className="m-5"
+        />
       </div>
   );
 }

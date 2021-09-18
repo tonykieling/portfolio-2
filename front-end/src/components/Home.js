@@ -8,7 +8,9 @@ export default function Home() {
 
   return(
     <div className="card card-container">
-      <div className="home-container d-flex flex-direction-row m-auto">
+      <div 
+        className="home-container d-flex flex-direction-row m-auto"
+      >
 
         <div className="cont1">
           <div className="cont1-1">
@@ -33,6 +35,7 @@ export default function Home() {
             alt       = "TK"
           />
         </div>
+        {/* <div style={{border: "1px solid red", width: "90%", height: "10%"}}>asd</div> */}
       </div>
     </div>
   );

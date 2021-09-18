@@ -4,6 +4,8 @@ import { goTop } from "../helpers/goTop";
 
 // this is temporary. As sson as I finish the content, it will be gone
 import Temp from "./Temp";
+import ProjectsImg from "../graphics/project.png";
+
 
 export default function Projects() {
   useEffect(() => goTop(), []);
@@ -18,9 +20,14 @@ export default function Projects() {
   );
 
   return(
-    // this is temporary. As sson as I finish the content, it will be gone
+    // this is temporary. As soon as I finish the content, it will be gone
     <div>
-      <Temp text = { <Text /> }/>
+      <Temp 
+        text = { <Text /> } 
+        // projects={true} 
+        Projects={ProjectsImg}
+        Style={{opacity: "0.6", width: "50%", borderRadius: 0}}
+      />
     </div>
 
     // <div className="card card-container">

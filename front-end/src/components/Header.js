@@ -1,7 +1,7 @@
 import Logo from "../graphics/logo192.png";
 import ToTurnOn from "../graphics/hamburguer.png";
 import ToTurnOff from "../graphics/hamburguer-banned.png";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import BurguerMenu from "./BurguerMenu.js";
 
@@ -12,6 +12,7 @@ const screenWidth = window.innerWidth; // it gets screen width
 
 function Header() {
   // console.log("screenWidth", screenWidth);
+
   const [
     burguerON, 
     setBurguerON] = useState(screenWidth > minimumWidth ? true : false);
@@ -29,10 +30,10 @@ function Header() {
           <div 
             className="logo"
           >
-            <NavLink 
+            <Link 
               to              = "/" 
-              exact           = {true}
-              className       = "nav-link logo"
+              // exact           = {true}
+              // className       = "nav-link logo"
               // activeClassName = "active-link"
             >
               <img 
@@ -41,11 +42,19 @@ function Header() {
                 title   = "Home" 
                 width   = "100%"
               />
-            </NavLink>
+            </Link>
           </div>
         </div>
 
         <div className="nav two-3rd-2">
+          <div className="whereru">
+            { !burguerON &&
+              <div className="whereru">
+                <WhereRU className="whereru" />
+              </div>
+            }
+          </div>
+          
           { burguerON &&
             <div className="text-items">
               <NavLink
@@ -102,15 +111,18 @@ function Header() {
     </>
   );
 
-  const ThinScreeHeader = () => (
+  const ThinScreenHeader = () => (
     <>
       <div className="one-3rd"></div>
 
       <div className="two-3rd">
-        <div className="two-3rd-1">
-          <BurguerMenu />
+        <BurguerMenu />
+
+        <div className="whereru">
+          <WhereRU className="whereru" />
         </div>
-        <div className="two-3rd-2 logo-mobile">
+
+        <div className="logo-mobile">
           <Link to="/">
             <img 
               src     = { Logo } 
@@ -126,13 +138,34 @@ function Header() {
     </>
   );
 
+
+  const WhereRU = () => {
+    const currentLocation = useLocation().pathname;
+    // const currentLocation = window.location.pathname;
+    console.log("inside whereRU", currentLocation);
+    let label = "";
+    if (currentLocation === "/")
+      label = "/Home";
+    else if (currentLocation === "/about")
+      label = "/About";
+    else if (currentLocation === "/projects")
+      label = "/Projects";
+    else if (currentLocation === "/samples")
+      label = "/Snippets";
+    else if (currentLocation === "/contact")
+      label = "/Contact"
+
+    return label;
+  };
+
+
   return(
-    <div className="header d-flex">
+    <div className="header d-flex sticky-top">
       { screenWidth > minimumWidth
         ?
           <LargeScreenHeader />
         :
-          <ThinScreeHeader />
+          <ThinScreenHeader />
       }
     </div>
   );
