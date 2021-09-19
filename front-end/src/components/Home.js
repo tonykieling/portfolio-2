@@ -1,5 +1,16 @@
 import { useEffect } from "react";
-import TK from "../graphics/tk.jpg";
+// import TK from "../graphics/tk.jpg";
+// import TK from "../graphics/tk1.jpg";
+// import TK from "../graphics/tk2.jpg";
+// import TK from "../graphics/tk3.jpg";
+// import TK from "../graphics/tk4.jpg";
+// import TK from "../graphics/tk5.jpg";
+// import TK from "../graphics/tk6.jpg";
+// import TK from "../graphics/tk7.jpg";
+import TK from "../graphics/tk8.jpg";
+// import TK from "../graphics/tk9.jpg";
+// import TK from "../graphics/tk10.jpg";
+
 import { Link } from "react-router-dom";
 import { goTop } from "../helpers/goTop";
 
@@ -18,9 +29,12 @@ export default function Home() {
             check poppins font 
             at fonts.google.com
             */}
-            <h1>Tony Kieling</h1>
-            <h1>Web</h1>
-            <h1>Developer</h1>
+            <div className="my-name">
+              <h1>Tony Kieling</h1>
+            </div>
+            <h1>Web Developer</h1>
+            {/* <h1>Web</h1>
+            <h1>Developer</h1> */}
           </div>
           <div className="cont1-2">
             <h2>Welcome to my Website</h2>

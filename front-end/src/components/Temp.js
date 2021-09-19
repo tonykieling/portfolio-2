@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 // temporary stuff
 import MenAtWork from "../graphics/maw.jpg";
-import MAW from "../graphics/u.gif";
+import MAW from "../graphics/maw.gif";
 
 export default function Temp(props) {
 
@@ -22,10 +22,11 @@ export default function Temp(props) {
             <p> <Link to="/projects">Projects</Link> and <Link to="/contact">Contact</Link>.</p>
           )}
         </div>
-        {/* {console.log("props", props)} */}
+        {console.log("props", props)}
 
         <div 
-          className="temp2">
+          className="temp2"
+        >
           <img 
             src={
               (props.Samples) ||
@@ -33,8 +34,10 @@ export default function Temp(props) {
               (props.About) ||
               MenAtWork
             }
-            // style={{borderRadius: "4px"}}
+            className={`${props.ClassMe}`}
             style={props.Style}
+            // style={{borderRadius: "4px"}}
+            // style={{border: "3px solid red"}}
             alt="Men at work" 
             width="90%"
           />

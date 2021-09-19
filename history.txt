@@ -17,6 +17,14 @@
   (as soon as i get the mobile I'll test within the vercel env)
  redoing header in order to accomodate hamburguer menu
  doing CSS for mobile
+ added pictures and gif for Temp componenent plus styling
+  try to move hamburguer icon to the left side, together menu
+ CSS settings, plus hamburguer, img and font changes
+  before deploying the first version, missing:
+    - check contac message (email, BE, FE)
+    - position <SocialMediaBox>
+    - Hamburguer button (have one green and another red, which it will tell the state of that componennt (ON or OFF))
+  
 
  missing
   be message and send me an email

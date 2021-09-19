@@ -250,11 +250,11 @@ export default function Contact() {
           { buttonMessage }
         </button>
 
-        <p className = "mt-5 text-center mb-1 contact-last-line">It is also possible to reach out through the social medias as follow.</p>
+        {/* <p className = "mt-5 text-center mb-1 contact-last-line">It is also possible to reach out through the social medias:</p> */}
         
-        <SocialMediasBox 
-          // className="m-5"
-        />
+        <div className="mt-5">
+          <SocialMediasBox />
+        </div>
       </div>
   );
 }

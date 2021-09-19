@@ -20,9 +20,26 @@ function Header() {
   const LargeScreenHeader = () => (
     <>
       <div className="one-3rd">
-        { (!burguerON) &&
-          <BurguerMenu />
-        }
+        <div className="one-3rd-1">
+          { (!burguerON) &&
+            <BurguerMenu />
+          }
+        </div>
+        <div className="one-3rd-2">
+          <div className="logo">
+            <img
+              src={burguerON ? ToTurnOn : ToTurnOff}
+              alt="Turn Hamburguer menu ON and OFF"
+              title={
+                burguerON
+                ? "Turn Hamburguer Menu ON"
+                : "Turn Hamburguer Menu OFF"
+              }
+              width="100%"
+              onClick={ () => setBurguerON(!burguerON) }
+            />
+          </div>
+        </div>
       </div>
 
       <div className="two-3rd d-flex">
@@ -93,7 +110,7 @@ function Header() {
         </div>
       </div>
 
-      <div className="three-3rd">
+      {/* <div className="three-3rd">
         <div className="logo">
           <img
             src={burguerON ? ToTurnOn : ToTurnOff}
@@ -107,7 +124,7 @@ function Header() {
             onClick={ () => setBurguerON(!burguerON) }
           />
         </div>
-      </div>
+      </div> */}
     </>
   );
 
