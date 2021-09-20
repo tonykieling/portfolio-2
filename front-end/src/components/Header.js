@@ -1,6 +1,6 @@
 import Logo from "../graphics/logo192.png";
-import ToTurnOn from "../graphics/hamburguer.png";
-import ToTurnOff from "../graphics/hamburguer-banned.png";
+import HamburguerGreen from "../graphics/hamburguer-green.png";
+import HamburguerRed from "../graphics/hamburguer-red.png";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import BurguerMenu from "./BurguerMenu.js";
@@ -26,9 +26,11 @@ function Header() {
           }
         </div>
         <div className="one-3rd-2">
-          <div className="logo">
+          <div 
+            className= {`logo ${!burguerON ? "logo--green" : "logo--red"}`}
+          >
             <img
-              src={burguerON ? ToTurnOn : ToTurnOff}
+              src={!burguerON ? HamburguerGreen : HamburguerRed}
               alt="Turn Hamburguer menu ON and OFF"
               title={
                 burguerON
@@ -113,7 +115,7 @@ function Header() {
       {/* <div className="three-3rd">
         <div className="logo">
           <img
-            src={burguerON ? ToTurnOn : ToTurnOff}
+            src={burguerON ? HamburguerGreen : HamburguerRed}
             alt="Turn Hamburguer menu ON and OFF"
             title={
               burguerON

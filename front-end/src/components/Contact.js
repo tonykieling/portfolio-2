@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import SocialMediasBox from "./SocialMediasBox";
-import { goTop } from "../helpers/goTop";
+import { goTop } from "../helpers/goTop.js";
 
 export default function Contact() {
 
@@ -176,85 +176,89 @@ export default function Contact() {
 
   return(
       // {/* <div className="card card-container card-contact"> */}
-      <div className="card card-container">
-        <p className="text-center">Please, feel free to contact me using the form below. </p> 
+      <div className="card card-container card-contact">
+        {/* <div className="card-contact--1"> */}
+        <div>
+          <p className="mt-2 mb-5 text-center">Please, feel free to reach out. 🤓 </p> 
 
-        <input 
-          className         = {`form-control form-text ${redBoxClass.name}`}
-          placeholder       = "Your name" 
-          data-bs-toggle    = "tooltip" 
-          data-bs-placement = "top"
-          data-bs-html      = "true"
-          title             = "Insert your name"
-          
-          autoFocus   = { window.innerWidth > 700 && true }
-          type        = "text"
-          name        = "name"
-          value       = { state.name }
-          onChange    = { handleChange }
-          onKeyPress  = { handleChange }
-          ref         = { refName}
-          disabled  = { buttonMessage === "sending message..." ? true : false }
-          // tooltip stylling is not working because the place where it is the element. It it positioned on <body>, it works. Check it in the future
-        />
-
-        {/* <div className="form-group"> */}
           <input 
-            className         = {`form-control form-text ${redBoxClass.email}`}
-            placeholder     = "Your email"
-            data-bs-toggle  = "tooltip" 
-            title           = "I will never share your email with anyone else."
-            aria-describedby= "emailHelp"
-
-            type        = "email"
-            name        = "email"
-            value       = { state.email }
+            className         = {`form-control form-text ${redBoxClass.name}`}
+            placeholder       = "Your name" 
+            data-bs-toggle    = "tooltip" 
+            data-bs-placement = "top"
+            data-bs-html      = "true"
+            title             = "Insert your name"
+            
+            autoFocus   = { window.innerWidth > 700 && true }
+            type        = "text"
+            name        = "name"
+            value       = { state.name }
             onChange    = { handleChange }
             onKeyPress  = { handleChange }
-            ref         = { refEmail }
+            ref         = { refName}
+            disabled  = { buttonMessage === "sending message..." ? true : false }
+            // tooltip stylling is not working because the place where it is the element. It it positioned on <body>, it works. Check it in the future
+          />
+
+          {/* <div className="form-group"> */}
+            <input 
+              className         = {`form-control form-text ${redBoxClass.email}`}
+              placeholder     = "Your email"
+              data-bs-toggle  = "tooltip" 
+              title           = "I will never share your email with anyone else."
+              aria-describedby= "emailHelp"
+
+              type        = "email"
+              name        = "email"
+              value       = { state.email }
+              onChange    = { handleChange }
+              onKeyPress  = { handleChange }
+              ref         = { refEmail }
+              disabled  = { buttonMessage === "sending message..." ? true : false }
+            />
+            {/* <p className="form-text-muted">We'll never share your email with anyone else.</p> */}
+          {/* </div> */}
+
+          {/* <label className="form-label">Leave your message:</label> */}
+          {/* <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> */}
+
+          <textarea 
+            // className       = {`form-textarea ${redBoxClass.message}`}
+            className       = {`form-control form-textarea ${redBoxClass.message}`}
+            placeholder     = "Please, leave your message" 
+            data-bs-toggle  = "tooltip" 
+            title           = "Insert your message"
+            rows            = "7"
+
+            type        = "text"
+            name        = "message"
+            value       = { state.message }
+            onChange    = { handleChange }
+            onKeyPress  = { handleChange }
+            ref         = { refMessage}
             disabled  = { buttonMessage === "sending message..." ? true : false }
           />
-          {/* <p className="form-text-muted">We'll never share your email with anyone else.</p> */}
-        {/* </div> */}
 
-        {/* <label className="form-label">Leave your message:</label> */}
-        {/* <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> */}
+          <button
+            type      = "button"
+            onClick   = { sendMessage }
+            className = {`btn btn-sm ${ buttonType }`}
+            ref       = { refButton }
+            disabled  = { buttonMessage === "sending message..." ? true : false }
 
-        <textarea 
-          // className       = {`form-textarea ${redBoxClass.message}`}
-          className       = {`form-control form-textarea ${redBoxClass.message}`}
-          placeholder     = "Please, leave your message" 
-          data-bs-toggle  = "tooltip" 
-          title           = "Insert your message"
-          rows            = "5"
+            data-bs-toggle  = "tooltip" 
+            title           = { buttonType === "btn-warning" ? "Click to renew" : "Send your message" }
+          >
+            { buttonMessage }
+          </button>
 
-          type        = "text"
-          name        = "message"
-          value       = { state.message }
-          onChange    = { handleChange }
-          onKeyPress  = { handleChange }
-          ref         = { refMessage}
-          disabled  = { buttonMessage === "sending message..." ? true : false }
-        />
-
-        <button
-          type      = "button"
-          onClick   = { sendMessage }
-          className = {`btn btn-sm ${ buttonType }`}
-          ref       = { refButton }
-          disabled  = { buttonMessage === "sending message..." ? true : false }
-
-          data-bs-toggle  = "tooltip" 
-          title           = { buttonType === "btn-warning" ? "Click to renew" : "Send your message" }
-        >
-          { buttonMessage }
-        </button>
-
-        {/* <p className = "mt-5 text-center mb-1 contact-last-line">It is also possible to reach out through the social medias:</p> */}
-        
-        <div className="mt-5">
-          <SocialMediasBox />
+          {/* <p className = "mt-5 text-center mb-1 contact-last-line">It is also possible to reach out through the social medias:</p> */}
         </div>
+
+        {/* <div className="card-contact--2"> */}
+        {/* <div> */}
+          <SocialMediasBox />
+        {/* </div> */}
       </div>
   );
 }

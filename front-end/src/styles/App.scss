@@ -6,10 +6,6 @@ $card-font-color  : #4f5138;
 $mobile-width     : 790px;
 
 @import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
-// @font-face {
-//   font-family: "Oregano-Regular";
-//   src: url("../fonts/Oregano-Regular.ttf") format("ttf");
-// }
 
 html, body {
   // height: 100%;
@@ -17,31 +13,22 @@ html, body {
   // min-height: 100vh;
   margin: 0;
   padding: 0;
-  // overflow: hidden;
-  
-  // @media (max-width: $mobile-width) {
-  //   height: -webkit-fill-available;
-  // }
 }
 
 #root{
   height: 100%;
-  // height: -webkit-fill-available;
 }
 
 .app-settings {
   display: flex;
   flex-direction: column;
   height: 100%;
-  // height: -webkit-fill-available;
 }
 
 .body-settings {
   flex-grow: 1;
   background-color: $main-back-color;
   font-size: calc(10px + 2vmin);
-  // color: rgba(255, 255, 255, 0.87);
-  // height: -webkit-fill-available;
 }
 
 // header settings
@@ -65,13 +52,12 @@ html, body {
       align-items: center;
       width: 50%;
     }
-    // border: 1px solid red;
   }
 
 
   .two-3rd {
     width: 70%;
-    // display: flex;
+    justify-content: space-between;
 
     &-1 {
       width: 10%;
@@ -81,7 +67,7 @@ html, body {
     }
 
     &-2 {
-      width: 80%;
+      width: 90%;
       display: flex;
       justify-content: space-between;
 
@@ -138,6 +124,25 @@ html, body {
     .active-link:hover, .nav-link:hover {
       background-color: transparent;
     }
+
+  }
+
+  .logo--green {
+    img {
+      &:hover{
+        border: 5px solid #14D500;
+        background-color: #14D500;
+      }
+    }
+  }
+
+  .logo--red {
+    img {
+      &:hover{
+        border: 5px solid #FF0000;
+        background-color: #FF0000;
+      }
+    }
   }
 
   .logo-mobile {
@@ -170,8 +175,9 @@ html, body {
 .social-media-box {
   width: 100%;
   margin: 0 auto;
-  padding: 0 17rem;
+  padding: 0 18rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   background-color: $card-back-color;
   border-top: 1px solid gray;
@@ -185,7 +191,7 @@ html, body {
   }
 
   @media (max-width: $mobile-width) {
-    padding: 0 3rem;
+    padding: 0 1.5rem;
   }
 }
 
@@ -197,13 +203,28 @@ html, body {
   width: 70%;
   color: $card-font-color;
   border-radius: 20px;
-  // min-height: 80vh;
   min-height: calc(100vh - (5rem + 1px + 6rem));
 
+  @media (max-width: $mobile-width) {
+    // display: flex;
+    // flex-direction: column;
+    padding: 1.5rem;
+    margin: 10% auto;
+    width: 80%;
+    border-radius: 10px;
+    // height: 75vh;
+    min-height: calc(100vh - (5rem + 1px + 5rem + 2rem));
+    min-height: calc(100vh - (5rem + 1px + 10rem));
+  }
+}
 
-  // box-sizing: border-box;
-  // height: 90%;
-  // padding: calc(5rem + 1px);
+
+.card-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 85%;
 
   .form-text, .form-textarea {
     border-radius: .25rem;
@@ -221,19 +242,14 @@ html, body {
     // }
     
   button {
-    font-size: 14px;
-    width: 50%;
-    margin: 0.5rem auto;
+    display: block;
+    margin: 1.5rem auto 0;
   }
- 
+
   .form-text, .form-textarea, button {
     width: 50%;
     min-width: 25rem;
   }
-
-  .last-line {
-     margin-top: 3rem;
-   }
   
   .redBox {
     border: 3px solid red;
@@ -249,24 +265,18 @@ html, body {
     color: navy;
     font-weight: bold;
   }
-
   
   @media (max-width: $mobile-width) {
-    // display: flex;
-    // flex-direction: column;
-    padding: 1.5rem;
-    margin: 10% auto;
-    width: 80%;
-    border-radius: 10px;
-    // height: 75vh;
-    min-height: calc(100vh - (5rem + 1px + 5rem + 2rem));
-    min-height: calc(100vh - (5rem + 1px + 10rem));
-
-    .form-text, .form-textarea, button {
-      min-width: 0;
-      width: 80%;
-      // border: 2px solid red;
-    }
+      .form-text, .form-textarea, button {
+        min-width: 0;
+        width: 80%;
+      }
+      button {
+        margin-bottom: 3rem;
+      }
+      .btn-warning {
+        margin-bottom: 0;
+      }
   }
 }
 
@@ -436,11 +446,6 @@ html, body {
       animation-duration: 2s;
       animation-timing-function: steps(7, end);
     }
-    // .me:hover {
-    //   animation-name: motionblur;
-    //   animation-duration: 5s;
-    //   animation-timing-function: steps(7, start);
-    // }
   }
 
   @media (max-width: $mobile-width) {

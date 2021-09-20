@@ -35,14 +35,15 @@ html, body {
       align-items: center;
       width: 50%; }
   .header .two-3rd {
-    width: 70%; }
+    width: 70%;
+    justify-content: space-between; }
     .header .two-3rd-1 {
       width: 10%;
       display: flex;
       align-items: center;
       justify-content: center; }
     .header .two-3rd-2 {
-      width: 80%;
+      width: 90%;
       display: flex;
       justify-content: space-between; }
       .header .two-3rd-2 .whereru {
@@ -80,6 +81,12 @@ html, body {
         background-color: #cfd9af; }
     .header .logo .active-link:hover, .header .logo .nav-link:hover {
       background-color: transparent; }
+  .header .logo--green img:hover {
+    border: 5px solid #14D500;
+    background-color: #14D500; }
+  .header .logo--red img:hover {
+    border: 5px solid #FF0000;
+    background-color: #FF0000; }
   .header .logo-mobile {
     width: 2.5rem; }
   .header .nav .text-items {
@@ -99,8 +106,9 @@ html, body {
 .social-media-box {
   width: 100%;
   margin: 0 auto;
-  padding: 0 17rem;
+  padding: 0 18rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   background-color: #cfd9af;
   border-top: 1px solid gray;
@@ -112,7 +120,7 @@ html, body {
     margin: 1rem 0; }
   @media (max-width: 790px) {
     .social-media-box {
-      padding: 0 3rem; } }
+      padding: 0 1.5rem; } }
 
 .card-container {
   background-color: #cfd9af;
@@ -122,30 +130,6 @@ html, body {
   color: #4f5138;
   border-radius: 20px;
   min-height: calc(100vh - (5rem + 1px + 6rem)); }
-  .card-container .form-text, .card-container .form-textarea {
-    border-radius: .25rem;
-    border: 1px solid wheat;
-    font-size: 14px;
-    margin: 0.5rem auto;
-    padding-left: 1rem; }
-  .card-container button {
-    font-size: 14px;
-    width: 50%;
-    margin: 0.5rem auto; }
-  .card-container .form-text, .card-container .form-textarea, .card-container button {
-    width: 50%;
-    min-width: 25rem; }
-  .card-container .last-line {
-    margin-top: 3rem; }
-  .card-container .redBox {
-    border: 3px solid red; }
-  .card-container .button-sending {
-    color: #282c34;
-    background-color: aquamarine; }
-  .card-container .button-thanks {
-    background-color: mediumseagreen;
-    color: navy;
-    font-weight: bold; }
   @media (max-width: 790px) {
     .card-container {
       padding: 1.5rem;
@@ -153,10 +137,43 @@ html, body {
       width: 80%;
       border-radius: 10px;
       min-height: calc(100vh - (5rem + 1px + 5rem + 2rem));
-      min-height: calc(100vh - (5rem + 1px + 10rem)); }
-      .card-container .form-text, .card-container .form-textarea, .card-container button {
-        min-width: 0;
-        width: 80%; } }
+      min-height: calc(100vh - (5rem + 1px + 10rem)); } }
+
+.card-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 85%; }
+  .card-contact .form-text, .card-contact .form-textarea {
+    border-radius: .25rem;
+    border: 1px solid wheat;
+    font-size: 14px;
+    margin: 0.5rem auto;
+    padding-left: 1rem; }
+  .card-contact button {
+    display: block;
+    margin: 1.5rem auto 0; }
+  .card-contact .form-text, .card-contact .form-textarea, .card-contact button {
+    width: 50%;
+    min-width: 25rem; }
+  .card-contact .redBox {
+    border: 3px solid red; }
+  .card-contact .button-sending {
+    color: #282c34;
+    background-color: aquamarine; }
+  .card-contact .button-thanks {
+    background-color: mediumseagreen;
+    color: navy;
+    font-weight: bold; }
+  @media (max-width: 790px) {
+    .card-contact .form-text, .card-contact .form-textarea, .card-contact button {
+      min-width: 0;
+      width: 80%; }
+    .card-contact button {
+      margin-bottom: 3rem; }
+    .card-contact .btn-warning {
+      margin-bottom: 0; } }
 
 .home-container .cont1 {
   display: flex;

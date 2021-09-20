@@ -21,9 +21,11 @@
   try to move hamburguer icon to the left side, together menu
  CSS settings, plus hamburguer, img and font changes
   before deploying the first version, missing:
+  hamburguer green and red plus <SocialMediaBox> position
     - check contac message (email, BE, FE)
-    - position <SocialMediaBox>
-    - Hamburguer button (have one green and another red, which it will tell the state of that componennt (ON or OFF))
+      - process.env on FE to send the password
+    X position <SocialMediaBox>
+    X Hamburguer button (have one green and another red, which it will tell the state of that componennt (ON or OFF))
   
 
  missing

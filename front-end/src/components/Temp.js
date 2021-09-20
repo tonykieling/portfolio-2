@@ -22,7 +22,6 @@ export default function Temp(props) {
             <p> <Link to="/projects">Projects</Link> and <Link to="/contact">Contact</Link>.</p>
           )}
         </div>
-        {console.log("props", props)}
 
         <div 
           className="temp2"
