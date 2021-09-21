@@ -1,16 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import SocialMediasBox from "./SocialMediasBox";
 import { goTop } from "../helpers/goTop.js";
+import ReCaptchaV2 from "react-google-recaptcha";
+
+const BadMessage = () => (
+  <>
+    <p><b>Something bad happened. :/</b></p>
+    <p><b>Please try it later or</b></p>
+    <p><b>email to <a style={{color: "blue"}} href="mailto:tony.kieling@gmail.com"> tony.kieling@gmail.com </a></b></p>
+  </>
+);
 
 export default function Contact() {
-
-  const BadMessage = () => (
-    <>
-      <p><b>Something bad happened. :/</b></p>
-      <p><b>Please try it later or</b></p>
-      <p><b>email to <a style={{color: "blue"}} href="mailto:tony.kieling@gmail.com"> tony.kieling@gmail.com </a></b></p>
-    </>
-);
 
   useEffect(() => goTop(), []);
 
@@ -36,6 +37,7 @@ export default function Contact() {
   const refEmail    = useRef(null);
   const refMessage  = useRef(null);
   const refButton   = useRef(null);
+  const refReCaptcha = useRef(null);
 
 
   const handleChange = event => {
@@ -115,6 +117,16 @@ export default function Contact() {
       return;
     } else {
 
+      const token = await refReCaptcha.current.getValue();
+      console.log("token========", token);
+      
+      if (!token) {
+        // set redbox for thecatptcha
+        setButtonMessage("captch, please");
+        return;
+      }
+      refReCaptcha.current.reset();
+
       // if everything is okay, the form will be sent
       try {
         const url = "/api";
@@ -122,9 +134,11 @@ export default function Contact() {
           person  : state.name,
           email   : state.email, 
           message : state.message,
-          password: process.env.pass
+          token
         };
-  console.log("body=", body);
+  // console.log("body=", body);
+
+        
 
         setButtonMessage("sending message...");
         setButtonType("button-sending");
@@ -174,10 +188,15 @@ export default function Contact() {
   };
 
 
+  const reCaptchaChange = value => {
+    // console.log("this is value:", value);
+    console.log("process.env", process.env.REACT_APP_SITEKEY)
+  }
+
+
   return(
       // {/* <div className="card card-container card-contact"> */}
       <div className="card card-container card-contact">
-        {/* <div className="card-contact--1"> */}
         <div>
           <p className="mt-2 mb-5 text-center">Please, feel free to reach out. 🤓 </p> 
 
@@ -197,33 +216,25 @@ export default function Contact() {
             onKeyPress  = { handleChange }
             ref         = { refName}
             disabled  = { buttonMessage === "sending message..." ? true : false }
-            // tooltip stylling is not working because the place where it is the element. It it positioned on <body>, it works. Check it in the future
           />
 
-          {/* <div className="form-group"> */}
-            <input 
-              className         = {`form-control form-text ${redBoxClass.email}`}
-              placeholder     = "Your email"
-              data-bs-toggle  = "tooltip" 
-              title           = "I will never share your email with anyone else."
-              aria-describedby= "emailHelp"
+          <input 
+            className         = {`form-control form-text ${redBoxClass.email}`}
+            placeholder     = "Your email"
+            data-bs-toggle  = "tooltip" 
+            title           = "I will never share your email with anyone else."
+            aria-describedby= "emailHelp"
 
-              type        = "email"
-              name        = "email"
-              value       = { state.email }
-              onChange    = { handleChange }
-              onKeyPress  = { handleChange }
-              ref         = { refEmail }
-              disabled  = { buttonMessage === "sending message..." ? true : false }
-            />
-            {/* <p className="form-text-muted">We'll never share your email with anyone else.</p> */}
-          {/* </div> */}
+            type        = "email"
+            name        = "email"
+            value       = { state.email }
+            onChange    = { handleChange }
+            onKeyPress  = { handleChange }
+            ref         = { refEmail }
+            disabled  = { buttonMessage === "sending message..." ? true : false }
+          />
 
-          {/* <label className="form-label">Leave your message:</label> */}
-          {/* <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> */}
-
-          <textarea 
-            // className       = {`form-textarea ${redBoxClass.message}`}
+          <textarea
             className       = {`form-control form-textarea ${redBoxClass.message}`}
             placeholder     = "Please, leave your message" 
             data-bs-toggle  = "tooltip" 
@@ -235,7 +246,7 @@ export default function Contact() {
             value       = { state.message }
             onChange    = { handleChange }
             onKeyPress  = { handleChange }
-            ref         = { refMessage}
+            ref         = { refMessage }
             disabled  = { buttonMessage === "sending message..." ? true : false }
           />
 
@@ -252,13 +263,16 @@ export default function Contact() {
             { buttonMessage }
           </button>
 
-          {/* <p className = "mt-5 text-center mb-1 contact-last-line">It is also possible to reach out through the social medias:</p> */}
+          <ReCaptchaV2
+            // sitekey="6Lc2eIEcAAAAAF_cCJ5jYnqSIyy2P0d0jPLy5t3s"
+            sitekey={process.env.REACT_APP_SITEKEY}
+            onChange={reCaptchaChange}
+            ref={ refReCaptcha }
+          />
         </div>
 
-        {/* <div className="card-contact--2"> */}
-        {/* <div> */}
-          <SocialMediasBox />
-        {/* </div> */}
+        <SocialMediasBox />
+
       </div>
   );
 }

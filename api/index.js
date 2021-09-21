@@ -1,5 +1,6 @@
 "use strict";
 const nodemailer = require("nodemailer");
+const fetch = require("node-fetch");
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -80,6 +81,20 @@ const sendEmail = async (person, email, message) => {
 };
 
 
+// it checks the token sent by the contact form
+const checkHuman = async (token) => {
+  const check = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${"token"}`, 
+    { 
+      method: "POST"
+    }
+  );
+  console.log("check --- ", check);
+  const data = await check.json();
+  console.log("data ---", data);
+  return data.success;
+};
+
 
 module.exports = async (req, res) => {
   try {
@@ -89,9 +104,14 @@ module.exports = async (req, res) => {
       person, 
       email,
       message,
-      password
+      token
     } = req.body;
 
+    const human = await checkHuman(token);
+    console.log("human verified result is => ", human);
+
+    if (!human)
+      return res.json({notHuman: true});
 
     // if (password !== process.env.senderPassword) {
     //   console.log("password issues");

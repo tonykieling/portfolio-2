@@ -26,7 +26,12 @@
       - process.env on FE to send the password
     X position <SocialMediaBox>
     X Hamburguer button (have one green and another red, which it will tell the state of that componennt (ON or OFF))
-  
+
+  doing reCaptcha
+
+dev v2
+  the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.
+
 
  missing
   be message and send me an email

@@ -144,7 +144,7 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 85%; }
+  min-height: 80%; }
   .card-contact .form-text, .card-contact .form-textarea {
     border-radius: .25rem;
     border: 1px solid wheat;

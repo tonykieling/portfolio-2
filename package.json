@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "node-fetch": "2.6.4",
     "nodemailer": "^6.6.3"
   }
 }
