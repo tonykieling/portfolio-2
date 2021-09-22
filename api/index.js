@@ -84,7 +84,7 @@ const sendEmail = async (person, email, message) => {
 // it checks the token sent by the contact form
 const checkHuman = async (token) => {
   const check = await fetch(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${"token"}`, 
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`, 
     { 
       method: "POST"
     }
@@ -106,6 +106,9 @@ module.exports = async (req, res) => {
       message,
       token
     } = req.body;
+
+    if (!token)
+      return res.json({notHuman: true});
 
     const human = await checkHuman(token);
     console.log("human verified result is => ", human);

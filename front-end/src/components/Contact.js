@@ -33,6 +33,9 @@ export default function Contact() {
   const [buttonMessage, setButtonMessage] = useState("Send Message");
   const [buttonType, setButtonType] = useState("btn-primary");
 
+  // it holds reCaptcha token
+  const [reCaptchaToken, setReCaptchaToken] = useState(null);
+
   const refName     = useRef(null);
   const refEmail    = useRef(null);
   const refMessage  = useRef(null);
@@ -80,6 +83,8 @@ export default function Contact() {
     // it checks if there was an error and the form was set with the BadMessage
     // if so, this if will enable the form again
     if (buttonType === "btn-warning") {
+      if (buttonMessage === "Check reCaptcha, please.")
+        return;
       setButtonType("btn-primary");
       setButtonMessage("Send message");
       refMessage.current.focus();
@@ -117,12 +122,13 @@ export default function Contact() {
       return;
     } else {
 
-      const token = await refReCaptcha.current.getValue();
-      console.log("token========", token);
-      
-      if (!token) {
+      // const token = await refReCaptcha.current.getValue();
+      // console.log("token========", token);
+      console.log("reCaptchaToken==>", reCaptchaToken);
+      if (!reCaptchaToken) {
         // set redbox for thecatptcha
-        setButtonMessage("captch, please");
+        setButtonType("btn-warning");
+        setButtonMessage("Check reCaptcha, please.");
         return;
       }
       refReCaptcha.current.reset();
@@ -134,12 +140,11 @@ export default function Contact() {
           person  : state.name,
           email   : state.email, 
           message : state.message,
-          token
+          token   : reCaptchaToken
         };
   // console.log("body=", body);
 
-        
-
+        setReCaptchaToken(null);
         setButtonMessage("sending message...");
         setButtonType("button-sending");
 
@@ -157,6 +162,7 @@ export default function Contact() {
         console.log("email:::", email);
         const res = await email.json();
         console.log("rRES:::", res);
+        // const res = {message: true};
 
         if (res.message) {
           setTimeout(() => {
@@ -180,7 +186,7 @@ export default function Contact() {
           throw new Error();
 
       } catch(error) {
-        console.log("checking error:::", error);
+        // console.log("checking error:::", error);
         setButtonType("btn-warning");
         setButtonMessage(<BadMessage />);
       }
@@ -188,9 +194,13 @@ export default function Contact() {
   };
 
 
+  // iy gets the token when recaptcha is clicked
   const reCaptchaChange = value => {
+    setReCaptchaToken(value);
+    setButtonType("btn-primary");
+    setButtonMessage("Send Message");
     // console.log("this is value:", value);
-    console.log("process.env", process.env.REACT_APP_SITEKEY)
+    // console.log("process.env", process.env.REACT_APP_SITEKEY)
   }
 
 
@@ -198,7 +208,7 @@ export default function Contact() {
       // {/* <div className="card card-container card-contact"> */}
       <div className="card card-container card-contact">
         <div>
-          <p className="mt-2 mb-5 text-center">Please, feel free to reach out. 🤓 </p> 
+          <p className="mt-1 mb-4 text-center">Please, feel free to reach out. 🤓 </p> 
 
           <input 
             className         = {`form-control form-text ${redBoxClass.name}`}
@@ -239,7 +249,7 @@ export default function Contact() {
             placeholder     = "Please, leave your message" 
             data-bs-toggle  = "tooltip" 
             title           = "Insert your message"
-            rows            = "7"
+            rows            = "6"
 
             type        = "text"
             name        = "message"
@@ -263,13 +273,45 @@ export default function Contact() {
             { buttonMessage }
           </button>
 
+
+
+        </div>
+
+          {/* <div 
+            style={{
+              border: "2px solid red", 
+              display: "flex", 
+              justifyContent: "center",
+              alignSelf: "center",
+              width: "100%"
+            }}
+          > */}
+          <div 
+            className="mt-3 mb-"
+            style={{
+              border: "1px solid red",
+              width: "150%",
+              display: "flex",
+              justifyContent: "center",
+              flex: "1 1 auto"
+            }}
+          >
           <ReCaptchaV2
             // sitekey="6Lc2eIEcAAAAAF_cCJ5jYnqSIyy2P0d0jPLy5t3s"
             sitekey={process.env.REACT_APP_SITEKEY}
             onChange={reCaptchaChange}
             ref={ refReCaptcha }
+            // ReCaptchaV2
+            size={window.innerWidth > 750 ? "normal" : "compact"}
           />
-        </div>
+          </div>
+
+{/* <div 
+  class="g-recaptcha" 
+  data-sitekey={process.env.REACT_APP_SITEKEY}
+></div>  */}
+
+          {/* </div> */}
 
         <SocialMediasBox />
 
