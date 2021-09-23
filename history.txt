@@ -26,9 +26,9 @@
       X process.env on FE to send the password
     X position <SocialMediaBox>
     X Hamburguer button (have one green and another red, which it will tell the state of that componennt (ON or OFF))
-
   doing reCaptcha
   reCaptcha FE and BE are done. Even style is limited, it is working but not in small screen (size="compact).
+  doing reCaptcha, styling is limited but it was set and it is working, plus secret key set on vercel. Deploying and testings
 
 dev v2
   the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.

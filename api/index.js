@@ -89,9 +89,9 @@ const checkHuman = async (token) => {
       method: "POST"
     }
   );
-  console.log("check --- ", check);
+  // console.log("check --- ", check);
   const data = await check.json();
-  console.log("data ---", data);
+  // console.log("data ---", data);
   return data.success;
 };
 

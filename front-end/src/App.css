@@ -136,7 +136,6 @@ html, body {
       margin: 10% auto;
       width: 80%;
       border-radius: 10px;
-      min-height: calc(100vh - (5rem + 1px + 5rem + 2rem));
       min-height: calc(100vh - (5rem + 1px + 10rem)); } }
 
 .card-contact {
@@ -171,11 +170,17 @@ html, body {
   @media (max-width: 790px) {
     .card-contact .form-text, .card-contact .form-textarea, .card-contact button {
       min-width: 0;
-      width: 90%; }
+      width: 85%; }
     .card-contact button {
       margin-bottom: 1rem; }
     .card-contact .btn-warning {
       margin-bottom: 0; } }
+  .card-contact .reCaptcha {
+    display: flex;
+    justify-content: center; }
+  @media (max-width: 790px) {
+    .card-contact .reCaptcha {
+      transform: scale(0.85); } }
 
 .home-container .cont1 {
   display: flex;

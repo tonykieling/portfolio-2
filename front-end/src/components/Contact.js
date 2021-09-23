@@ -25,9 +25,10 @@ export default function Contact() {
   });
 
   const [redBoxClass, setRedBoxClass] = useState({
-    name    : null,
-    email   : null,
-    message : null
+    name      : "",
+    email     : "",
+    message   : "",
+    reCaptcha : ""
   });
 
   const [buttonMessage, setButtonMessage] = useState("Send Message");
@@ -70,9 +71,9 @@ export default function Contact() {
       }
     } else {
       setState({...state, [name]: value});
-      (name === "name") && setRedBoxClass({...redBoxClass, name: null});
-      (name === "email") && setRedBoxClass({...redBoxClass, email: null});
-      (name === "message") && setRedBoxClass({...redBoxClass, message: null});
+      (name === "name") && setRedBoxClass({...redBoxClass, name: ""});
+      (name === "email") && setRedBoxClass({...redBoxClass, email: ""});
+      (name === "message") && setRedBoxClass({...redBoxClass, message: ""});
     }
   };
 
@@ -129,6 +130,8 @@ export default function Contact() {
         // set redbox for thecatptcha
         setButtonType("btn-warning");
         setButtonMessage("Check reCaptcha, please.");
+        tempObj = {...tempObj, reCaptcha: "redBox"};
+        setRedBoxClass({reCaptcha: "redBox"});
         return;
       }
       refReCaptcha.current.reset();
@@ -199,6 +202,7 @@ export default function Contact() {
     setReCaptchaToken(value);
     setButtonType("btn-primary");
     setButtonMessage("Send Message");
+    setRedBoxClass({...redBoxClass, reCaptcha: ""});
     // console.log("this is value:", value);
     // console.log("process.env", process.env.REACT_APP_SITEKEY)
   }
@@ -275,43 +279,17 @@ export default function Contact() {
 
 
 
-        </div>
-
-          {/* <div 
-            style={{
-              border: "2px solid red", 
-              display: "flex", 
-              justifyContent: "center",
-              alignSelf: "center",
-              width: "100%"
-            }}
-          > */}
-          <div 
-            className="mt-3 mb-"
-            style={{
-              border: "1px solid red",
-              width: "150%",
-              display: "flex",
-              justifyContent: "center",
-              flex: "1 1 auto"
-            }}
-          >
-          <ReCaptchaV2
-            // sitekey="6Lc2eIEcAAAAAF_cCJ5jYnqSIyy2P0d0jPLy5t3s"
-            sitekey={process.env.REACT_APP_SITEKEY}
-            onChange={reCaptchaChange}
-            ref={ refReCaptcha }
-            // ReCaptchaV2
-            size={window.innerWidth > 750 ? "normal" : "compact"}
-          />
+          <div className="mt-3 mb-2 reCaptcha">
+            <ReCaptchaV2
+              // sitekey="6Lc2eIEcAAAAAF_cCJ5jYnqSIyy2P0d0jPLy5t3s"
+              sitekey={process.env.REACT_APP_SITEKEY}
+              onChange={reCaptchaChange}
+              ref={ refReCaptcha }
+              className={`${redBoxClass.reCaptcha}`}
+            />
           </div>
 
-{/* <div 
-  class="g-recaptcha" 
-  data-sitekey={process.env.REACT_APP_SITEKEY}
-></div>  */}
-
-          {/* </div> */}
+          </div>
 
         <SocialMediasBox />
 

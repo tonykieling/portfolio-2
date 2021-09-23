@@ -213,7 +213,7 @@ html, body {
     width: 80%;
     border-radius: 10px;
     // height: 75vh;
-    min-height: calc(100vh - (5rem + 1px + 5rem + 2rem));
+    // min-height: calc(100vh - (5rem + 1px + 5rem + 2rem));
     min-height: calc(100vh - (5rem + 1px + 10rem));
   }
 }
@@ -272,7 +272,7 @@ html, body {
   @media (max-width: $mobile-width) {
       .form-text, .form-textarea, button {
         min-width: 0;
-        width: 90%;
+        width: 85%;
       }
       button {
         margin-bottom: 1rem;
@@ -280,6 +280,17 @@ html, body {
       .btn-warning {
         margin-bottom: 0;
       }
+  }
+
+  .reCaptcha {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    .reCaptcha {
+      transform: scale(0.85);
+    }
   }
 }
 
