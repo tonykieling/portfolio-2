@@ -33,12 +33,18 @@
 dev v2
   the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.
 
+  ONE WAY TO PASS VARAIBLE TO THE APP in build time is to set package.json
+  "build": "VAR=123 react-scripts build"
+  doing CSS and setting keys for reCaptcha
+
 
  missing
   be message and send me an email
     need to make passwordcode for sending message
   footer (Tony Kieling - 2021)
   mobile settings
+    check clockinjs about the screen min-height
+  reCaptcha
   content and styling for
    about
    projects

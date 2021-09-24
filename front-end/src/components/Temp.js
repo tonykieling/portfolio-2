@@ -15,9 +15,8 @@ export default function Temp(props) {
             src={MAW}
             alt="Men at Work"
             width="25%"
-            // style={{margin: "auto"}}
           />
-          <p> Meanwhile, please feel free to check</p>
+          <p className="cp"> Meanwhile, please feel free to check out</p>
           {props.text || (
             <p> <Link to="/projects">Projects</Link> and <Link to="/contact">Contact</Link>.</p>
           )}

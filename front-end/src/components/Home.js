@@ -42,6 +42,10 @@ export default function Home() {
           </div>
         </div>
 
+{/* <br />
+<br />
+<br />
+<br /> */}
         <div className="cont2">
           <img 
             className = "picture"

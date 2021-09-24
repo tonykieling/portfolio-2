@@ -1,25 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Oregano&display=swap");
 html, body {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0; }
 
 #root {
-  height: 100%; }
+  margin: 0;
+  padding: 0; }
 
 .app-settings {
   display: flex;
   flex-direction: column;
-  height: 100%; }
+  min-height: 100vh;
+  background-color: green; }
 
 .body-settings {
   flex-grow: 1;
   background-color: #282c34;
-  font-size: calc(10px + 2vmin); }
+  font-size: calc(10px + 2vmin);
+  min-height: calc(100vh - 5rem - 1px); }
 
 .header {
   width: 100%;
-  border-bottom: solid #4f5138 1px;
+  border-bottom: 1px solid #4f5138;
   background-color: #282c34;
   height: 5rem; }
   .header .one-3rd, .header .three-3rd {
@@ -104,12 +107,11 @@ html, body {
       padding: 1rem 0; } }
 
 .social-media-box {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 18rem;
+  width: 80%;
+  padding: 0 25%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #cfd9af;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray; }
@@ -120,30 +122,28 @@ html, body {
     margin: 1rem 0; }
   @media (max-width: 790px) {
     .social-media-box {
-      padding: 0 1.5rem; } }
+      padding: 0 10%; } }
 
-.card-container {
+.card {
   background-color: #cfd9af;
   padding: 3rem;
   margin: 2rem auto;
   width: 70%;
   color: #4f5138;
   border-radius: 20px;
-  min-height: calc(100vh - (5rem + 1px + 6rem)); }
+  min-height: calc(100vh - 5rem - 1px - 4rem); }
   @media (max-width: 790px) {
-    .card-container {
+    .card {
+      flex-direction: column;
       padding: 1.5rem;
-      margin: 10% auto;
       width: 80%;
       border-radius: 10px;
-      min-height: calc(100vh - (5rem + 1px + 10rem)); } }
+      min-height: 70vh; } }
 
 .card-contact {
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  min-height: 80%; }
+  align-items: center; }
   .card-contact .form-text, .card-contact .form-textarea {
     border-radius: .25rem;
     border: 1px solid wheat;
@@ -153,8 +153,7 @@ html, body {
   .card-contact button {
     display: block;
     margin: auto;
-    margin-bottom: 0;
-    margin-top: 1rem; }
+    margin-bottom: 0; }
   .card-contact .form-text, .card-contact .form-textarea, .card-contact button {
     width: 50%;
     min-width: 25rem; }
@@ -167,6 +166,9 @@ html, body {
     background-color: mediumseagreen;
     color: navy;
     font-weight: bold; }
+  .card-contact .reCaptcha {
+    display: flex;
+    justify-content: center; }
   @media (max-width: 790px) {
     .card-contact .form-text, .card-contact .form-textarea, .card-contact button {
       min-width: 0;
@@ -174,11 +176,7 @@ html, body {
     .card-contact button {
       margin-bottom: 1rem; }
     .card-contact .btn-warning {
-      margin-bottom: 0; } }
-  .card-contact .reCaptcha {
-    display: flex;
-    justify-content: center; }
-  @media (max-width: 790px) {
+      margin-bottom: 0; }
     .card-contact .reCaptcha {
       transform: scale(0.85); } }
 
@@ -246,16 +244,18 @@ html, body {
 
 .temp {
   display: flex;
-  flex: 1 1 auto; }
+  flex: 1 1 auto;
+  justify-content: space-between; }
   .temp .temp1 {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
     width: 50%; }
     .temp .temp1 .cp {
-      margin: 3rem 0 1rem; }
+      margin: 1rem 2rem 1rem; }
     .temp .temp1 img {
-      margin: 0rem auto 3rem; }
+      margin: 1rem auto 3rem; }
   .temp .temp2 {
     display: flex;
     width: 50%;
@@ -293,6 +293,8 @@ html, body {
       justify-content: space-around; }
       .temp .temp1 {
         width: 100%; }
+        .temp .temp1 .cp {
+          margin: 0; }
       .temp .temp2 {
         width: 100%;
         height: 100%;

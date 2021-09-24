@@ -18,8 +18,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "REACT_APP_SITEKEY=6Ld9kYccAAAAALq01Zx9ly4_7AWmzul_CeW7ppkn react-scripts start",
+    "build": "REACT_APP_SITEKEY=6Ld9kYccAAAAALq01Zx9ly4_7AWmzul_CeW7ppkn react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

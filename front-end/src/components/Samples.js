@@ -14,7 +14,10 @@ export default function About() {
       <Temp 
         // samples={true} 
         Samples={MatrixCode} 
-        Style={{borderRadius: "4px", width: "100%"}}
+        Style={{
+          borderRadius: "4px", 
+          width: "100%"
+        }}
       />
     </div>
   );

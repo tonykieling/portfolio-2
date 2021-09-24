@@ -89,9 +89,9 @@ const checkHuman = async (token) => {
       method: "POST"
     }
   );
-  // console.log("check --- ", check);
+  console.log("check --- ", check);
   const data = await check.json();
-  // console.log("data ---", data);
+  console.log("data ---", data);
   return data.success;
 };
 
@@ -107,18 +107,28 @@ module.exports = async (req, res) => {
       token
     } = req.body;
 
+    // console.log("process.env.RECAPTCHA_SECRET_KEY:::", process.env.RECAPTCHA_SECRET_KEY);
+
     if (!token)
-      return res.json({notHuman: true});
+      return res.json({
+        notHuman: true,
+        // this is temp just now, MUST DELETE it
+        k: process.env.RECAPTCHA_SECRET_KEY
+      });
 
     const human = await checkHuman(token);
     console.log("human verified result is => ", human);
 
     if (!human)
-      return res.json({notHuman: true});
+      return res.json({
+        notHuman: true,
+        // this is temp just now, MUST DELETE it
+        k: process.env.RECAPTCHA_SECRET_KEY
+      });
 
     // if (password !== process.env.senderPassword) {
     //   console.log("password issues");
-      return res.json({ message: true });
+      // return res.json({ message: true });
     // }
 
     const emailSuccess = await sendEmail(person, email, message);

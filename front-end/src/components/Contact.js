@@ -3,11 +3,20 @@ import SocialMediasBox from "./SocialMediasBox";
 import { goTop } from "../helpers/goTop.js";
 import ReCaptchaV2 from "react-google-recaptcha";
 
+// general message when something bad happens
 const BadMessage = () => (
   <>
     <p><b>Something bad happened. :/</b></p>
     <p><b>Please try it later or</b></p>
     <p><b>email to <a style={{color: "blue"}} href="mailto:tony.kieling@gmail.com"> tony.kieling@gmail.com </a></b></p>
+  </>
+);
+
+// message for when the server does not accept reCaptcha token
+const BadMessageReCaptcha = () => (
+  <>
+    <p><b>Something bad happened with reCaptcha. :/</b></p>
+    <p><b>Please recheck it and try again. {":)"}</b></p>
   </>
 );
 
@@ -54,7 +63,7 @@ export default function Contact() {
 
       switch(name) {
         case "name":
-          console.log("blur");
+          // console.log("blur");
           if (state.name)
             refEmail.current.focus();
           break;
@@ -145,7 +154,7 @@ export default function Contact() {
           message : state.message,
           token   : reCaptchaToken
         };
-  // console.log("body=", body);
+  console.log("body = to be sent:::", body);
 
         setReCaptchaToken(null);
         setButtonMessage("sending message...");
@@ -162,9 +171,9 @@ export default function Contact() {
           },
         );
 
-        console.log("email:::", email);
+        // console.log("email:::", email);
         const res = await email.json();
-        console.log("rRES:::", res);
+        console.log("result from server:::", res);
         // const res = {message: true};
 
         if (res.message) {
@@ -185,6 +194,13 @@ export default function Contact() {
               refName.current.focus();
             }, 3000);
           }, 2000);
+
+
+          // need to check if it is working
+          // it happens when notHuman is returned from server
+        } else if (res.notHuman) {
+          setButtonType("btn-warning");
+          setButtonMessage(<BadMessageReCaptcha />);
         } else
           throw new Error();
 
@@ -199,6 +215,7 @@ export default function Contact() {
 
   // iy gets the token when recaptcha is clicked
   const reCaptchaChange = value => {
+    console.log("process.env", process.env);
     setReCaptchaToken(value);
     setButtonType("btn-primary");
     setButtonMessage("Send Message");
@@ -210,7 +227,7 @@ export default function Contact() {
 
   return(
       // {/* <div className="card card-container card-contact"> */}
-      <div className="card card-container card-contact">
+      <div className="card card-contact">
         <div>
           <p className="mt-1 mb-4 text-center">Please, feel free to reach out. 🤓 </p> 
 

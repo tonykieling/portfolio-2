@@ -161,7 +161,6 @@ function Header() {
   const WhereRU = () => {
     const currentLocation = useLocation().pathname;
     // const currentLocation = window.location.pathname;
-    console.log("inside whereRU", currentLocation);
     let label = "";
     if (currentLocation === "/")
       label = "/Home";
