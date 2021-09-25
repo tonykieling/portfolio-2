@@ -76,7 +76,7 @@ const sendEmail = async (person, email, message) => {
   `);
 
   const success = await generalSender(email, " - automatic reply from Tony Kieling - ", content);
-  console.log("success:", success);
+  // console.log("success:", success);
   return (success ? true : false);
 };
 
@@ -114,37 +114,49 @@ module.exports = async (req, res) => {
 
 
     if (!token)
-      return res.json({
+      throw({
         notHuman: true,
         // this is temp just now, MUST DELETE it
         secret_key
       });
+      // return res.json({
+      //   notHuman: true,
+      //   secret_key
+      // });
 
     const human = await checkHuman(token, secret_key);
     // console.log("human verified result is => ", human);
 
     if (!human)
     // if (1)
-      return res.json({
+      throw({
         notHuman: true,
         // this is temp just now, MUST DELETE it
         secret_key
       });
+      // return res.json({
+      //   notHuman: true,
+      //   secret_key
+      // });
 
 
     const emailSuccess = await sendEmail(person, email, message);
     // console.log("emailSuccess:", emailSuccess);
     // const emailSuccess = true;
 
-    return res.json(emailSuccess 
-      ? { 
+    if (!emailSuccess)
+      throw({
+        error: true
+      });
+
+    return res.json({ 
         message: true,
         secret_key,
         test: "another field"
-      } 
-      : { error: true });
+      });
+
   } catch(error) {
-    console.log("-----------", error.message);
+    // console.log("-----------", error);
     return res.json({ error: error.message || error });
   }
 };

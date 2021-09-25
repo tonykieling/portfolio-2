@@ -17,6 +17,7 @@ const BadMessageReCaptcha = () => (
   <>
     <p><b>Something bad happened with reCaptcha. :/</b></p>
     <p><b>Please recheck it and try again. {":)"}</b></p>
+    <p><b>Or email to <a style={{color: "blue"}} href="mailto:tony.kieling@gmail.com"> tony.kieling@gmail.com </a></b></p>
   </>
 );
 
@@ -198,7 +199,7 @@ export default function Contact() {
 
           // need to check if it is working
           // it happens when notHuman is returned from server
-        } else if (res.notHuman) {
+        } else if (res.error.notHuman) {
           setButtonType("btn-warning");
           setButtonMessage(<BadMessageReCaptcha />);
         } else
