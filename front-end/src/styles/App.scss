@@ -316,7 +316,8 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     // justify-content: space-around;
-    padding: 2rem;
+    padding: 0rem 2rem;
+    // padding: 2rem;
     width: 60%;
 
     h1 {
@@ -378,10 +379,10 @@ html, body {
     .cont1 {
       width: 100%;
       padding: 0;
-      height: 50%;
+      // height: 50%;
 
       h1 {
-        font-size: 200%;
+        font-size: 190%;
       }
       h2, h3 {
         font-size: 130%;

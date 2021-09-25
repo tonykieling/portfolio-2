@@ -42,13 +42,13 @@ const sendEmail = async (person, email, message) => {
         <p>Hi <b>${person}</b></p>
         <p>Thanks for your email.</p>
         <br>
-        <br>
         <p> I will reply for you asap.
-
+        <br>
+        <br>
         <p>Kind regards from</p>
         <h3>Tony Kieling</h3>
-        <h2>https://tkwebdev.ca</h2>
-        <h2>tony.kieling@gmail.com</h2>
+        <p>https://tkwebdev.ca</p>
+        <p>tony.kieling@gmail.com</p>
       </div>
 
       <div>
@@ -82,23 +82,23 @@ const sendEmail = async (person, email, message) => {
 
 
 // it checks the token sent by the contact form
-const checkHuman = async (token) => {
+const checkHuman = async (token, secret_key) => {
   const check = await fetch(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`, 
+    `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`, 
     { 
       method: "POST"
     }
   );
-  console.log("check --- ", check);
+  // console.log("check --- ", check);
   const data = await check.json();
-  console.log("data ---", data);
+  // console.log("data ---", data);
   return data.success;
 };
 
 
 module.exports = async (req, res) => {
   try {
-    console.log("req.body", req.body);
+    // console.log("req.body", req.body);
 
     const { 
       person, 
@@ -109,34 +109,42 @@ module.exports = async (req, res) => {
 
     // console.log("process.env.RECAPTCHA_SECRET_KEY:::", process.env.RECAPTCHA_SECRET_KEY);
 
+    const secret_key = process.env.RECAPTCHA_SECRET_KEY || "process.env.RECAPTCHA_SECRET_KEY"
+
+
+
     if (!token)
       return res.json({
         notHuman: true,
         // this is temp just now, MUST DELETE it
-        k: process.env.RECAPTCHA_SECRET_KEY
+        secret_key
       });
 
-    const human = await checkHuman(token);
-    console.log("human verified result is => ", human);
+    const human = await checkHuman(token, secret_key);
+    // console.log("human verified result is => ", human);
 
     if (!human)
+    // if (1)
       return res.json({
         notHuman: true,
         // this is temp just now, MUST DELETE it
-        k: process.env.RECAPTCHA_SECRET_KEY
+        secret_key
       });
 
-    // if (password !== process.env.senderPassword) {
-    //   console.log("password issues");
-      // return res.json({ message: true });
-    // }
 
     const emailSuccess = await sendEmail(person, email, message);
-    console.log("emailSuccess:", emailSuccess);
+    // console.log("emailSuccess:", emailSuccess);
+    // const emailSuccess = true;
 
-    return res.json(emailSuccess ? { message: true } : { error: true });
+    return res.json(emailSuccess 
+      ? { 
+        message: true,
+        secret_key,
+        test: "another field"
+      } 
+      : { error: true });
   } catch(error) {
-    // console.log("-----------", error.message);
+    console.log("-----------", error.message);
     return res.json({ error: error.message || error });
   }
 };

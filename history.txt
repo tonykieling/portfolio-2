@@ -29,14 +29,13 @@
   doing reCaptcha
   reCaptcha FE and BE are done. Even style is limited, it is working but not in small screen (size="compact).
   doing reCaptcha, styling is limited but it was set and it is working, plus secret key set on vercel. Deploying and testings
-
-dev v2
-  the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.
-
   ONE WAY TO PASS VARAIBLE TO THE APP in build time is to set package.json
   "build": "VAR=123 react-scripts build"
   doing CSS and setting keys for reCaptcha
+  resetting reCaptcha env variables and a bit of styling
 
+dev v2
+  the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.
 
  missing
   be message and send me an email
@@ -61,3 +60,6 @@ fw-bold for bold font
 for diff sizes of img in the same row at 55min
 
 
+package.json FE for vercel production
+    "start": "REACT_APP_SITEKEY=6Ld9kYccAAAAALq01Zx9ly4_7AWmzul_CeW7ppkn react-scripts start",
+    "build": "REACT_APP_SITEKEY=6Ld9kYccAAAAALq01Zx9ly4_7AWmzul_CeW7ppkn react-scripts build",
