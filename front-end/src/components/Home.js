@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => goTop(), []);
 
   return(
-    <div className="card card-container">
+    <div className="card">
       <div 
         className="home-container d-flex flex-direction-row m-auto"
       >
@@ -42,10 +42,6 @@ export default function Home() {
           </div>
         </div>
 
-{/* <br />
-<br />
-<br />
-<br /> */}
         <div className="cont2">
           <img 
             className = "picture"

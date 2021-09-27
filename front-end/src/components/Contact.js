@@ -144,7 +144,6 @@ export default function Contact() {
         setRedBoxClass({reCaptcha: "redBox"});
         return;
       }
-      refReCaptcha.current.reset();
 
       // if everything is okay, the form will be sent
       try {
@@ -176,6 +175,10 @@ export default function Contact() {
         const res = await email.json();
         console.log("result from server:::", res);
         // const res = {message: true};
+
+        // reset reCaptcha
+        refReCaptcha.current.reset();
+
 
         if (res.message) {
           setTimeout(() => {
@@ -227,13 +230,12 @@ export default function Contact() {
 
 
   return(
-      // {/* <div className="card card-container card-contact"> */}
       <div className="card card-contact">
         <div>
           <p className="mt-1 mb-4 text-center">Please, feel free to reach out. 🤓 </p> 
 
           <input 
-            className         = {`form-control form-text ${redBoxClass.name}`}
+            className = {`form-control form-text ${redBoxClass.name}`}
             placeholder       = "Your name" 
             data-bs-toggle    = "tooltip" 
             data-bs-placement = "top"
@@ -279,7 +281,7 @@ export default function Contact() {
             onChange    = { handleChange }
             onKeyPress  = { handleChange }
             ref         = { refMessage }
-            disabled  = { buttonMessage === "sending message..." ? true : false }
+            disabled    = { buttonMessage === "sending message..." ? true : false }
           />
 
           <button
@@ -299,11 +301,10 @@ export default function Contact() {
 
           <div className="mt-3 mb-2 reCaptcha">
             <ReCaptchaV2
-              // sitekey="6Lc2eIEcAAAAAF_cCJ5jYnqSIyy2P0d0jPLy5t3s"
-              sitekey={process.env.REACT_APP_SITEKEY}
-              onChange={reCaptchaChange}
-              ref={ refReCaptcha }
-              className={`${redBoxClass.reCaptcha}`}
+              sitekey   ={process.env.REACT_APP_SITEKEY}
+              onChange  ={reCaptchaChange}
+              ref       ={ refReCaptcha }
+              className ={`${redBoxClass.reCaptcha}`}
             />
           </div>
 

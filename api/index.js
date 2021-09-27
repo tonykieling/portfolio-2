@@ -14,11 +14,11 @@ const transporter = nodemailer.createTransport({
 const generalSender = async (to, subject, html) => {
   try {
     await transporter.sendMail({
-      from  : "Tony Kieling<tony.kieling@gmail.com>",
-      bcc   : "Tony Kieling<tony.kieling@gmail.com>",
-      // sender  : "Tony Kieling<tony.kieling@gmail.com>",
-      replyTo  : "Tony Kieling<tony.kieling@gmail.com>",
-      // from  : "Tony Kieling<tony.kieling@gmail.com>",
+      from  : process.env.TK_auto,
+      cc   : process.env.TK,
+      // sender  : process.env.TK,
+      replyTo  : process.env.TK,
+      // from  : process.env.TK,
 
       to,
       subject,
@@ -42,41 +42,35 @@ const sendEmail = async (person, email, message) => {
         <p>Hi <b>${person}</b></p>
         <p>Thanks for your email.</p>
         <br>
-        <p> I will reply for you asap.
+        <p> I will reply for you asap.</p>
         <br>
-        <br>
-        <p>Kind regards from</p>
+        <p style="margin: 1rem 0">Kind regards from</p>
         <h3>Tony Kieling</h3>
-        <p>https://tkwebdev.ca</p>
-        <p>tony.kieling@gmail.com</p>
+        <p style="margin:0 0.5rem">https://tkwebdev.ca</p>
+        <p style="margin: 0 0.5rem">tony.kieling@gmail.com</p>
       </div>
 
-      <div>
-      ------------------------------------------
-      </div>
-      <div>
-      original message
-      </div>
-      <div>
-      ------------------------------------------
-      </div>
-      <div>
-      <b>from:</b> "${person}&lt;${email}>"
-      </div>
-      <div>
-      <b>to:</b> "Tony Kieling&lt;tony.kieling@gmail.com>"
-      </div>
-      <div>
-      <b>message:</b>
-      </div>
-      <div style="color:blue">
-      "${ message }"
+      <div style="border: 1px double blue; background-color: lightgreen; margin: 0.5rem 1rem ">
+        <div style="border: 1px solid black">
+          original message
+        </div>
+        <p style="margin: 0">
+          <b>from:</b> "${person}&lt;${email}>"
+        </p>
+        <p style="margin: 0">
+          <b>to:</b> "Tony Kieling&lt;tony.kieling@gmail.com>"
+        </p>
+        <p style="margin: 0">
+          <b>message:</b>
+        </p>
+        <p style="color:blue; margin: 0">
+          "${ message }"
+        </p>
       </div>
     </div>
   `);
 
   const success = await generalSender(email, " - automatic reply from Tony Kieling - ", content);
-  // console.log("success:", success);
   return (success ? true : false);
 };
 
@@ -98,7 +92,6 @@ const checkHuman = async (token, secret_key) => {
 
 module.exports = async (req, res) => {
   try {
-    // console.log("req.body", req.body);
 
     const { 
       person, 
@@ -107,42 +100,24 @@ module.exports = async (req, res) => {
       token
     } = req.body;
 
-    // console.log("process.env.RECAPTCHA_SECRET_KEY:::", process.env.RECAPTCHA_SECRET_KEY);
-
     const secret_key = process.env.RECAPTCHA_SECRET_KEY || "process.env.RECAPTCHA_SECRET_KEY"
 
 
 
     if (!token)
       throw({
-        notHuman: true,
-        // this is temp just now, MUST DELETE it
-        secret_key
+        notHuman: true
       });
-      // return res.json({
-      //   notHuman: true,
-      //   secret_key
-      // });
 
     const human = await checkHuman(token, secret_key);
-    // console.log("human verified result is => ", human);
 
     if (!human)
-    // if (1)
       throw({
-        notHuman: true,
-        // this is temp just now, MUST DELETE it
-        secret_key
+        notHuman: true
       });
-      // return res.json({
-      //   notHuman: true,
-      //   secret_key
-      // });
 
 
     const emailSuccess = await sendEmail(person, email, message);
-    // console.log("emailSuccess:", emailSuccess);
-    // const emailSuccess = true;
 
     if (!emailSuccess)
       throw({
@@ -150,13 +125,10 @@ module.exports = async (req, res) => {
       });
 
     return res.json({ 
-        message: true,
-        secret_key,
-        test: "another field"
+        message: true
       });
 
   } catch(error) {
-    // console.log("-----------", error);
     return res.json({ error: error.message || error });
   }
 };

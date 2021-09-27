@@ -135,7 +135,7 @@ html, body {
   @media (max-width: 790px) {
     .card {
       flex-direction: column;
-      padding: 1.5rem;
+      padding: 1rem 1.5rem;
       width: 80%;
       border-radius: 10px;
       min-height: 70vh; } }
