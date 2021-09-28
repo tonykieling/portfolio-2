@@ -293,7 +293,7 @@ html, body {
       .temp .temp1 {
         width: 100%; }
         .temp .temp1 .cp {
-          margin: 0; }
+          margin: 1rem 1rem 0; }
       .temp .temp2 {
         width: 100%;
         height: 100%;

@@ -28,7 +28,7 @@ const generalSender = async (to, subject, html) => {
     return true;
   } catch(error) {
     // this error is related to the email part, 
-    console.trace(error.message || message);
+    // console.trace(error.message || message);
     return false;
   }
 };
@@ -50,9 +50,9 @@ const sendEmail = async (person, email, message) => {
         <p style="margin: 0 0.5rem">tony.kieling@gmail.com</p>
       </div>
 
-      <div style="border: 1px double blue; background-color: lightgreen; margin: 0.5rem 1rem ">
-        <div style="border: 1px solid black">
-          original message
+      <div style="border: 1px double blue; background-color: lightgreen; margin: 0.5rem 1rem; width: 90%">
+        <div style="border: 1px solid black; text-align: center">
+          <b>original message</b>
         </div>
         <p style="margin: 0">
           <b>from:</b> "${person}&lt;${email}>"

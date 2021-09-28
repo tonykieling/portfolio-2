@@ -35,13 +35,15 @@
   resetting reCaptcha env variables and a bit of styling
   redeploying for email user credentials + BE small changes
   adjustments on style and logic as follow
-    clean form fields
-    -clean code on FE and BE (console.logs)
+    Xclean form fields
+    Xclean code on FE and BE (console.logs)
+      needs to recheck temp stuff car-container and images
     Xset reset reCaptcha after receiving fetch's answer
     reCaptcha key form tkwebdev.ca domain
     Xset email's autehntication for env variables
     Xhome component space adjustments
     import font for the email signature (Tony Kieling font Oregano) in index.js (BE)
+  small adjustments plus reCaptcha for tkwebdev.ca
 
 dev v2
   the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.

@@ -26,12 +26,12 @@ export default function Contact() {
   useEffect(() => goTop(), []);
 
   const [state, setState] = useState({
-    // name    : "",
-    // email   : "",
-    // message : ""
-    name    : "test",
-    email   : "test@email.ca",
-    message : "msg test"
+    name    : "",
+    email   : "",
+    message : ""
+    // name    : "test",
+    // email   : "test@email.ca",
+    // message : "msg test"
   });
 
   const [redBoxClass, setRedBoxClass] = useState({
@@ -135,7 +135,7 @@ export default function Contact() {
 
       // const token = await refReCaptcha.current.getValue();
       // console.log("token========", token);
-      console.log("reCaptchaToken==>", reCaptchaToken);
+      // console.log("reCaptchaToken==>", reCaptchaToken);
       if (!reCaptchaToken) {
         // set redbox for thecatptcha
         setButtonType("btn-warning");
@@ -154,7 +154,7 @@ export default function Contact() {
           message : state.message,
           token   : reCaptchaToken
         };
-  console.log("body = to be sent:::", body);
+  // console.log("body = to be sent:::", body);
 
         setReCaptchaToken(null);
         setButtonMessage("sending message...");
@@ -173,7 +173,7 @@ export default function Contact() {
 
         // console.log("email:::", email);
         const res = await email.json();
-        console.log("result from server:::", res);
+        // console.log("result from server:::", res);
         // const res = {message: true};
 
         // reset reCaptcha
@@ -219,7 +219,7 @@ export default function Contact() {
 
   // iy gets the token when recaptcha is clicked
   const reCaptchaChange = value => {
-    console.log("process.env", process.env);
+    // console.log("process.env", process.env);
     setReCaptchaToken(value);
     setButtonType("btn-primary");
     setButtonMessage("Send Message");
