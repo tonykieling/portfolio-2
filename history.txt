@@ -44,6 +44,7 @@
     Xhome component space adjustments
     import font for the email signature (Tony Kieling font Oregano) in index.js (BE)
   small adjustments plus reCaptcha for tkwebdev.ca
+  new settings for deploying at tkwebdev.ca
 
 dev v2
   the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.
