@@ -111,22 +111,6 @@ function Header() {
           }
         </div>
       </div>
-
-      {/* <div className="three-3rd">
-        <div className="logo">
-          <img
-            src={burguerON ? HamburguerGreen : HamburguerRed}
-            alt="Turn Hamburguer menu ON and OFF"
-            title={
-              burguerON
-              ? "Turn Hamburguer Menu ON"
-              : "Turn Hamburguer Menu OFF"
-            }
-            width="100%"
-            onClick={ () => setBurguerON(!burguerON) }
-          />
-        </div>
-      </div> */}
     </>
   );
 

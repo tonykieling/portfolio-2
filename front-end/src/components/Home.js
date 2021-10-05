@@ -49,8 +49,8 @@ export default function Home() {
             alt       = "TK"
           />
         </div>
-        {/* <div style={{border: "1px solid red", width: "90%", height: "10%"}}>asd</div> */}
       </div>
+        {/* <div style={{border: "1px solid red", width: "90%", height: "25rem"}}>asd</div> */}
     </div>
   );
 }
