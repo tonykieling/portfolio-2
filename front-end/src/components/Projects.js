@@ -14,7 +14,10 @@ export default function Projects() {
   // this is temporary. As sson as I finish the content, it will be gone
   const Text = () => (
       <>
-        <p> <a href="https://clockin.tkwebdev.ca" target="_blank" rel="noreferrer"> ClockinJS </a></p>
+        <p> 
+          <a href="https://clockin.tkwebdev.ca" target="_blank" rel="noreferrer"> ClockinJS</a> &nbsp; and &nbsp;
+          <a href="https://home-seeker.tkwebdev.ca" target="_blank" rel="noreferrer">Home Seeker</a>
+        </p>
         <p> or <Link to="/contact">Contact</Link>.</p>
       </>
   );

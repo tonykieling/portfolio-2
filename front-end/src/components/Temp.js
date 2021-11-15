@@ -10,7 +10,7 @@ export default function Temp(props) {
     <div className="card card-container">
       <div className="temp">
         <div className="temp1">
-          <p className="cp"> This part is under construction.</p>
+          <p className="cp"> This area is under construction.</p>
           <img
             src={MAW}
             alt="Men at Work"
