@@ -6,6 +6,7 @@ import { goTop } from "../helpers/goTop";
 import Temp from "./Temp";
 import ProjectsImg from "../graphics/project.png";
 
+const MobileScreen = window.innerWidth > 790 ? false : true;
 
 export default function Projects() {
   useEffect(() => goTop(), []);
@@ -29,7 +30,7 @@ export default function Projects() {
         text = { <Text /> } 
         // projects={true} 
         Projects={ProjectsImg}
-        Style={{opacity: "0.6", width: "50%", borderRadius: 0}}
+        Style={{opacity: "0.6", width: "50%", height: MobileScreen && "60%", borderRadius: 0, marginTop: MobileScreen ? "4rem" : 0}}
       />
     </div>
 

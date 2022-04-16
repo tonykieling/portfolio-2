@@ -5,6 +5,8 @@ import MatrixCode from "../graphics/matrix-code.gif";
 // this is temporary. As sson as I finish the content, it will be gone
 import Temp from "./Temp.js";
 
+const MobileScreen = window.innerWidth > 790 ? false : true;
+
 export default function About() {
   useEffect(() => goTop(), []);
 
@@ -13,10 +15,12 @@ export default function About() {
     <div>
       <Temp 
         // samples={true} 
-        Samples={MatrixCode} 
-        Style={{
+        Samples = { MatrixCode } 
+        Style   = {{
           borderRadius: "4px", 
-          width: "100%"
+          width: "100%",
+          height: MobileScreen && "60%",
+          marginTop: MobileScreen ? "5rem" : 0
         }}
       />
     </div>

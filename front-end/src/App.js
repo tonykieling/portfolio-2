@@ -1,7 +1,7 @@
 // import { useLayoutEffect } from 'react';
 
 
-import './App.css';
+import './css/App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import Header   from "./components/Header.js";
@@ -51,6 +51,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        
         <Footer />
         
       </Router>

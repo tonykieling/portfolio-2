@@ -36,7 +36,7 @@ export default function Temp(props) {
             style={props.Style}
             // style={{borderRadius: "4px"}}
             // style={{border: "3px solid red"}}
-            alt="Men at work" 
+            alt="Temp Img" 
             width="90%"
           />
         </div>

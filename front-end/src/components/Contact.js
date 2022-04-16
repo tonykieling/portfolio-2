@@ -21,6 +21,9 @@ const BadMessageReCaptcha = () => (
   </>
 );
 
+// screen size
+const MobileScreen = window.innerWidth > 790 ? false : true;
+
 export default function Contact() {
 
   useEffect(() => goTop(), []);
@@ -273,7 +276,7 @@ export default function Contact() {
             placeholder     = "Please, leave your message" 
             data-bs-toggle  = "tooltip" 
             title           = "Insert your message"
-            rows            = "5"
+            rows            = { MobileScreen ? 11 : 5}
 
             type        = "text"
             name        = "message"
