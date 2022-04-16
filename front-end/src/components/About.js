@@ -43,7 +43,7 @@ export default function About() {
         <div className="bice">
           <img
             src       = { Bice }
-            // className = "bice"
+            className = "bice-settings"
             alt       = "This is me" 
             width     = "100%"
           />

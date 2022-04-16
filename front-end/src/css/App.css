@@ -178,11 +178,11 @@ html, body {
 .card {
   background-color: #cfd9af;
   padding: 2rem;
-  margin: 2rem auto calc(2.5rem + 1px + 2rem) auto;
+  margin: 1rem auto auto auto;
   width: 70%;
   color: #4f5138;
   border-radius: 20px;
-  height: calc(100vh - (5rem + 1px + 4rem + 2.5rem + 1px));
+  height: 80vh;
 }
 
 @media (max-width: 790px) {
@@ -507,6 +507,9 @@ html, body {
 }
 
 .bice {
-  opacity: 45%;
   text-align: center;
+}
+
+.bice .bice-settings {
+  opacity: 0.5;
 }

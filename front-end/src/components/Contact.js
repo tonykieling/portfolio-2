@@ -235,7 +235,7 @@ export default function Contact() {
   return(
       <div className="card card-contact">
         <div>
-          <p className="mb-4 text-center">Please, feel free to reach out. 🤓 </p> 
+          <p className="mb-3 text-center">Please, feel free to reach out. 🤓 </p> 
 
           <input 
             className = {`form-control form-text ${redBoxClass.name}`}
@@ -276,7 +276,7 @@ export default function Contact() {
             placeholder     = "Please, leave your message" 
             data-bs-toggle  = "tooltip" 
             title           = "Insert your message"
-            rows            = { MobileScreen ? 11 : 5}
+            rows            = { MobileScreen ? 11 : 4}
 
             type        = "text"
             name        = "message"
@@ -302,7 +302,7 @@ export default function Contact() {
 
 
 
-          <div className="mt-3 mb-2 reCaptcha">
+          <div className="mt-1 mb-1 reCaptcha">
             <ReCaptchaV2
               sitekey   ={process.env.REACT_APP_SITEKEY}
               onChange  ={reCaptchaChange}
