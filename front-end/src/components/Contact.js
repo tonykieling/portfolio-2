@@ -232,7 +232,7 @@ export default function Contact() {
   return(
       <div className="card card-contact">
         <div>
-          <p className="mt-1 mb-4 text-center">Please, feel free to reach out. 🤓 </p> 
+          <p className="mb-4 text-center">Please, feel free to reach out. 🤓 </p> 
 
           <input 
             className = {`form-control form-text ${redBoxClass.name}`}
@@ -273,7 +273,7 @@ export default function Contact() {
             placeholder     = "Please, leave your message" 
             data-bs-toggle  = "tooltip" 
             title           = "Insert your message"
-            rows            = "6"
+            rows            = "5"
 
             type        = "text"
             name        = "message"
