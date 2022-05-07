@@ -1,5 +1,5 @@
-// import { useLayoutEffect } from 'react';
-
+// import { useLayoutEffect, useState,  useRef } from 'react';
+import { useState } from 'react';
 
 import './css/App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
@@ -13,47 +13,69 @@ import Samples  from "./components/Samples.js"
 import Footer from "./components/Footer.js";
 
 function App() {
+  // const [ bodyHeight, setBodyHeight ] = useState(null);
+  const [ headerHeight, setHeaderHeight ] = useState(null);
+  const [ footerHeight, setFooterHeight ] = useState(null);
+  // const bodyRef = useRef(null);
+
   // useLayoutEffect(() => {
   //     // window.location.href = "https://clockin.tkwebdev.ca/contact";
-  //     console.log("test");
+  //     // console.log("test", bodyRef.current.clientHeight);
+  //     // setBodyHeight(bodyRef.current.clientHeight);
+  // }, []);
+
+
+  // useEffect(() => {
+  //   setBodyHeight(bodyRef.current.clientHeight);
   // }, []);
 
   return (
     // <div></div>
     <div className="app-settings">
       <Router>
-        <Header />
+        <Header
+          getHeaderHeight = { setHeaderHeight }
+        />
 
-        <div className="body-settings">
-          <Switch>
-            <Route exact path = "/">
-              <Home />
-            </Route>
+        <div 
+          className = "body-settings" id = "body-app"
+        >
+          { (headerHeight !== null && footerHeight !== null) &&
+            <Switch>
+              <Route exact path = "/">
+                <Home />
+              </Route>
 
-            <Route exact path = "/about">
-              <About />
-            </Route>
-            
-            <Route exact path = "/contact">
-              <Contact />
-            </Route>
-            
-            <Route exact path = "/projects">
-              <Projects />
-            </Route>
+              <Route exact path = "/about">
+                <About />
+              </Route>
+              
+              <Route exact path = "/contact">
+                <Contact
+                  headerHeight  = { headerHeight }
+                  footerHeight  = { footerHeight }
+                />
+              </Route>
+              
+              <Route exact path = "/projects">
+                <Projects />
+              </Route>
 
-            <Route exact path = "/samples">
-              <Samples />
-            </Route>
+              <Route exact path = "/samples">
+                <Samples />
+              </Route>
 
-            <Route>
-              <Redirect to = "/" />
-            </Route>
-          </Switch>
+              <Route>
+                <Redirect to = "/" />
+              </Route>
+            </Switch>
+          }
         </div>
-        
-        <Footer />
-        
+
+        <Footer
+          getFooterHeight = { setFooterHeight }
+        />
+
       </Router>
     </div>
   );

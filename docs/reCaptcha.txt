@@ -1,0 +1,29 @@
+
+https://www.youtube.com/watch?v=vrbyaOoZ-4Q
+
+1- create site and secret keys for reCaptcha
+  https://www.google.com/recaptcha/admin/site/478217259
+
+2- install reCaptcha 
+  https://www.npmjs.com/package/react-google-recaptcha
+  npm i react-google-recaptcha
+  
+  https://www.npmjs.com/package/react-google-recaptcha-v3
+
+
+3- 
+
+
+1 - create reCaptcha keys
+2 - set variables - both BE and FE
+  FE needs to have on package.json, on start and build
+    REACT_APP_RECAPTCHA_SITE_KEY
+  the usage is made by process.env.REACT_APP_RECAPTCHA_SITE_KEY
+3 - install the package
+4 - set FE
+5 - set BE
+
+
+TM replacing C
+https://munch.studio/what-is-the-difference-between-tm-and-r/
+have to fix header and footer to at least a certain length

@@ -73,6 +73,8 @@ set spaces use: padding class p-1, p-5, also margin m-3 => pt-3 means paddin-top
 fw-bold for bold font
 for diff sizes of img in the same row at 55min
 
+found out how to center vertically a dynamic div in react (see <Contact> and App.js). Needs to replicate to <About>, <Footer>, <Home>, <Projects>, and <Samples>.
+
 
 package.json FE for vercel production
     "start": "REACT_APP_SITEKEY=6Ld9kYccAAAAALq01Zx9ly4_7AWmzul_CeW7ppkn react-scripts start",

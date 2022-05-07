@@ -2,7 +2,7 @@ import Logo from "../graphics/logo192.png";
 import HamburguerGreen from "../graphics/hamburguer-green.png";
 import HamburguerRed from "../graphics/hamburguer-red.png";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import BurguerMenu from "./BurguerMenu.js";
 
 // it defines the minumum width's screen to show the burguer option
@@ -10,8 +10,11 @@ const minimumWidth = 750;
 
 const screenWidth = window.innerWidth; // it gets screen width
 
-function Header() {
-  // console.log("screenWidth", screenWidth);
+function Header( { getHeaderHeight }) {
+  // console.log("getHeaderHeight", getHeaderHeight);
+  const headerRef = useRef(null);
+
+  useEffect(() => headerRef && getHeaderHeight(headerRef.current.clientHeight + 1), [ headerRef ]);
 
   const [
     burguerON, 
@@ -162,7 +165,7 @@ function Header() {
 
 
   return(
-    <div className="header d-flex sticky-top">
+    <div className="header d-flex sticky-top" id = "header" ref = { headerRef }>
       { screenWidth > minimumWidth
         ?
           <LargeScreenHeader />
