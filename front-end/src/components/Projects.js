@@ -8,7 +8,7 @@ import ProjectsImg from "../graphics/project.png";
 
 const MobileScreen = window.innerWidth > 790 ? false : true;
 
-export default function Projects() {
+export default function Projects({ headerHeight, footerHeight }) {
   useEffect(() => goTop(), []);
 
   // sending HTML as props
@@ -16,10 +16,11 @@ export default function Projects() {
   const Text = () => (
       <>
         <p> 
-          <a href="https://clockin.tkwebdev.ca" target="_blank" rel="noreferrer"> ClockinJS</a> &nbsp; and &nbsp;
+          <a href="https://clockin.tkwebdev.ca" target="_blank" rel="noreferrer"> ClockinJS</a>, &nbsp;
           <a href="https://home-seeker.tkwebdev.ca" target="_blank" rel="noreferrer">Home Seeker</a>
         </p>
-        <p> or <Link to="/contact">Contact</Link>.</p>
+        <p> <a href="https://crud.tkwebdev.ca" target="_blank" rel="noreferrer">CRUD</a>  &nbsp;
+            or <Link to="/contact">Contact</Link>.</p>
       </>
   );
 
@@ -31,6 +32,8 @@ export default function Projects() {
         // projects={true} 
         Projects={ProjectsImg}
         Style={{opacity: "0.6", width: "50%", height: MobileScreen && "60%", borderRadius: 0, marginTop: MobileScreen ? "4rem" : 0}}
+        headerHeight = { headerHeight }
+        footerHeight = { footerHeight }
       />
     </div>
 

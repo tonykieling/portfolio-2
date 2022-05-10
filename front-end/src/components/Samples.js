@@ -7,21 +7,25 @@ import Temp from "./Temp.js";
 
 const MobileScreen = window.innerWidth > 790 ? false : true;
 
-export default function About() {
+export default function About({ headerHeight, footerHeight }) {
+
   useEffect(() => goTop(), []);
 
+
   return(
-    // this is temporary. As sson as I finish the content, it will be gone
+    // this is temporary. As soon as I finish the content, it will be gone
     <div>
       <Temp 
         // samples={true} 
         Samples = { MatrixCode } 
         Style   = {{
           borderRadius: "4px", 
-          width: "100%",
-          height: MobileScreen && "60%",
-          marginTop: MobileScreen ? "5rem" : 0
+          width       : "100%",
+          height      : MobileScreen && "60%",
+          marginTop   : MobileScreen ? "5rem" : 0
         }}
+        headerHeight = { headerHeight }
+        footerHeight = { footerHeight }
       />
     </div>
   );

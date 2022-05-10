@@ -1,9 +1,12 @@
-import { useEffect, useRef } from "react"
+import { useRef, useLayoutEffect } from "react"
 
 export default function Footer({ getFooterHeight }){
   const footerRef = useRef(null);
 
-  useEffect(() => footerRef && getFooterHeight(footerRef.current.clientHeight + 1), [ footerRef ]);
+  useLayoutEffect(() =>
+    footerRef && getFooterHeight(footerRef.current.clientHeight + 1)
+  // eslint-disable-next-line
+  , [ footerRef ]);
 
 
   return (

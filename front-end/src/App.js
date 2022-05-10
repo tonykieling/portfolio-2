@@ -43,11 +43,17 @@ function App() {
           { (headerHeight !== null && footerHeight !== null) &&
             <Switch>
               <Route exact path = "/">
-                <Home />
+                <Home
+                  headerHeight  = { headerHeight }
+                  footerHeight  = { footerHeight }
+                />
               </Route>
 
               <Route exact path = "/about">
-                <About />
+                <About
+                  headerHeight  = { headerHeight }
+                  footerHeight  = { footerHeight }
+                />
               </Route>
               
               <Route exact path = "/contact">
@@ -58,11 +64,17 @@ function App() {
               </Route>
               
               <Route exact path = "/projects">
-                <Projects />
+                <Projects
+                  headerHeight  = { headerHeight }
+                  footerHeight  = { footerHeight }
+                />
               </Route>
 
               <Route exact path = "/samples">
-                <Samples />
+                <Samples
+                  headerHeight  = { headerHeight }
+                  footerHeight  = { footerHeight }
+                />
               </Route>
 
               <Route>

@@ -34,9 +34,11 @@ export default function Contact( { headerHeight, footerHeight }) {
   const [ cardPosition, setCardPosition ] = useState(null);
 
   useLayoutEffect(() => 
-                cardRef && 
-                setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
+    cardRef && 
+    setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
+  // eslint-disable-next-line
   , [ cardRef ] );
+
 
   const [state, setState] = useState({
     name    : "",
@@ -247,7 +249,7 @@ export default function Contact( { headerHeight, footerHeight }) {
         className = "card card-contact" 
         id        = "card"
         ref       = { cardRef }
-        style={{top: cardPosition }}
+        style     = {{ top: cardPosition }}
       >
 
         { cardPosition &&

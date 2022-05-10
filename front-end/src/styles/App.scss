@@ -4,7 +4,7 @@ $card-back-color  : #cfd9af;
 $card-font-color  : #4f5138;
 // $mobile-width     : 576px;
 $mobile-width     : 790px;
-$header-height    : 5rem;
+$header-height    : 4rem;
 $minimum-body-height: calc(100vh - 5rem - 1px);
 $minimum-card-height: calc(100vh - (5rem + 1px + 4rem + 2.5rem + 1px));
 
@@ -196,6 +196,8 @@ html, body {
   background-color: $card-back-color;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+  margin-left: auto;
+  margin-right: auto;
 
   .icon-settings {
     height: 30px;
@@ -214,7 +216,9 @@ html, body {
   background-color: $card-back-color;
   padding: 2rem;
   // margin: 2rem auto calc(2.5rem + 1px + 2rem) auto;
-  margin: 1rem auto auto auto;
+  // margin: 1rem auto auto auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 70%;
   color: $card-font-color;
   border-radius: 20px;

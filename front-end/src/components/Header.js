@@ -2,7 +2,7 @@ import Logo from "../graphics/logo192.png";
 import HamburguerGreen from "../graphics/hamburguer-green.png";
 import HamburguerRed from "../graphics/hamburguer-red.png";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import BurguerMenu from "./BurguerMenu.js";
 
 // it defines the minumum width's screen to show the burguer option
@@ -14,7 +14,11 @@ function Header( { getHeaderHeight }) {
   // console.log("getHeaderHeight", getHeaderHeight);
   const headerRef = useRef(null);
 
-  useEffect(() => headerRef && getHeaderHeight(headerRef.current.clientHeight + 1), [ headerRef ]);
+  useLayoutEffect(() =>
+    headerRef && getHeaderHeight(headerRef.current.clientHeight + 1)
+  // eslint-disable-next-line  
+  , [ headerRef ]);
+ 
 
   const [
     burguerON, 
