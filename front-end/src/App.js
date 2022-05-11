@@ -1,5 +1,5 @@
 // import { useLayoutEffect, useState,  useRef } from 'react';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import './css/App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
@@ -13,21 +13,22 @@ import Samples  from "./components/Samples.js"
 import Footer from "./components/Footer.js";
 
 function App() {
-  // const [ bodyHeight, setBodyHeight ] = useState(null);
   const [ headerHeight, setHeaderHeight ] = useState(null);
   const [ footerHeight, setFooterHeight ] = useState(null);
-  // const bodyRef = useRef(null);
 
   // useLayoutEffect(() => {
   //     // window.location.href = "https://clockin.tkwebdev.ca/contact";
   //     // console.log("test", bodyRef.current.clientHeight);
-  //     // setBodyHeight(bodyRef.current.clientHeight);
   // }, []);
 
+  const cardRef = useRef();
+  const [ cardPosition, setCardPosition ] = useState(null);
 
-  // useEffect(() => {
-  //   setBodyHeight(bodyRef.current.clientHeight);
-  // }, []);
+  useEffect(() =>
+    headerHeight && footerHeight && !cardPosition &&
+    setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
+  // eslint-disable-next-line
+  , [ headerHeight, footerHeight ]);
 
   return (
     // <div></div>
@@ -40,47 +41,53 @@ function App() {
         <div 
           className = "body-settings" id = "body-app"
         >
-          { (headerHeight !== null && footerHeight !== null) &&
-            <Switch>
-              <Route exact path = "/">
-                <Home
-                  headerHeight  = { headerHeight }
-                  footerHeight  = { footerHeight }
-                />
-              </Route>
+          { cardPosition === null
+            ?
+              <div 
+                className = "card"
+                ref       = { cardRef }
+              />
 
-              <Route exact path = "/about">
-                <About
-                  headerHeight  = { headerHeight }
-                  footerHeight  = { footerHeight }
-                />
-              </Route>
-              
-              <Route exact path = "/contact">
-                <Contact
-                  headerHeight  = { headerHeight }
-                  footerHeight  = { footerHeight }
-                />
-              </Route>
-              
-              <Route exact path = "/projects">
-                <Projects
-                  headerHeight  = { headerHeight }
-                  footerHeight  = { footerHeight }
-                />
-              </Route>
+            :
+              <Switch>
+                <Route exact path = "/">
+                  <Home
+                    cardPosition  = { cardPosition }
+                  />
+                </Route>
 
-              <Route exact path = "/samples">
-                <Samples
-                  headerHeight  = { headerHeight }
-                  footerHeight  = { footerHeight }
-                />
-              </Route>
+                <Route exact path = "/about">
+                  <About
+                    headerHeight  = { headerHeight }
+                    footerHeight  = { footerHeight }
+                  />
+                </Route>
+                
+                <Route exact path = "/contact">
+                  <Contact
+                    headerHeight  = { headerHeight }
+                    footerHeight  = { footerHeight }
+                  />
+                </Route>
+                
+                <Route exact path = "/projects">
+                  <Projects
+                    headerHeight  = { headerHeight }
+                    footerHeight  = { footerHeight }
+                  />
+                </Route>
 
-              <Route>
-                <Redirect to = "/" />
-              </Route>
-            </Switch>
+                <Route exact path = "/samples">
+                  <Samples
+                    headerHeight  = { headerHeight }
+                    footerHeight  = { footerHeight }
+                  />
+                </Route>
+
+                <Route>
+                  <Redirect to = "/" />
+                </Route>
+              </Switch>
           }
         </div>
 
