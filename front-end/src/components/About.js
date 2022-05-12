@@ -1,29 +1,15 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { goTop } from "../helpers/goTop.js";
 
-// this is temporary. As soon as I finish the content, it will be gone
-// import Temp from "./Temp.js";
-// import TK from "../graphics/tk.jpg";
-// import TK from "../graphics/me2.jpeg";
-// import FilmStripe from "../graphics/film11.jpg";
 import Bice from "../graphics/bice.jpg";
 
-export default function About({ headerHeight, footerHeight }) {
-  const cardRef = useRef(null);
-  const [ cardPosition, setCardPosition ] = useState(null);
-
-  useLayoutEffect(() => 
-      cardRef &&
-      setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
-    // eslint-disable-next-line
-  , [ cardRef ]);
+export default function About({ cardPosition }) {
 
   useEffect(() => goTop(), []);
 
   return(
     <div 
       className = "card card-container"
-      ref       = { cardRef }
       style     = {{ top: cardPosition }}
     >
       { cardPosition &&

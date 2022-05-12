@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() =>
     headerHeight && footerHeight && !cardPosition &&
-    setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
+      setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
   // eslint-disable-next-line
   , [ headerHeight, footerHeight ]);
 
@@ -58,29 +58,25 @@ function App() {
 
                 <Route exact path = "/about">
                   <About
-                    headerHeight  = { headerHeight }
-                    footerHeight  = { footerHeight }
-                  />
-                </Route>
-                
-                <Route exact path = "/contact">
-                  <Contact
-                    headerHeight  = { headerHeight }
-                    footerHeight  = { footerHeight }
+                    cardPosition  = { cardPosition }
                   />
                 </Route>
                 
                 <Route exact path = "/projects">
                   <Projects
-                    headerHeight  = { headerHeight }
-                    footerHeight  = { footerHeight }
+                    cardPosition  = { cardPosition }
                   />
                 </Route>
 
                 <Route exact path = "/samples">
                   <Samples
-                    headerHeight  = { headerHeight }
-                    footerHeight  = { footerHeight }
+                    cardPosition  = { cardPosition }
+                  />
+                </Route>
+
+                <Route exact path = "/contact">
+                  <Contact
+                    cardPosition  = { cardPosition }
                   />
                 </Route>
 

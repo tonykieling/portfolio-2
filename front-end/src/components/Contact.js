@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import SocialMediasBox from "./SocialMediasBox";
 import { goTop } from "../helpers/goTop.js";
 import ReCaptchaV2 from "react-google-recaptcha";
@@ -24,20 +24,10 @@ const BadMessageReCaptcha = () => (
 // screen size
 const MobileScreen = window.innerWidth > 790 ? false : true;
 
-export default function Contact( { headerHeight, footerHeight }) {
+export default function Contact( { cardPosition }) {
   useEffect(() => {
     goTop();
   }, []);
-
-  const cardRef = useRef(null);
-
-  const [ cardPosition, setCardPosition ] = useState(null);
-
-  useLayoutEffect(() => 
-    cardRef && 
-    setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
-  // eslint-disable-next-line
-  , [ cardRef ] );
 
 
   const [state, setState] = useState({
@@ -248,7 +238,6 @@ export default function Contact( { headerHeight, footerHeight }) {
       <div 
         className = "card card-contact" 
         id        = "card"
-        ref       = { cardRef }
         style     = {{ top: cardPosition }}
       >
 
