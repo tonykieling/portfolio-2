@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import TK from "../graphics/tk8.jpg";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { goTop } from "../helpers/goTop";
 
 export default function Home({ cardPosition }) {
@@ -31,7 +31,7 @@ export default function Home({ cardPosition }) {
           </div>
           <div className="cont1-2">
             <h2>Welcome to my Website</h2>
-            <h3><Link to = "/home">tkwebdev.ca</Link></h3>
+            {/* <h3><Link to = "/home">tkwebdev.ca</Link></h3> */}
           </div>
         </div>
 

@@ -10,6 +10,10 @@ html, body {
   padding: 0;
 }
 
+a {
+    color: blue;
+}
+
 .app-settings {
   display: flex;
   flex-direction: column;
@@ -85,14 +89,39 @@ html, body {
   }
 }
 
+.header .nav-link {
+    transition: none;
+    color: linen;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    width: 6rem;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .header .nav-link:hover {
-  background-color: #cfd9af;
+  /* background-color: #cfd9af; */
+  background-color: #50C878;
+  /* color: #282c34; */
+  color: #282c34;
+  font-weight: 900;
   border-radius: 6px;
+  /* width: auto; */
+  letter-spacing: 1px;
+  font-variant: small-caps;
 }
 
 .header .active-link {
   border-radius: 6px;
-  background-color: #cfd9af;
+  /* background-color: #cfd9af; */
+  color: #0F52BA;
+  font-weight: 900;
+  border-radius: 6px;
+  background-color: #50C878;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  font-size: 110%;
 }
 
 .header .logo {
@@ -157,7 +186,7 @@ html, body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #cfd9af;
+  /* background-color: #cfd9af; */
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
   margin-left: auto;
@@ -195,12 +224,18 @@ html, body {
 }
 
 .card {
-  background-color: #cfd9af;
+  /* background-color: #cfd9af; */
+  background-color: #50C878;
+  /* background-color: #0FFF50; */
+  /* background-color: #0BDA51; */
+
   padding: 2rem;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  color: #4f5138;
+  /* color: #4f5138; */
+  color: black;
+  font-weight: 400;
   border-radius: 20px;
   height: 80vh;
 }
@@ -378,10 +413,12 @@ html, body {
   align-items: center;
   font-family: Oregano;
   font-size: 1rem;
-  color: #4f5138;
+  /* color: #4f5138; */
+  color: linen;
   background-color: #282c34;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-variant: small-caps;
+  letter-spacing: 2px;
 }
 
 .signature span {
@@ -518,7 +555,8 @@ html, body {
 
 .text-about::first-letter {
   font-weight: bold;
-  color: green;
+  /* color: green; */
+  color: blue;
   font-size: 170%;
   margin: 0;
   padding: 0;
@@ -528,6 +566,10 @@ html, body {
 .text-about:first-child {
   text-align: center;
   align-self: center;
+}
+
+.hand-icons {
+    white-space: nowrap;
 }
 
 .bice {

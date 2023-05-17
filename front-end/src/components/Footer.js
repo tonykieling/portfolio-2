@@ -8,11 +8,15 @@ export default function Footer({ getFooterHeight }){
   // eslint-disable-next-line
   , [ footerRef ]);
 
-
+  const year = () => {
+    const d = new Date(Date.now());
+    return d.getFullYear();
+  }
+  
   return (
     // <div style={frame}>
       <div className="signature" id = "footer" ref = { footerRef }>
-        Tony Kieling<span>&nbsp;™️ - 2022</span>
+        Tony Kieling<span>™️ - {year()} </span>
       {/* </div> */}
     </div>
   )

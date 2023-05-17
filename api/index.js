@@ -102,7 +102,7 @@ module.exports = async (req, res) => {
 
     const secret_key = process.env.RECAPTCHA_SECRET_KEY || "process.env.RECAPTCHA_SECRET_KEY"
 
-console.log("test::::::::::::::::::::::::::: ", req.body, "secret_key::: ", secret_key);
+console.log("test::::::::::::::::::::::::::: ", new Date(), req.body, "secret_key::: ", secret_key);
     if (1) return;
 
     if (!token)

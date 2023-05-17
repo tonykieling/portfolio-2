@@ -31,12 +31,12 @@ export default function Contact( { cardPosition }) {
 
 
   const [state, setState] = useState({
-    name    : "",
-    email   : "",
-    message : ""
-    // name    : "test",
-    // email   : "test@email.ca",
-    // message : "msg test"
+    // name    : "",
+    // email   : "",
+    // message : ""
+    name    : "test",
+    email   : "test@email.ca",
+    message : "msg test"
   });
 
   const [redBoxClass, setRedBoxClass] = useState({

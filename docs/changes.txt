@@ -1,0 +1,15 @@
+X- footer date to be the current year
+- add BCIT content
+  replace Snippets by BCIT Alumni
+  develop content in there
+- Projects
+  add React-Tabs - each project is going to be a tab
+- fix card position (to be flex center/middle)
+X- have the resume on googledrive
+X- Welcome to my website without tkwebdev.ca
+X- About page having the hand icons in a new line
+    white-space: nowrap
+- About page text review
+- change colors
+- can the icons be better?
+

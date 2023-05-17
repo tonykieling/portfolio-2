@@ -18,9 +18,13 @@ export default function SocialMediasBox() {
         <img src={githubIcon} title="GitHub" className="icon-settings" alt="github"/>
       </a>
 
-      <a href="https://resume.creddle.io/resume/hqaeq2fbnr6" target="_blank" rel="noopener noreferrer">
+      {/* <a href="https://resume.creddle.io/resume/hqaeq2fbnr6" target="_blank" rel="noopener noreferrer">
+        <img src={resumeIcon} title="Resume" alt="resume" className="icon-settings" />
+      </a> */}
+      <a href="https://drive.google.com/file/d/1t5IXUpVFSEJQF9QHLiqHtNWjHYuEkWbi/view?usp=share_link" target="_blank" rel="noopener noreferrer">
         <img src={resumeIcon} title="Resume" alt="resume" className="icon-settings" />
       </a>
+
   </div>
   );
 }
