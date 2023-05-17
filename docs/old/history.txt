@@ -1,0 +1,85 @@
+- starting project
+  first definitions
+
+- first deploy: redirecting to https://clockin.tkwebdev.ca/contact
+    it is a temporary forward just to make https://tkwebdev.ca public
+- for SEO purposes, description added in index.html
+
+- dev branch
+ started writting some content plus working on a header definition
+ react routes changed (cleanup with no /home) plus styling and doing ico and logo
+ temp component is working fine and passing html as props, also, fe for sendmessage is done
+ be for send email is pretty done, missibg integration with fe and settings user/password for sending email
+ new component for code samples + styling and a bit of integration btw fe and me - send email
+ contact message styling, error handling and integration, plus vercel routes fixed
+  (?my picture still not uploading...?)
+ picture fixed, goTop organization, and message is working fine, need to test with password
+  (as soon as i get the mobile I'll test within the vercel env)
+ redoing header in order to accomodate hamburguer menu
+ doing CSS for mobile
+ added pictures and gif for Temp componenent plus styling
+  try to move hamburguer icon to the left side, together menu
+ CSS settings, plus hamburguer, img and font changes
+  before deploying the first version, missing:
+  hamburguer green and red plus <SocialMediaBox> position
+    - check contac message (email, BE, FE)
+      X process.env on FE to send the password
+    X position <SocialMediaBox>
+    X Hamburguer button (have one green and another red, which it will tell the state of that componennt (ON or OFF))
+  doing reCaptcha
+  reCaptcha FE and BE are done. Even style is limited, it is working but not in small screen (size="compact).
+  doing reCaptcha, styling is limited but it was set and it is working, plus secret key set on vercel. Deploying and testings
+    ONE WAY TO PASS VARAIBLE TO THE APP in build time is to set package.json
+    "build": "VAR=123 react-scripts build"
+  doing CSS and setting keys for reCaptcha
+  resetting reCaptcha env variables and a bit of styling
+  redeploying for email user credentials + BE small changes
+  adjustments on style and logic as follow
+    Xclean form fields
+    Xclean code on FE and BE (console.logs)
+      needs to recheck temp stuff car-container and images
+    Xset reset reCaptcha after receiving fetch's answer
+    reCaptcha key form tkwebdev.ca domain
+    Xset email's autehntication for env variables
+    Xhome component space adjustments
+    import font for the email signature (Tony Kieling font Oregano) in index.js (BE)
+  small adjustments plus reCaptcha for tkwebdev.ca
+  new settings for deploying at tkwebdev.ca
+  footer added (font + height for card and footer) + menu glitch got fixed
+
+dev v2
+  the card's structure will have a frame border instead of being a card. The frame will be rounded and the app's background will be the same color as the border's frame.
+
+ missing
+  Xbe message and send me an email
+    Xneed to make passwordcode for sending message - reCaptcha
+  Xfooter (Tony Kieling © - 2021)
+  mobile settings
+    check clockinjs about the screen min-height
+  XreCaptcha
+  content and styling for
+   about
+   projects
+   code samples
+  README.dm file
+
+#Bootstrap5 video (https://www.youtube.com/watch?v=1nxSE0R27Gg)
+(it also shows how to deploy at hostinger.com)
+large screens and small ones at 50min
+  col-md-6 col-lg-4 (meaning at medium screens, col=6 AND at large ones, col=4), sm (small)
+card and container at 40min
+sandwich menu see nav
+set spaces use: padding class p-1, p-5, also margin m-3 => pt-3 means paddin-top 3
+fw-bold for bold font
+for diff sizes of img in the same row at 55min
+
+found out how to center vertically a dynamic div in react (see <Contact> and App.js). Needs to replicate to <About>, <Footer>, <Home>, <Projects>, and <Samples>.
+
+adding content to Projects
+backlog:
+ - list of projects and button to top
+ - add a new section called Skills - soft, hard and new skills, i.e. Typescript
+
+package.json FE for vercel production
+    "start": "REACT_APP_SITEKEY=6Ld9kYccAAAAALq01Zx9ly4_7AWmzul_CeW7ppkn react-scripts start",
+    "build": "REACT_APP_SITEKEY=6Ld9kYccAAAAALq01Zx9ly4_7AWmzul_CeW7ppkn react-scripts build",

@@ -94,6 +94,8 @@ export default function Contact( { cardPosition }) {
 
 
   const sendMessage = async event => {
+    console.log("asads")
+
     event.preventDefault();
 
     // it checks if there was an error and the form was set with the BadMessage
@@ -224,12 +226,12 @@ export default function Contact( { cardPosition }) {
 
   // iy gets the token when recaptcha is clicked
   const reCaptchaChange = value => {
-    // console.log("process.env", process.env);
+    console.log("process.env", process.env);
     setReCaptchaToken(value);
     setButtonType("btn-primary");
     setButtonMessage("Send Message");
     setRedBoxClass({...redBoxClass, reCaptcha: ""});
-    // console.log("this is value:", value);
+    console.log("this is value:", value);
     // console.log("process.env", process.env.REACT_APP_SITEKEY)
   }
 
@@ -312,7 +314,8 @@ export default function Contact( { cardPosition }) {
 
             <div className="mt-1 mb-1 reCaptcha">
               <ReCaptchaV2
-                sitekey   ={process.env.REACT_APP_SITEKEY}
+                // sitekey   ={"process.env.REACT_APP_SITEKEY"}
+                sitekey   ={"6Ld-t5ccAAAAAGZPcHvACwQWvfbTZH-vBDD_nG9V"}
                 onChange  ={reCaptchaChange}
                 ref       ={ refReCaptcha }
                 className ={`${redBoxClass.reCaptcha}`}

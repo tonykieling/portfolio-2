@@ -1,0 +1,7 @@
+# npm i -g vercel
+# vercel dev -- it will ask some project info at the first time
+
+* at development, 
+ client needs to run at 3000, which leads to the necessity to rebuild the frontend
+
+ 
