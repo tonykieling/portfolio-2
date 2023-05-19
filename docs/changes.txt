@@ -4,6 +4,7 @@ X- footer date to be the current year
   develop content in there
 - Projects
   add React-Tabs - each project is going to be a tab
+    doing
 - fix card position (to be flex center/middle)
 X- have the resume on googledrive
 X- Welcome to my website without tkwebdev.ca

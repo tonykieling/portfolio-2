@@ -2,7 +2,12 @@
 import { useState, useEffect, useRef } from 'react';
 
 import './css/App.css';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Navigate
+  } from "react-router-dom";
 
 import Header   from "./components/Header.js";
 import Home     from "./components/Home.js";
@@ -11,6 +16,7 @@ import Contact  from "./components/Contact.js";
 import Projects from "./components/Projects.js";
 import Samples  from "./components/Samples.js"
 import Footer from "./components/Footer.js";
+import ProjectsOld from './components/Projects-old';
 
 function App() {
   const [ headerHeight, setHeaderHeight ] = useState(null);
@@ -24,76 +30,104 @@ function App() {
   const cardRef = useRef();
   const [ cardPosition, setCardPosition ] = useState(null);
 
-  useEffect(() =>
-    headerHeight && footerHeight && !cardPosition &&
-      setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2)
+  useEffect(() => {
+      headerHeight && footerHeight && !cardPosition &&
+        setCardPosition((window.innerHeight - cardRef.current.clientHeight - headerHeight - footerHeight) / 2);
+  }
   // eslint-disable-next-line
   , [ headerHeight, footerHeight ]);
 
-  return (
-    // <div></div>
-    <div className="app-settings">
-      <Router>
-        <Header
-          getHeaderHeight = { setHeaderHeight }
-        />
+    return (
+        <div className="app-settings">
+            <BrowserRouter>
+                <Header
+                    getHeaderHeight = { setHeaderHeight }
+                />
 
-        <div 
-          className = "body-settings" id = "body-app"
-        >
-          { cardPosition === null
-            ?
-              <div 
-                className = "card"
-                ref       = { cardRef }
-              />
+                <div 
+                    className = "body-settings" id = "body-app"
+                >
+                    { cardPosition === null
+                        ?
+                        <div 
+                            className = "card"
+                            ref       = { cardRef }
+                        />
 
-            :
-              <Switch>
-                <Route exact path = "/">
-                  <Home
-                    cardPosition  = { cardPosition }
-                  />
-                </Route>
+                        :
+                        <Routes>
+                            <Route 
+                                exact path = "/" 
+                                element = {
+                                    <Home
+                                    cardPosition  = { cardPosition }
+                                    />
+                                }
+                            />
 
-                <Route exact path = "/about">
-                  <About
-                    cardPosition  = { cardPosition }
-                  />
-                </Route>
-                
-                <Route exact path = "/projects">
-                  <Projects
-                    cardPosition  = { cardPosition }
-                  />
-                </Route>
+                            <Route 
+                                exact path = "/about"
+                                element = {
+                                    <About
+                                        cardPosition  = { cardPosition }
+                                    />
+                                }
+                            />
 
-                <Route exact path = "/samples">
-                  <Samples
-                    cardPosition  = { cardPosition }
-                  />
-                </Route>
+                            <Route 
+                                exact path = "/projects-old"
+                                element = {
+                                    <ProjectsOld
+                                        cardPosition  = { cardPosition }
+                                    />
+                                }
+                            />
 
-                <Route exact path = "/contact">
-                  <Contact
-                    cardPosition  = { cardPosition }
-                  />
-                </Route>
+                            <Route 
+                                exact path = "/projects"
+                                element = {
+                                    <Projects
+                                        cardPosition  = { cardPosition }
+                                    />
+                                }
+                            />
 
-                <Route>
-                  <Redirect to = "/" />
-                </Route>
-              </Switch>
-          }
+                            <Route 
+                                exact path = "/samples"
+                                element = {
+                                    <Samples
+                                        cardPosition  = { cardPosition }
+                                    />
+                                }
+                            />
+
+                            <Route 
+                                exact path = "/contact"
+                                element = {
+                                    <Contact
+                                        cardPosition  = { cardPosition }
+                                    />
+                                }
+                            />
+
+
+                            <Route
+                                path = "*"
+                                element = {
+                                    <Navigate to = "/" replace />
+                                }
+                            />
+                        </Routes>
+                    }
+                </div>
+
+                <Footer
+                    getFooterHeight = { setFooterHeight }
+                />
+
+            </BrowserRouter>
         </div>
-
-        <Footer
-          getFooterHeight = { setFooterHeight }
-        />
-
-      </Router>
-    </div>
-  );
+    );
 }
 
 export default App;

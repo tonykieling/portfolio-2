@@ -14,8 +14,9 @@ function Header( { getHeaderHeight }) {
   // console.log("getHeaderHeight", getHeaderHeight);
   const headerRef = useRef(null);
 
-  useLayoutEffect(() =>
-    headerRef && getHeaderHeight(headerRef.current.clientHeight + 1)
+  useLayoutEffect(() => {
+      headerRef && getHeaderHeight(headerRef.current.clientHeight + 1);
+  }
   // eslint-disable-next-line  
   , [ headerRef ]);
  
@@ -23,6 +24,10 @@ function Header( { getHeaderHeight }) {
   const [
     burguerON, 
     setBurguerON] = useState(screenWidth > minimumWidth ? true : false);
+
+
+    const menuActive = ({ isActive }) => "nav-link" + (isActive ? " active-link" : "");
+
 
   const LargeScreenHeader = () => (
     <>
@@ -58,9 +63,6 @@ function Header( { getHeaderHeight }) {
           >
             <Link 
               to              = "/" 
-              // exact           = {true}
-              // className       = "nav-link logo"
-              // activeClassName = "active-link"
             >
               <img 
                 src     = { Logo } 
@@ -85,32 +87,35 @@ function Header( { getHeaderHeight }) {
             <div className="text-items">
               <NavLink
                 to              = "/about" 
-                className       = "nav-link"
-                activeClassName = "active-link"
+                className = { menuActive }
               >
                 About
               </NavLink>
 
               <NavLink
+                to              = "/projects-old"
+                className = { menuActive }
+                >
+                OldProjs
+              </NavLink>
+
+              <NavLink
                 to              = "/projects"
-                className       = "nav-link"
-                activeClassName = "active-link"
+                className = { menuActive }
                 >
                 Projects
               </NavLink>
 
               <NavLink
                 to              = "/samples"
-                className       = "nav-link"
-                activeClassName = "active-link"
+                className = { menuActive }
               >
                 Snippets
               </NavLink>
               
               <NavLink
                 to              = "/contact"
-                className       = "nav-link"
-                activeClassName = "active-link"
+                className = { menuActive }
               >
                 Contact
               </NavLink>

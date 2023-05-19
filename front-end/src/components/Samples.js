@@ -9,7 +9,9 @@ const MobileScreen = window.innerWidth > 790 ? false : true;
 
 export default function About({ cardPosition }) {
 
-  useEffect(() => goTop(), []);
+    useEffect(() => {
+        goTop();
+    }, []);
 
 
   return(

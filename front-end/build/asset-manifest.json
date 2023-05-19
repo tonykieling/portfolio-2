@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e4530cfe.css",
+    "main.js": "/static/js/main.76338186.js",
+    "static/js/496.cae0a888.chunk.js": "/static/js/496.cae0a888.chunk.js",
+    "static/media/bice.jpg": "/static/media/bice.d3e3a4253c4023e2e8b9.jpg",
+    "static/media/matrix-code.gif": "/static/media/matrix-code.6b7b5c00e2023eddfd35.gif",
+    "static/media/tk8.jpg": "/static/media/tk8.00a5a58ca1221fa834d3.jpg",
+    "static/media/clockinjs.png": "/static/media/clockinjs.5b7d8d17264f897817dd.png",
+    "static/media/home-seeker.png": "/static/media/home-seeker.0fa15b740497612c4b8b.png",
+    "static/media/crud.png": "/static/media/crud.af11cade6257cce4d044.png",
+    "static/media/hamburguer-red.png": "/static/media/hamburguer-red.a597458c18f1cc91d873.png",
+    "static/media/hamburguer-green.png": "/static/media/hamburguer-green.370a1a997f2668435d9f.png",
+    "static/media/maw.jpg": "/static/media/maw.001442b9c11d8bd1e00b.jpg",
+    "static/media/github.png": "/static/media/github.237e2214562c441f67b2.png",
+    "static/media/logo192.png": "/static/media/logo192.74b45c28425bdab359ec.png",
+    "static/media/resume.svg": "/static/media/resume.44caa18039a9479fe4ea4bcafa1cbc78.svg",
+    "index.html": "/index.html",
+    "static/media/gmail.svg": "/static/media/gmail.16286b30a5da399b916c79593815b049.svg",
+    "main.e4530cfe.css.map": "/static/css/main.e4530cfe.css.map",
+    "main.76338186.js.map": "/static/js/main.76338186.js.map",
+    "496.cae0a888.chunk.js.map": "/static/js/496.cae0a888.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4530cfe.css",
+    "static/js/main.76338186.js"
+  ]
+}

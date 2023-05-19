@@ -1,4 +1,5 @@
 ISSUES:
+#1
 - FE package.json NOT working
     "start": "react-scripts "REACT_APP_SITEKEY=6Ld-t5ccAAAAAGZPcHvACwQWvfbTZH-vBDD_nG9V react-scripts start",
     "build": "REACT_APP_SITEKEY=6Ld-t5ccAAAAAGZPcHvACwQWvfbTZH-vBDD_nG9V react-scripts build",
@@ -8,3 +9,7 @@ ISSUES:
 * https://www.freecodecamp.org/news/error-error-0308010c-digital-envelope-routines-unsupported-node-error-solved/
 * also set the same reCaptcha key to tkwebdev.ca and localhost
 
+
+#2
+- editing files on node_modules was notupdating in the app
+SOLVED: need to edit package.json to compile and error, rerun "npm start", and rerun the right way

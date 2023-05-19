@@ -6,7 +6,9 @@ import { goTop } from "../helpers/goTop";
 
 export default function Home({ cardPosition }) {
 
-  useEffect(() => goTop(), []);
+    useEffect(() => {
+        goTop();
+    }, []);
 
   return(
     <div 

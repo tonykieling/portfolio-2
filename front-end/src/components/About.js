@@ -6,7 +6,9 @@ import Bice from "../graphics/bice.jpg";
 
 export default function About({ cardPosition }) {
 
-    useEffect(() => goTop(), []);
+    useEffect(() => {
+        goTop();
+    }, []);
 
     return(
         <div 
