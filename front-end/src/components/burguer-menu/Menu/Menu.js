@@ -96,12 +96,13 @@ const Menu = ({ open, ...props }) => {
         Projects
       </Link>
 
-      <Link to="/samples" tabIndex={tabIndex} onClick={hideMenu}>
+      <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu}>
         <span aria-hidden="true">
           { getEmoji(samples) }
         </span>
           {/* ⌨️ */}
-        Snippets
+        {/* Snippets */}
+        BCIT Alumni
       </Link>
 
       <Link to="/contact" tabIndex={tabIndex} onClick={hideMenu}>

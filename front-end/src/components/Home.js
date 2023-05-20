@@ -1,20 +1,9 @@
-import { useEffect } from "react";
 import TK from "../graphics/tk8.jpg";
 
-// import { Link } from "react-router-dom";
-import { goTop } from "../helpers/goTop";
-
-export default function Home({ cardPosition }) {
-
-    useEffect(() => {
-        goTop();
-    }, []);
+export default function Home() {
 
   return(
-    <div 
-      className = "card"
-      style     = {{ top: cardPosition }}
-    >
+    <div className = "card">
       <div 
         className="home-container d-flex flex-direction-row m-auto"
       >
@@ -28,12 +17,9 @@ export default function Home({ cardPosition }) {
               <h1>Tony Kieling</h1>
             </div>
             <h1>Web Developer</h1>
-            {/* <h1>Web</h1>
-            <h1>Developer</h1> */}
           </div>
           <div className="cont1-2">
             <h2>Welcome to my Website</h2>
-            {/* <h3><Link to = "/home">tkwebdev.ca</Link></h3> */}
           </div>
         </div>
 
@@ -45,7 +31,6 @@ export default function Home({ cardPosition }) {
           />
         </div>
       </div>
-      {/* <div style={{border: "1px solid red", width: "90%", height: "25rem"}}>asd</div> */}
     </div>
   );
 }

@@ -7,10 +7,7 @@ import MAW from "../graphics/maw.gif";
 export default function Temp(props) {
     
   return(
-    <div 
-      className = "card card-container"
-      style = {{ top: props.cardPosition  }}
-    >
+    <div className = "card" >
       <div className="temp">
         <div className="temp1">
           <p className="cp"> This area is under construction.</p>
@@ -19,10 +16,10 @@ export default function Temp(props) {
             alt="Men at Work"
             width="25%"
           />
-          <p className="cp"> Meanwhile, please feel free to check out</p>
-          {props.text || (
+          <p className="cp"> Meanwhile, please feel free to check out other areas.</p>
+          {/* {props.text || (
             <p> <Link to="/projects">Projects</Link> and <Link to="/contact">Contact</Link>.</p>
-          )}
+          )} */}
         </div>
 
         <div 

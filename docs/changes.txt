@@ -13,4 +13,11 @@ X- About page having the hand icons in a new line
 - About page text review
 - change colors
 - can the icons be better?
+- at home, check image size kz it takes a little to be loaded
+- handling error when submitting message (BE & FE)
+move
+"Some of the tools used here and in other projects include 
+React, Bootstrap, Sass, NodeJs, Axios, ExpressJs, Moongoose, PostgreSQL, Node-mailer, and Google reCaptcha."
+to Intro
+add icons
 
