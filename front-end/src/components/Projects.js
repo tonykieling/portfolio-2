@@ -1,26 +1,35 @@
 
-import ClockinJS from "../graphics/clockinjs.png";
-import HomeSeeker from "../graphics/home-seeker.png";
-import Crud from "../graphics/crud.png";
-
+import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
-import NodeIcon from "../icons/node-32.png";
-
+import ClockinJS from "../graphics/clockinjs.png";
+import HomeSeeker from "../graphics/home-seeker.png";
+import Crud from "../graphics/crud.png";
+import JSLogo from "../icons/96-js.png";
+import CssHtmlLogo from "../icons/96-css-html.png";
+import NodeLogo from "../icons/96-nodejs.png";
+import ReactLogo from "../icons/96-react.png";
+import ExpressLogo from "../icons/96-ExpressJS.png";
+import BootstrapLogo from "../icons/96-bootstrap.png";
+import ReduxLogo from "../icons/96-redux.png";
+import MongoDBLogo from "../icons/96-mongoDB.png";
+import PostgreSQLLogo from "../icons/96-postgresql.png";
+import NodeMailerLogo from "../icons/96-nodemailer.png";
+import RecaptchaLogo from "../icons/96-recaptcha.png";
+import GitHubLogo from "../icons/96-github.png";
 
 const mobileScreen = window.innerWidth > 790 ? false : true;
 
 export default function Projects() {
 
   return(
-
     <div className="card" >
         <Tabs selectedTabClassName="selected-tab"
             style={{ height: "100%", display: "flex", flexDirection: "column", flex: 1}} 
         >
             <TabList >
-                <Tab className={"react-tabs__tab tab-extra"}>Intro</Tab>
+                <Tab className={"react-tabs__tab tab-extra"} onClick={()=>console.log("asd")} >Intro</Tab>
                 <Tab className={"react-tabs__tab tab-extra"}>Clockin.js</Tab>
                 <Tab className={"react-tabs__tab tab-extra"}>Home Seeker</Tab>
                 <Tab className={"react-tabs__tab tab-extra"}>CRUD</Tab>
@@ -30,25 +39,21 @@ export default function Projects() {
             <TabPanel style={{overflow: "auto", height: "100%"}} >
                 <div className="tab-card d-flex flex-column">
                     <p className="mt-4">Welcome to my project portfolio! I'm excited to show you what I've been working on - a range of projects built with some of the industry's best tools and technologies including:</p> 
-                    <ul>
-                            {/* <a href="https://icon2.cleanpng.com/20180628/kwe/kisspng-node-js-javascript-express-js-coding-computer-pro-node-js-icon-5b34ecbe020234.1732574015302577057736.png" 
-                                target="_blank" rel="noreferrer">GitHub</a> is an amazing platform where I share my projects and codes.</li> */}
-                        <li className="proj-items ml-5">
-                            <img src={NodeIcon} />
-                            Node.js
-                        </li>
-                        <li className="proj-items">NodeJs</li>
-                        <li className="proj-items">React</li> 
-                        <li className="proj-items">ExpressJs</li>
-                        <li className="proj-items">Bootstrap</li>
-                        <li className="proj-items">Sass</li>
-                        <li className="proj-items">Axios</li>
-                        <li className="proj-items">Moongoose</li>
-                        <li className="proj-items">PostgreSQL</li>
-                        <li className="proj-items">Node-mailer</li>
-                        <li className="proj-items">Google reCaptcha</li>
-                    </ul>
-                    <p>I'm really proud of the skills I've developed and the amazing projects I have completed. Dive right in and explore my portfolio to get a picture of my abilities!</p>
+                    <div className="proj-items-container">
+                        <img src={JSLogo} className="proj-items" title="Javascript" />
+                        <img src={CssHtmlLogo} className="proj-items" title="Html & CSS" />
+                        <img src={NodeLogo} className="proj-items" title="Node.js" />
+                        <img src={ReactLogo} className="proj-items" title="React JS" />
+                        <img src={ExpressLogo} className="proj-items" title="Express JS" />
+                        <img src={BootstrapLogo} className="proj-items" title="Bootstrap" />
+                        <img src={ReduxLogo} className="proj-items" title="Redux" />
+                        <img src={PostgreSQLLogo} className="proj-items" title="PostgreSQL" />
+                        <img src={MongoDBLogo} className="proj-items" title="MongoDB" />
+                        <img src={RecaptchaLogo} className="proj-items" title="Recaptcha" />
+                        <img src={NodeMailerLogo} className="proj-items" title="Node Mailer" />
+                        <img src={GitHubLogo} className="proj-items" title="Github" />
+                    </div>
+                    <p className="mb-4">I'm really proud of the skills I've developed and the amazing projects I have completed. Dive right in and explore my portfolio to get a picture of my abilities!</p>
                     {/* <p className="mt-5 mb-5">Some of my projects are being displayed in this section.</p>
                     <p>Some of the tools used here and in other projects include React, Bootstrap, Sass, NodeJs, Axios, ExpressJs, Moongoose, PostgreSQL, Node-mailer, and Google reCaptcha.</p> */}
                     <p><a href="https://github.com/tonykieling" target="_blank" rel="noreferrer">GitHub</a> is an amazing platform where I share my projects and codes.</p>
@@ -123,8 +128,10 @@ export default function Projects() {
 
             <TabPanel style={{overflow: "auto", height: "100%"}} >
                 <div className="tab-card d-flex flex-column pt-5">
-                    <p>This home page you are browsing right now is all developed by myself from scratch.</p>
-                    <p>Please, refer to </p>
+                    {/* <p className="text-center">This home page you are browsing right now is all developed by myself from scratch.</p> */}
+                    <p className="text-center">This home page you are browsing right now is entirely my own work, created from the ground up.</p>
+                    {/* <p>Please, refer to <span onClick={() => IntroRef.current.onClick()}>Intro</span></p> */}
+                    {/* <p> Please, refer to <Link to="/projects">Intro</Link>. <button onClick={() => IntroRef.current.click()}>HERE</button></p> */}
                     {/* <p>Some of the tools used here and in other projects include React, Bootstrap, Sass, NodeJs, Axios, ExpressJs, Moongoose, PostgreSQL, Node-mailer, and Google reCaptcha.</p> */}
                     {/* <p><a href="https://tkwebdev.ca" target="_blank" rel="noreferrer">https://tkwebdev.ca</a></p> */}
                 </div>

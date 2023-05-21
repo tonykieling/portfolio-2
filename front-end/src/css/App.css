@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oregano&display=swap");
 html, body {
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
 }
@@ -9,6 +10,7 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 a {
@@ -17,6 +19,7 @@ a {
 
 .app-settings {
   height: 100vh;
+  height: 100dvh;
   display: grid;
   grid-template: 4rem auto 2.8rem / 1fr;
   grid-template-areas: 
@@ -217,9 +220,36 @@ footer {
 }
 
 .proj-items {
-    text-align: justify;
-    padding-left: 5rem;
-    list-style-type: none;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+@media (max-width: 750px) {
+    .proj-items {
+        width: 50%;
+        /* border: gold 1px solid; */
+    }
+
+}
+.proj-items-container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    /* border: 1px solid blue; */
+}
+@media (min-width: 750px) {
+    .proj-items-container {
+        grid-template-columns: repeat(3, 33%);
+        row-gap: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}
+@media (min-width: 980px) {
+    .proj-items-container {
+        grid-template-columns: repeat(4, 25%);
+    }
 }
 /* .card-sub-projects {
   width: 90%;
@@ -571,6 +601,7 @@ footer {
   padding: 2.5rem 3.5rem;
   height: 100%;
   overflow: auto;
+  padding-bottom: 0.5rem;
 }
 
 .tab-general {
@@ -601,6 +632,7 @@ footer {
 @media (max-width: 790px) {
   .about {
     padding: 2rem 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -654,7 +686,7 @@ footer {
 }
 .tab-extra:hover {
     /* font-weight: 800; */
-    text-shadow: 0 0 2px #333;
+    text-shadow: 1px 1px 2px #333;
 }
 .selected-tab {
     background-color: #4f5138;
@@ -666,4 +698,9 @@ footer {
     border-bottom: 1px solid red;
     margin: 0 0 10px;
     padding: 0;
+}
+
+.last-about-text {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }

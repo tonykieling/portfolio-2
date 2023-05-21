@@ -35,14 +35,14 @@ export default function About() {
                     I am confident that I can bring a wide range of knowledge and resources to the table which will enable me to accomplish goals and tackle various types of challenges. <span className="hand-icons">👍🖖💪✌️</span>
                 </p>
 
-                <div className="bice">
-                <img
-                    src       = { Bice }
-                    className = "bice-settings"
-                    alt       = "This is me" 
-                    width     = "100%"
-                />
-                </div>
+                {/* <div className="bice">
+                    <img
+                        src       = { Bice }
+                        className = "bice-settings"
+                        alt       = "This is me" 
+                        width     = "100%"
+                    />
+                </div> */}
             </div>
         </div>
     );
