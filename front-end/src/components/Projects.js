@@ -1,5 +1,3 @@
-
-import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -18,18 +16,22 @@ import PostgreSQLLogo from "../icons/96-postgresql.png";
 import NodeMailerLogo from "../icons/96-nodemailer.png";
 import RecaptchaLogo from "../icons/96-recaptcha.png";
 import GitHubLogo from "../icons/96-github.png";
+import { useState } from 'react';
 
 const mobileScreen = window.innerWidth > 790 ? false : true;
 
 export default function Projects() {
+  const [tabIndex, setTabIndex] = useState(0);
 
   return(
     <div className="card" >
-        <Tabs selectedTabClassName="selected-tab"
+        <Tabs 
+            selectedTabClassName="selected-tab"
+            selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}
             style={{ height: "100%", display: "flex", flexDirection: "column", flex: 1}} 
         >
             <TabList >
-                <Tab className={"react-tabs__tab tab-extra"} onClick={()=>console.log("asd")} >Intro</Tab>
+                <Tab className={"react-tabs__tab tab-extra"}>Intro</Tab>
                 <Tab className={"react-tabs__tab tab-extra"}>Clockin.js</Tab>
                 <Tab className={"react-tabs__tab tab-extra"}>Home Seeker</Tab>
                 <Tab className={"react-tabs__tab tab-extra"}>CRUD</Tab>
@@ -128,12 +130,13 @@ export default function Projects() {
 
             <TabPanel style={{overflow: "auto", height: "100%"}} >
                 <div className="tab-card d-flex flex-column pt-5">
-                    {/* <p className="text-center">This home page you are browsing right now is all developed by myself from scratch.</p> */}
                     <p className="text-center">This home page you are browsing right now is entirely my own work, created from the ground up.</p>
-                    {/* <p>Please, refer to <span onClick={() => IntroRef.current.onClick()}>Intro</span></p> */}
-                    {/* <p> Please, refer to <Link to="/projects">Intro</Link>. <button onClick={() => IntroRef.current.click()}>HERE</button></p> */}
-                    {/* <p>Some of the tools used here and in other projects include React, Bootstrap, Sass, NodeJs, Axios, ExpressJs, Moongoose, PostgreSQL, Node-mailer, and Google reCaptcha.</p> */}
-                    {/* <p><a href="https://tkwebdev.ca" target="_blank" rel="noreferrer">https://tkwebdev.ca</a></p> */}
+                    <p className="mt-4 text-center">Any additional information, please refer to 
+                        <span 
+                            onClick={ () => setTabIndex(0)}
+                            className="intro-link"
+                        > Intro</span>
+                    </p>
                 </div>
             </TabPanel>
 

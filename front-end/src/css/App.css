@@ -704,3 +704,10 @@ footer {
     padding-bottom: 0;
     margin-bottom: 0;
 }
+.intro-link {
+    font-weight: 700;
+    color: blue;
+}
+.intro-link:hover {
+    cursor: pointer;
+}
