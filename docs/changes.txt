@@ -21,3 +21,9 @@ React, Bootstrap, Sass, NodeJs, Axios, ExpressJs, Moongoose, PostgreSQL, Node-ma
 to Intro
 add icons
 
+- about content
+- home format
+- logo and icon to yellow
+- contact style and no enter for the form message
+- removed on package.json
+  "proxy": "http://localhost:3000"

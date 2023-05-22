@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-// import Bice from "../graphics/bice.jpg";
-
 export default function About() {
     return(
         <div className = "card" >
@@ -25,7 +23,7 @@ export default function About() {
 
                 <p className="text-about">
                     {/* For the past years, I have shifted gears towards software development after graduating from the Lighthouse Labs Bootcamp (Mar/2019). Since then, my main tech stack has included Node.js, React, and MongoDB, as well as a set of tools such as Bootstrap, PostgreSQL, Redux, and others in order to get things done. */}
-                    For the past years, I have shifted gears towards software development after graduating from the Lighthouse Labs Bootcamp (Mar/2019). Since then, my main tech stack has included Javscript, Node.js, and React - please refer to <span className="hand-icons"><Link to="/projects"> Projects</Link>.</span>.
+                    For the past years, I have shifted gears towards software development after graduating from the Lighthouse Labs Bootcamp (Mar/2019). Since then, my main tech stack has included Javscript, Node.js, and React - please refer to <span className="hand-icons"><Link to="/projects"> Projects</Link></span>.
                 </p>
 
                 <p className="text-about">
@@ -35,15 +33,6 @@ export default function About() {
                 <p className="text-about last-about-text">
                     I am confident that I can bring a wide range of knowledge and resources to the table which will enable me to accomplish goals and tackle various types of challenges. <span className="hand-icons">👍🖖💪✌️</span>
                 </p>
-
-                {/* <div className="bice">
-                    <img
-                        src       = { Bice }
-                        className = "bice-settings"
-                        alt       = "This is me" 
-                        width     = "100%"
-                    />
-                </div> */}
             </div>
         </div>
     );

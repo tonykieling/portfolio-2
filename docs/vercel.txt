@@ -6,3 +6,7 @@
 *** OR
 "proxy": "http://localhost:3000" -- it will allow to reach the server (3000) running the dev app at 3001
 
+* to Deploy
+ on front-end dir ```npm run build```
+ copy front-end\build to \build
+

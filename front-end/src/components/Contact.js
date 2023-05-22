@@ -222,12 +222,12 @@ export default function Contact() {
 
   // iy gets the token when recaptcha is clicked
   const reCaptchaChange = value => {
-    console.log("process.env", process.env);
+    // console.log("process.env", process.env);
     setReCaptchaToken(value);
     setButtonType("btn-primary");
     setButtonMessage("Send Message");
     setRedBoxClass({...redBoxClass, reCaptcha: ""});
-    console.log("this is value:", value);
+    // console.log("this is value:", value);
     // console.log("process.env", process.env.REACT_APP_SITEKEY)
   }
 
@@ -279,16 +279,26 @@ export default function Contact() {
                     placeholder     = "Please, leave your message" 
                     data-bs-toggle  = "tooltip" 
                     title           = "Insert your message"
-                    rows            = { MobileScreen ? 11 : 4}
+                    rows            = { MobileScreen ? 10 : 4}
 
                     type        = "text"
                     name        = "message"
                     value       = { state.message }
                     onChange    = { handleChange }
-                    onKeyPress  = { handleChange }
+                    // onKeyPress  = { handleChange }
                     ref         = { refMessage }
                     disabled    = { buttonMessage === "sending message..." ? true : false }
                 />
+
+                <div className="mt-1 mb-1 reCaptcha">
+                    <ReCaptchaV2
+                        // sitekey   ={"process.env.REACT_APP_SITEKEY"}
+                        sitekey   ={"6Ld-t5ccAAAAAGZPcHvACwQWvfbTZH-vBDD_nG9V"}
+                        onChange  ={reCaptchaChange}
+                        ref       ={ refReCaptcha }
+                        className ={`${redBoxClass.reCaptcha}`}
+                    />
+                </div>
 
                 <button
                     type      = "button"
@@ -303,17 +313,6 @@ export default function Contact() {
                     { buttonMessage }
                 </button>
 
-
-
-                <div className="mt-1 mb-1 reCaptcha">
-                    <ReCaptchaV2
-                    // sitekey   ={"process.env.REACT_APP_SITEKEY"}
-                    sitekey   ={"6Ld-t5ccAAAAAGZPcHvACwQWvfbTZH-vBDD_nG9V"}
-                    onChange  ={reCaptchaChange}
-                    ref       ={ refReCaptcha }
-                    className ={`${redBoxClass.reCaptcha}`}
-                    />
-                </div>
             </div>
 
             <SocialMediasBox />
