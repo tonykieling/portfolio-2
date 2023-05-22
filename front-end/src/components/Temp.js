@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 // temporary stuff
 import MenAtWork from "../graphics/maw.jpg";
 import MAW from "../graphics/maw.gif";

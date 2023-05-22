@@ -42,18 +42,18 @@ export default function Projects() {
                 <div className="tab-card d-flex flex-column">
                     <p className="mt-4">Welcome to my project portfolio! I'm excited to show you what I've been working on - a range of projects built with some of the industry's best tools and technologies including:</p> 
                     <div className="proj-items-container">
-                        <img src={JSLogo} className="proj-items" title="Javascript" />
-                        <img src={CssHtmlLogo} className="proj-items" title="Html & CSS" />
-                        <img src={NodeLogo} className="proj-items" title="Node.js" />
-                        <img src={ReactLogo} className="proj-items" title="React JS" />
-                        <img src={ExpressLogo} className="proj-items" title="Express JS" />
-                        <img src={BootstrapLogo} className="proj-items" title="Bootstrap" />
-                        <img src={ReduxLogo} className="proj-items" title="Redux" />
-                        <img src={PostgreSQLLogo} className="proj-items" title="PostgreSQL" />
-                        <img src={MongoDBLogo} className="proj-items" title="MongoDB" />
-                        <img src={RecaptchaLogo} className="proj-items" title="Recaptcha" />
-                        <img src={NodeMailerLogo} className="proj-items" title="Node Mailer" />
-                        <img src={GitHubLogo} className="proj-items" title="Github" />
+                        <img src={JSLogo} className="proj-items" title="Javascript" alt=""/>
+                        <img src={CssHtmlLogo} className="proj-items" title="Html & CSS" alt=""/>
+                        <img src={NodeLogo} className="proj-items" title="Node.js" alt=""/>
+                        <img src={ReactLogo} className="proj-items" title="React JS" alt=""/>
+                        <img src={ExpressLogo} className="proj-items" title="Express JS" alt=""/>
+                        <img src={BootstrapLogo} className="proj-items" title="Bootstrap" alt=""/>
+                        <img src={ReduxLogo} className="proj-items" title="Redux" alt=""/>
+                        <img src={PostgreSQLLogo} className="proj-items" title="PostgreSQL" alt=""/>
+                        <img src={MongoDBLogo} className="proj-items" title="MongoDB" alt=""/>
+                        <img src={RecaptchaLogo} className="proj-items" title="Recaptcha" alt=""/>
+                        <img src={NodeMailerLogo} className="proj-items" title="Node Mailer" alt=""/>
+                        <img src={GitHubLogo} className="proj-items" title="Github" alt=""/>
                     </div>
                     <p className="mb-4">I'm really proud of the skills I've developed and the amazing projects I have completed. Dive right in and explore my portfolio to get a picture of my abilities!</p>
                     {/* <p className="mt-5 mb-5">Some of my projects are being displayed in this section.</p>
