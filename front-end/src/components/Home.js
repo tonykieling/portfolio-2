@@ -1,4 +1,4 @@
-import TK from "../graphics/tk88.jpg";
+import TK from "../graphics/tk888.jpg";
 
 export default function Home() {
 
