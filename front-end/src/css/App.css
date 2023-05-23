@@ -422,6 +422,7 @@ footer {
 .home-container .cont1 .cont1-2 {
   padding-bottom: 2rem;
   text-align: center;
+  /* margin-top: 3rem; */
 }
 
 .home-container .cont2 {
@@ -443,9 +444,10 @@ footer {
 }
 
 .home-container .cont2 .picture {
-  width: 100%;
-  opacity: 0.9;
+  width: 75%;
+  opacity: 0.8;
   border-radius: 50%;
+  align-self: center;
 }
 
 @media (max-width: 790px) {
@@ -453,13 +455,15 @@ footer {
     flex-direction: column;
     height: 100%;
     padding: 0;
+    justify-content: space-between;
   }
   .home-container .cont1 {
     width: 100%;
     padding: 0;
+    margin-top: 3rem;
   }
   .home-container .cont1 h1 {
-    font-size: 190%;
+    font-size: 170%;
   }
   .home-container .cont1 h2, .home-container .cont1 h3 {
     font-size: 130%;
@@ -474,7 +478,7 @@ footer {
   }
   .home-container .picture {
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
     margin-bottom: 0;
   }
 }
