@@ -88,7 +88,7 @@ export default function Contact() {
 
 
   const sendMessage = async event => {
-    console.log("asads")
+    // console.log("asads")
 
     event.preventDefault();
 
@@ -176,7 +176,7 @@ export default function Contact() {
 
         if (res.error)
           throw(res.message || "")
-        console.log("result from server:::", res);
+        // console.log("result from server:::", res);
         // const res = {message: true};
 
         // reset reCaptcha
@@ -200,7 +200,7 @@ export default function Contact() {
 
               refName.current.focus();
             }, 3000);
-          }, 2000);
+          }, 1500);
 
 
           // need to check if it is working

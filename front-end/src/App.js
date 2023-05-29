@@ -14,7 +14,7 @@ import Contact  from "./components/Contact.js";
 import Projects from "./components/Projects.js";
 import Samples  from "./components/Samples.js"
 import Footer   from "./components/Footer.js";
-import ProjectsOld from './components/Projects-old';
+// import ProjectsOld from './components/Projects-old';
 
 function App() {
 
@@ -35,10 +35,10 @@ function App() {
                             element = { <About /> }
                         />
 
-                        <Route 
+                        {/* <Route 
                             exact path = "/projects-old"
                             element = { <ProjectsOld/> }
-                        />
+                        /> */}
 
                         <Route 
                             exact path = "/projects"
