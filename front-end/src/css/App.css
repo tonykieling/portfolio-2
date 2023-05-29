@@ -31,7 +31,8 @@ a {
 
 .body-settings {
   grid-area: main;
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #D3D3D2;
   font-size: calc(10px + 2vmin);
   /* padding: 2rem; */
   padding-top: 1rem;
@@ -294,6 +295,7 @@ footer {
     /* border: 5px solid red; */
     margin: auto;
     width: 95%;
+    box-shadow: 0 0 12px;
 }
 @media (min-width: 1000px) {
     .card {

@@ -135,7 +135,7 @@ export default function Projects() {
                         <span 
                             onClick={ () => setTabIndex(0)}
                             className="intro-link"
-                        > Intro</span>
+                        > Intro</span>.
                     </p>
                 </div>
             </TabPanel>
