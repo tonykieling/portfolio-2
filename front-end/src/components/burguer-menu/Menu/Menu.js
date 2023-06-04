@@ -93,7 +93,7 @@ const Menu = ({ open, ...props }) => {
         <span aria-hidden="true">
           { getEmoji(projects) }
         </span>
-        Projects
+        Up_&_Running
       </Link>
 
       <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu}>
