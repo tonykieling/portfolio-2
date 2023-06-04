@@ -66,7 +66,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  /* width: 50%; */
+  width: 60px;
 }
 
 .header .two-3rd {
@@ -104,6 +105,7 @@ footer {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -151,6 +153,8 @@ footer {
 .header .logo img {
   border-radius: 50%;
   border: 7px solid transparent;
+  /* transition: linear 5s linear;
+  transform: translateX(100%); */
 }
 
 .header .logo img:hover {
@@ -192,7 +196,7 @@ footer {
 
 @media (max-width: 790px) {
   .header {
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
   }
 }
 
@@ -398,24 +402,43 @@ footer {
   width: 60%;
 }
 
-.home-container .cont1 h1 {
-  font-size: 200%;
+.home-container .cont1 h1, h2 {
+    font-size: 200%;
 }
 
+@keyframes web-dev-animation {
+    0% {font-size: 0;}
+    100% {font-size: 150%;}
+}
+.home-container .cont1 h3 {
+  /* font-size: 200%; */
+  animation-name: web-dev-animation;
+  animation-duration: 5s;
+}
+
+/* @keyframes name-animation {
+    0% {color: #FFF;}
+    20% {color: #FEDD00;}
+    50% { color: #009739;}
+    75% { color: #012169;}
+    100% { color: #212529;}
+} */
 .home-container .cont1 .my-name {
   font-family: Oregano;
   font-size: 230%;
   padding-bottom: 1rem;
-  /* font-weight: 900; */
-}
-
-.home-container .cont1 h2 {
-  font-size: 150%;
+  /* animation-name: name-animation;
+  animation-duration: 4s;
+  animation-timing-function: linear; */
 }
 
 .home-container .cont1 h3 {
-  font-size: 130%;
+  font-size: 150%;
 }
+
+/* .home-container .cont1 h3 {
+  font-size: 130%;
+} */
 
 .home-container .cont1 .cont1-1 {
   text-align: center;
@@ -445,11 +468,18 @@ footer {
   }
 } */
 
+@keyframes picture-animation {
+    0% {opacity: 0;}
+    90% {opacity: 1;}
+    100% {opacity: 0.8;}
+}
 .home-container .cont2 .picture {
   width: 75%;
   opacity: 0.8;
   border-radius: 50%;
   align-self: center;
+  animation-name: picture-animation;
+  animation-duration: 8s;
 }
 
 @media (max-width: 790px) {
@@ -468,8 +498,14 @@ footer {
   .home-container .cont1 h1 {
     font-size: 170%;
   }
+  
+  @keyframes web-dev-animation {
+    0% {font-size: 0;}
+    100% {font-size: 130%;}
+  }
   .home-container .cont1 h2, .home-container .cont1 h3 {
     font-size: 130%;
+    animation-name: web-dev-animation;
     text-align: center;
   }
   .home-container .cont1 .cont1-2 {

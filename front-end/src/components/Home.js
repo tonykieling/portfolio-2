@@ -16,10 +16,10 @@ export default function Home() {
             <div className="my-name">
               <h1>Tony Kieling</h1>
             </div>
-            <h1>Web Developer</h1>
+            <h2>Web Developer</h2>
           </div>
           <div className="cont1-2">
-            <h2>Welcome to my Website</h2>
+            <h3>Welcome to my Website</h3>
           </div>
         </div>
 
