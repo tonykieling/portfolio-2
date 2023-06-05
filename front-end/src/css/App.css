@@ -406,15 +406,6 @@ footer {
     font-size: 200%;
 }
 
-@keyframes web-dev-animation {
-    0% {font-size: 0;}
-    100% {font-size: 150%;}
-}
-.home-container .cont1 h3 {
-  /* font-size: 200%; */
-  animation-name: web-dev-animation;
-  animation-duration: 5s;
-}
 
 /* @keyframes name-animation {
     0% {color: #FFF;}
@@ -470,7 +461,7 @@ footer {
 
 @keyframes picture-animation {
     0% {opacity: 0;}
-    90% {opacity: 1;}
+    /* 90% {opacity: 1;} */
     100% {opacity: 0.8;}
 }
 .home-container .cont2 .picture {
@@ -479,7 +470,7 @@ footer {
   border-radius: 50%;
   align-self: center;
   animation-name: picture-animation;
-  animation-duration: 8s;
+  animation-duration: 4s;
 }
 
 @media (max-width: 790px) {
@@ -492,20 +483,22 @@ footer {
   .home-container .cont1 {
     width: 100%;
     padding: 0;
-    /* margin-top: 3rem; */
     height: 45%;
   }
-  .home-container .cont1 h1 {
+  .home-container .cont1 h1, h2 {
     font-size: 170%;
   }
   
-  @keyframes web-dev-animation {
+  /* @keyframes web-dev-animation {
     0% {font-size: 0;}
     100% {font-size: 130%;}
-  }
-  .home-container .cont1 h2, .home-container .cont1 h3 {
+  } */
+  /* .home-container .cont1 h2 {
+    font-size: 170%;
+  } */
+  .home-container .cont1 h3 {
     font-size: 130%;
-    animation-name: web-dev-animation;
+    /* animation-name: web-dev-animation; */
     text-align: center;
   }
   .home-container .cont1 .cont1-2 {
@@ -776,4 +769,25 @@ footer {
 }
 .intro-link:hover {
     cursor: pointer;
+}
+
+/* menu settings */
+.menu-item-position {
+    margin-left: -3rem;
+    /* background-color: red; */
+}
+.menu-item-format {
+    letter-spacing: 0.25rem;
+    margin-left: 0.5rem;
+}
+@media (width > 576px) {
+    #main-menu {
+        min-width: 390px;
+    }
+    .menu-item-position {
+        margin-left: 0rem;
+    }
+    .menu-item-format {
+        margin-left: 1rem;
+    }
 }
