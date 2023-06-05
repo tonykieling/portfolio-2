@@ -3,6 +3,7 @@ import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
 import { Link } from 'react-router-dom';
 
+
 const Menu = ({ open, ...props }) => {
   
   const isHidden = open ? true : false;
@@ -15,45 +16,40 @@ const Menu = ({ open, ...props }) => {
   // so, I will create an array an each time the screen is load, it gets a new one to show up
   
   const homes = [
-    "🏠 ",
-    "🏡 "
+    "🏠",
+    "🏡"
   ];
 
   const abouts = [
-    "🐸 ",
-    "🕺 ",
-    "🐵 ",
-    // "🐨",
+    "🐸",
+    "🕺",
+    "🐵",
     "🚚",
-    "🐜 ",
-    "🐧 ",
-    // "🦆",
-    "🦉 ",
-    "🦖 ",
-    // "🐙",
-    "🐝 ",
-    // "🐠",
-    "🏊‍♂️ ",
-    // "🌻",
+    "🐜",
+    "🐧",
+    "🦉",
+    "🦖",
+    "🐝",
+    "🏊‍♂️",
   ];
 
   const projects = [
-    "🚧 ",
-    "🗄️ ",
-    "💻 ",
-    "🧮 "
+    "🚧",
+    "🗄️",
+    "💻",
+    "🧮"
   ];
 
   const samples = [
-    "🤖 ",
-    "👨‍💻 ",
-    "🛠️ "
+    "🤖",
+    "👨‍💻",
+    "🛠️"
   ];
 
   const contacts = [
-    "📝 ",
-    "✉️ ",
-    "📩 "
+    "📝",
+    "✉️",
+    "📩"
   ];
 
   // thinking about avoiding repetition
@@ -75,41 +71,49 @@ const Menu = ({ open, ...props }) => {
   
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-      <Link to="/" tabIndex={tabIndex} onClick={hideMenu}>
+      <Link to="/" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(homes) }
         </span>
-        Home
+        <span className={"menu-item-format"}>
+            Home
+        </span>
       </Link>
 
-      <Link to="/about" tabIndex={tabIndex} onClick={hideMenu}>
+      <Link to="/about" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(abouts) }
         </span>
-        About
+        <span className="menu-item-format">
+            About
+        </span>
       </Link>
 
-      <Link to="/projects" tabIndex={tabIndex} onClick={hideMenu}>
+      <Link to="/projects" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(projects) }
         </span>
-        Up_&_Running
+        <span className="menu-item-format">
+            Up & Running
+        </span>
       </Link>
 
-      <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu}>
+      <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(samples) }
         </span>
-          {/* ⌨️ */}
-        {/* Snippets */}
-        BCIT Alumni
+        <span className="menu-item-format">
+            BCIT Alumni
+        </span>
       </Link>
 
-      <Link to="/contact" tabIndex={tabIndex} onClick={hideMenu}>
+      <Link to="/contact" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(contacts) }
         </span>
-        Contact
+        <span className="menu-item-format">
+            Contact
+        </span>
       </Link>
     </StyledMenu>
   )
