@@ -27,3 +27,24 @@ add icons
 - contact style and no enter for the form message
 - removed on package.json
   "proxy": "http://localhost:3000"
+
+### June 8th
+add counter
+ - create db
+ - set the FE app to get client's info every frontend application load
+ - send the data to BE
+ - create a BE function to receive the data and record that into DB
+ - create a FE component <Statistics> to display the info in a table format (it requires a secret by confirm js method)
+ - set the <App> to check the path and record data accordingly
+    - rn, do not record 
+
+DATABASE:
+TABLE #1: IP  CONTRY  STATE  CITY  DATE  ==> for site's visitors
+TABLE #2: IP  CONTRY  STATE  CITY  ACTION  DATE  ==> for site's statics visitors
+
+ACTION:
+ VISIT_COUNTER
+ VISIT_COUNTER_SUCCESS
+ VISIT_COUNTER_FAIL
+
+adding google analytics, instead

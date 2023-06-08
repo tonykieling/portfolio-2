@@ -14,9 +14,19 @@ import Contact  from "./components/Contact.js";
 import Projects from "./components/Projects.js";
 import Samples  from "./components/Samples.js"
 import Footer   from "./components/Footer.js";
+// import { useEffect } from 'react';
 // import ProjectsOld from './components/Projects-old';
 
 function App() {
+    // useEffect(() =>
+    //     {
+    //         const checkVisitorInfo = async () => {
+    //             fetch("https://geolocation-db.com/json/").then(dt => dt.json()).then(console.log);
+    //         }
+
+    //         checkVisitorInfo();
+    //     }
+    // , []);
 
     return (
         <BrowserRouter>
