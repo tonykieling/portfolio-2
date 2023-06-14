@@ -71,8 +71,7 @@ footer {
 }
 
 .header .two-3rd {
-  /* width: 70%; */
-  width: 100%;
+  width: 70%;
   justify-content: space-between;
 }
 
@@ -95,7 +94,6 @@ footer {
 
 .header .two-3rd-2 .text-items {
   width: 80%;
-  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
