@@ -48,3 +48,10 @@ ACTION:
  VISIT_COUNTER_FAIL
 
 adding google analytics, instead
+
+removed BCIT Alumni under construction (Pat's suggestion)
+added Resume in Menus
+removed Resume from Social Medias
+changed Resume instead resume
+added hidden text which contains https://tkwebdev.ca and tkwebdev.ca (for the SEO puproses - need to check whether it works)
+NEED TO UNCOMMENT GOOGLE TAGS ON index.html

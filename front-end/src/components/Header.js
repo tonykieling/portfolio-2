@@ -73,13 +73,6 @@ function Header() {
                             About
                         </NavLink>
 
-                        {/* <NavLink
-                            to              = "/projects-old"
-                            className = { menuActive }
-                        >
-                        OldProjs
-                        </NavLink> */}
-
                         <NavLink
                             to              = "/projects"
                             className = { menuActive }
@@ -87,15 +80,15 @@ function Header() {
                             Up & Running
                         </NavLink>
 
-                        <NavLink
+                        {/* <NavLink
                             to              = "/bcit-alumni"
                             className = { menuActive }
                         >
                             BCIT Alumni
-                        </NavLink>
+                        </NavLink> */}
 
                         <NavLink 
-                            to="https://drive.google.com/file/d/1t5IXUpVFSEJQF9QHLiqHtNWjHYuEkWbi/view?usp=share_link" 
+                            to="https://drive.google.com/file/d/1yi5cPBgA93jKSZsEwU8mJc0mjWRQ2joc/view?usp=drive_link" 
                             target="_blank" rel="noopener noreferrer"
                             className={menuActive}
                         >

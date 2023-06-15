@@ -12,10 +12,8 @@ import Home     from "./components/Home.js";
 import About    from "./components/About.js";
 import Contact  from "./components/Contact.js";
 import Projects from "./components/Projects.js";
-import Samples  from "./components/Samples.js"
+// import Samples  from "./components/Samples.js"
 import Footer   from "./components/Footer.js";
-// import { useEffect } from 'react';
-// import ProjectsOld from './components/Projects-old';
 
 function App() {
     // useEffect(() =>
@@ -45,20 +43,15 @@ function App() {
                             element = { <About /> }
                         />
 
-                        {/* <Route 
-                            exact path = "/projects-old"
-                            element = { <ProjectsOld/> }
-                        /> */}
-
                         <Route 
                             exact path = "/projects"
                             element = { <Projects /> }
                         />
 
-                        <Route 
+                        {/* <Route 
                             exact path = "/bcit-alumni"
                             element = { <Samples /> }
-                        />
+                        /> */}
 
                         <Route 
                             exact path = "/contact"

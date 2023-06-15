@@ -104,18 +104,20 @@ const Menu = ({ open, ...props }) => {
         </span>
       </Link>
 
-      <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
+      {/* <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(samples) }
         </span>
         <span className="menu-item-format">
             BCIT Alumni
         </span>
-      </Link>
+      </Link> */}
 
-      <Link to="https://drive.google.com/file/d/1t5IXUpVFSEJQF9QHLiqHtNWjHYuEkWbi/view?usp=share_link" 
+      <Link 
+        to="https://drive.google.com/file/d/1yi5cPBgA93jKSZsEwU8mJc0mjWRQ2joc/view?usp=drive_link"
         target="_blank" rel="noopener noreferrer"
-        tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
+        tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position"
+      >
         <span aria-hidden="true">
           { getEmoji(resumes) }
         </span>
