@@ -71,8 +71,7 @@ footer {
 }
 
 .header .two-3rd {
-  /* width: 70%; */
-  width: 100%;
+  width: 70%;
   justify-content: space-between;
 }
 
@@ -94,13 +93,10 @@ footer {
 }
 
 .header .two-3rd-2 .text-items {
-  /* width: 80%; */
-  width: 100%;
-  /* background-color: #14D500; */
+  width: 80%;
   display: flex;
   align-items: center;
-  /* justify-content: flex-end; */
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 @media (max-width: 790px) {
@@ -142,7 +138,7 @@ footer {
   border-radius: 6px;
   background-color: #D3D3D2;
   font-variant: small-caps;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-size: 110%;
 }
 
@@ -187,8 +183,7 @@ footer {
 .header .nav .text-items {
   display: flex;
   align-items: center;
-  /* justify-content: flex-end; */
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .header .whereru {

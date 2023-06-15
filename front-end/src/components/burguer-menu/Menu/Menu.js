@@ -52,6 +52,12 @@ const Menu = ({ open, ...props }) => {
     "📩"
   ];
 
+  const resumes = [
+    "📑",
+    "📜",
+    "📃"
+  ]
+
   // thinking about avoiding repetition
   // it will need to presist state (not now)
   // const [emoji, setEmoji] = useState(null)
@@ -98,12 +104,25 @@ const Menu = ({ open, ...props }) => {
         </span>
       </Link>
 
-      <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
+      {/* <Link to="/bcit-alumni" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(samples) }
         </span>
         <span className="menu-item-format">
             BCIT Alumni
+        </span>
+      </Link> */}
+
+      <Link 
+        to="https://drive.google.com/file/d/1yi5cPBgA93jKSZsEwU8mJc0mjWRQ2joc/view?usp=drive_link"
+        target="_blank" rel="noopener noreferrer"
+        tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position"
+      >
+        <span aria-hidden="true">
+          { getEmoji(resumes) }
+        </span>
+        <span className="menu-item-format">
+            Resume
         </span>
       </Link>
 

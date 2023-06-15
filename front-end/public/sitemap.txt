@@ -3,3 +3,6 @@ https://tkwebdev.ca/about
 https://tkwebdev.ca/projects
 https://tkwebdev.ca/bcit-alumni
 https://tkwebdev.ca/contact
+https://clockinjs.tkwebdev.ca
+https://home-seeker.tkwebdev.ca
+https://crud.tkwebdev.ca

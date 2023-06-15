@@ -21,21 +21,16 @@ function Header() {
         <>
             <div className="one-3rd">
                 <div className="one-3rd-1">
-                    { (!burguerON) &&
-                    <BurguerMenu />
-                    }
+                    { (!burguerON) && <BurguerMenu /> }
                 </div>
                 <div className="one-3rd-2">
-                    <div 
-                    className= {`logo ${!burguerON ? "logo--green" : "logo--red"}`}
-                    >
+                    <div className= {`logo ${!burguerON ? "logo--green" : "logo--red"}`}>
                     <img
                         src={!burguerON ? HamburguerGreen : HamburguerRed}
                         alt="Turn Hamburguer menu ON and OFF"
-                        title={
-                        burguerON
-                        ? "Turn Hamburguer Menu ON"
-                        : "Turn Hamburguer Menu OFF"
+                        title={ burguerON
+                                    ? "Turn Hamburguer Menu ON"
+                                    : "Turn Hamburguer Menu OFF"
                         }
                         width="100%"
                         onClick={ () => setBurguerON(!burguerON) }
@@ -46,19 +41,17 @@ function Header() {
 
             <div className="two-3rd d-flex">
                 <div className="two-3rd-1">
-                    <div 
-                    className="logo"
-                    >
-                    <Link 
-                        to              = "/" 
-                    >
-                        <img 
-                        src     = { Logo } 
-                        alt     = "TK's logo" 
-                        title   = "Home" 
-                        width   = "100%"
-                        />
-                    </Link>
+                    <div className="logo" >
+                        <Link 
+                            to              = "/" 
+                        >
+                            <img 
+                            src     = { Logo } 
+                            alt     = "TK's logo" 
+                            title   = "Home" 
+                            width   = "100%"
+                            />
+                        </Link>
                     </div>
                 </div>
 
@@ -66,7 +59,7 @@ function Header() {
                     <div className="whereru">
                     { !burguerON &&
                         <div className="whereru">
-                        <WhereRU className="whereru" />
+                            <WhereRU className="whereru" />
                         </div>
                     }
                     </div>
@@ -80,13 +73,6 @@ function Header() {
                             About
                         </NavLink>
 
-                        {/* <NavLink
-                            to              = "/projects-old"
-                            className = { menuActive }
-                        >
-                        OldProjs
-                        </NavLink> */}
-
                         <NavLink
                             to              = "/projects"
                             className = { menuActive }
@@ -94,12 +80,21 @@ function Header() {
                             Up & Running
                         </NavLink>
 
-                        <NavLink
+                        {/* <NavLink
                             to              = "/bcit-alumni"
                             className = { menuActive }
                         >
                             BCIT Alumni
+                        </NavLink> */}
+
+                        <NavLink 
+                            to="https://drive.google.com/file/d/1yi5cPBgA93jKSZsEwU8mJc0mjWRQ2joc/view?usp=drive_link" 
+                            target="_blank" rel="noopener noreferrer"
+                            className={menuActive}
+                        >
+                                    Resume
                         </NavLink>
+
                         
                         <NavLink
                             to              = "/contact"
@@ -120,22 +115,22 @@ function Header() {
             <div className="one-3rd"></div>
 
             <div className="two-3rd">
-            <BurguerMenu />
+                <BurguerMenu />
 
-            <div className="whereru">
-                <WhereRU className="whereru" />
-            </div>
+                <div className="whereru">
+                    <WhereRU className="whereru" />
+                </div>
 
-            <div className="logo-mobile">
-                <Link to="/">
-                <img 
-                    src     = { Logo } 
-                    alt     = "TK's logo" 
-                    title   = "Home" 
-                    width   = "100%"
-                />
-                </Link>
-            </div>
+                <div className="logo-mobile">
+                    <Link to="/">
+                        <img 
+                            src     = { Logo } 
+                            alt     = "TK's logo" 
+                            title   = "Home" 
+                            width   = "100%"
+                        />
+                    </Link>
+                </div>
             </div>
 
             <div className="three-3rd"></div>
