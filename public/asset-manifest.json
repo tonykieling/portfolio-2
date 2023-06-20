@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fcda66ea.css",
-    "main.js": "/static/js/main.6cf40691.js",
+    "main.js": "/static/js/main.c898e700.js",
     "static/js/496.cae0a888.chunk.js": "/static/js/496.cae0a888.chunk.js",
     "static/media/hamburguer-red.png": "/static/media/hamburguer-red.a597458c18f1cc91d873.png",
     "static/media/hamburguer-green.png": "/static/media/hamburguer-green.370a1a997f2668435d9f.png",
@@ -14,11 +14,11 @@
     "index.html": "/index.html",
     "static/media/gmail.svg": "/static/media/gmail.16286b30a5da399b916c79593815b049.svg",
     "main.fcda66ea.css.map": "/static/css/main.fcda66ea.css.map",
-    "main.6cf40691.js.map": "/static/js/main.6cf40691.js.map",
+    "main.c898e700.js.map": "/static/js/main.c898e700.js.map",
     "496.cae0a888.chunk.js.map": "/static/js/496.cae0a888.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fcda66ea.css",
-    "static/js/main.6cf40691.js"
+    "static/js/main.c898e700.js"
   ]
 }

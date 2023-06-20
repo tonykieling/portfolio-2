@@ -40,11 +40,11 @@ const Menu = ({ open, ...props }) => {
     "🧮"
   ];
 
-  const samples = [
-    "🤖",
-    "👨‍💻",
-    "🛠️"
-  ];
+//   const samples = [
+//     "🤖",
+//     "👨‍💻",
+//     "🛠️"
+//   ];
 
   const contacts = [
     "📝",
@@ -95,12 +95,13 @@ const Menu = ({ open, ...props }) => {
         </span>
       </Link>
 
-      <Link to="/projects" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
+      <Link to="/portfolio" tabIndex={tabIndex} onClick={hideMenu} className="menu-item-position">
         <span aria-hidden="true">
           { getEmoji(projects) }
         </span>
         <span className="menu-item-format">
-            Up & Running
+            {/* Up & Running */}
+            Portfolio
         </span>
       </Link>
 

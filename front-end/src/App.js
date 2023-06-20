@@ -44,7 +44,7 @@ function App() {
                         />
 
                         <Route 
-                            exact path = "/projects"
+                            exact path = "/portfolio"
                             element = { <Projects /> }
                         />
 
