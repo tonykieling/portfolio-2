@@ -23,7 +23,7 @@ export default function About() {
 
                 <p className="text-about">
                     {/* For the past years, I have shifted gears towards software development after graduating from the Lighthouse Labs Bootcamp (Mar/2019). Since then, my main tech stack has included Node.js, React, and MongoDB, as well as a set of tools such as Bootstrap, PostgreSQL, Redux, and others in order to get things done. */}
-                    For the past years, I have shifted gears towards software development after graduating from the Lighthouse Labs Bootcamp (Mar/2019). Since then, my main tech stack has included JavaScript, Node.js, and React - please refer to <span className="hand-icons"><Link to="/projects"> Projects</Link></span>.
+                    For the past years, I have shifted gears towards software development after graduating from the Lighthouse Labs Bootcamp (Mar/2019). Since then, my main tech stack has included JavaScript, Node.js, and React - please refer to <span className="hand-icons"><Link to="/portfolio"> Portfolio</Link></span>.
                 </p>
 
                 <p className="text-about">
