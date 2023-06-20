@@ -40,11 +40,11 @@ const Menu = ({ open, ...props }) => {
     "🧮"
   ];
 
-  const samples = [
-    "🤖",
-    "👨‍💻",
-    "🛠️"
-  ];
+//   const samples = [
+//     "🤖",
+//     "👨‍💻",
+//     "🛠️"
+//   ];
 
   const contacts = [
     "📝",
@@ -100,7 +100,8 @@ const Menu = ({ open, ...props }) => {
           { getEmoji(projects) }
         </span>
         <span className="menu-item-format">
-            Up & Running
+            {/* Up & Running */}
+            Portfolio
         </span>
       </Link>
 

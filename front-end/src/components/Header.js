@@ -77,7 +77,8 @@ function Header() {
                             to              = "/projects"
                             className = { menuActive }
                         >
-                            Up & Running
+                            {/* Up & Running */}
+                            Portfolio
                         </NavLink>
 
                         {/* <NavLink
