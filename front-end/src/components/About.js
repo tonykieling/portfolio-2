@@ -14,7 +14,8 @@ export default function About() {
                 </p>
 
                 <p className = "text-about">
-                    Having recently graduated from BCIT Software Systems Development program (May/2023), I offer solid training and experience in intense deadline-focused software projects. This program covers areas related to a full-stack developer, including Project and Requirements, Back & Front-end, Database, and Deployment (AWS). <span className="hand-icons"> More <Link to="/bcit-alumni">details</Link>.</span>
+                    Having recently graduated from BCIT Software Systems Development program (May/2023), I offer solid training and experience in intense deadline-focused software projects. This program covers areas related to a full-stack developer, including Project and Requirements, Back & Front-end, Database, and Deployment (AWS). 
+                    {/* <span className="hand-icons"> More <Link to="/bcit-alumni">details</Link>.</span> */}
                 </p>
 
                 <p className="text-about">

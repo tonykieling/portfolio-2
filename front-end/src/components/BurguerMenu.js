@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { ThemeProvider } from 'styled-components'; // ok - it needs to install the library
 import { useOnClickOutside } from './burguer-menu/helpers/hooks'; // ok
 import { theme } from './burguer-menu/helpers/theme.js'; // ok

@@ -3,5 +3,18 @@ Also, checking from https://codefrontend.com/introduction-to-seo-for-react-devel
 
 *** Planning to move to Next.js later and have some sontent as SSR.
 
-Do I need bootratp being load at index.html?
-negerate new build and test it.
+Do I need bootstrap being load at index.html?
+ A: the CSS one yes - Header is using it
+  but, removed it from package.json
+generate new build and test it.
+
+- commented out components not being used (which were calling unused images)
+- commented out bootstrap on index.html
+- tkwebdev as h1
+- removed from package.json
+    "bootstrap": "^5.1.0",
+- FE npm i - and npm audit fix--force
+  still has left with 6 high severity (better than 6 critical)
+- reomved the shortcut to bcit-alumni (I did this before, but for some reason was there yet)
+- same ^^ for UP&Running istead of Porfolio
+

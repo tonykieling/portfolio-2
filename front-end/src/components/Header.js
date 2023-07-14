@@ -77,7 +77,7 @@ function Header() {
                             to              = "/projects"
                             className = { menuActive }
                         >
-                            Up & Running
+                            Portfolio
                         </NavLink>
 
                         {/* <NavLink
@@ -147,10 +147,10 @@ function Header() {
         else if (currentLocation === "/about")
             label = "/About";
         else if (currentLocation === "/projects")
-            label = "/Up & Running";
-        else if (currentLocation === "/bcit-alumni")
-            // label = "/Snippets";
-            label = "/BCIT-Alumni";
+            label = "/Portfolio";
+        // else if (currentLocation === "/bcit-alumni")
+        //     // label = "/Snippets";
+        //     label = "/BCIT-Alumni";
         else if (currentLocation === "/contact")
             label = "/Contact"
 
