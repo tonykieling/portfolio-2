@@ -1,0 +1,7 @@
+Doing some tweaks in order to get a better performance and cleanup.
+Also, checking from https://codefrontend.com/introduction-to-seo-for-react-developers/
+
+*** Planning to move to Next.js later and have some sontent as SSR.
+
+Do I need bootratp being load at index.html?
+negerate new build and test it.
