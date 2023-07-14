@@ -1,0 +1,40 @@
+Doing some tweaks in order to get a better performance and cleanup.
+Also, checking from https://codefrontend.com/introduction-to-seo-for-react-developers/
+
+*** Planning to move to Next.js later and have some sontent as SSR.
+
+Do I need bootstrap being load at index.html?
+ A: the CSS one yes - Header is using it
+  but, removed it from package.json
+generate new build and test it.
+
+- commented out components not being used (which were calling unused images)
+- commented out bootstrap on index.html
+- removed from package.json
+    "bootstrap": "^5.1.0",
+- FE npm i - and npm audit fix--force
+  still has left with 6 high severity (better than 6 critical)
+- BE was updated well
+- email message ("reply to" instead of "reply for")
+- sitemap, removed
+  https://tkwebdev.ca/bcit-alumni
+  https://tkwebdev.ca/about
+  https://tkwebdev.ca/projects
+  https://tkwebdev.ca/contact
+  https://clockinjs.tkwebdev.ca
+  https://home-seeker.tkwebdev.ca
+  https://crud.tkwebdev.ca
+- had to
+  npm install --save-dev @babel/plugin-proposal-private-property-in-object
+  bkz when running npm run build, received
+One of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it may break at any time.
+
+babel-preset-react-app is part of the create-react-app project, which
+is not maintianed anymore. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.

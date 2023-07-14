@@ -42,7 +42,7 @@ const sendEmail = async (person, email, message) => {
         <p>Hi <b>${person}</b></p>
         <p>Thanks for your email.</p>
         <br>
-        <p> I will reply for you asap.</p>
+        <p> I will reply to you asap.</p>
         <br>
         <p style="margin: 1rem 0">Kind regards from</p>
         <h3>Tony Kieling</h3>
