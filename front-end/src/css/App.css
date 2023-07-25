@@ -20,12 +20,13 @@ a {
 .app-settings {
   height: 100vh;
   height: 100dvh;
-  display: grid;
-  grid-template: 4rem auto 2.8rem / 1fr;
-  grid-template-areas: 
-    "header"
-    "main"
-    "footer";
+  /* display: grid; */
+  /* grid-template: 4rem auto 2.8rem / 1fr; */
+  /* grid-template: auto / 1fr;
+  grid-template-areas:  */
+    /* "header" */
+    /* "main"; */
+    /* "footer"; */
   width: 100%;
 }
 
@@ -35,14 +36,14 @@ a {
   background-color: #D3D3D2;
   font-size: calc(10px + 2vmin);
   /* padding: 2rem; */
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-top: 1rem; */
+  /* padding-bottom: 1rem; */
   overflow: auto;
 }
 
 footer {
-    grid-area: footer;
-    height: 2.8rem;
+    /* grid-area: footer; */
+    height: 5rem;
 }
 
 .header {
@@ -206,7 +207,7 @@ footer {
 }
 
 .social-media-box {
-  width: 80%;
+  width: 100%;
   padding: 0 25%;
   display: flex;
   flex-direction: row;
@@ -386,7 +387,7 @@ footer {
 @media (max-width: 790px) {
   .card-contact .form-text, .card-contact .form-textarea, .card-contact button {
     min-width: 0;
-    width: 85%;
+    width: 95%;
   }
   .card-contact button {
     margin-bottom: 1rem;
@@ -395,7 +396,7 @@ footer {
     margin-bottom: 0;
   }
   .card-contact .reCaptcha {
-    transform: scale(0.85);
+    transform: scale(0.95);
   }
 }
 
@@ -470,7 +471,9 @@ footer {
     100% {opacity: 0.8;}
 }
 .home-container .cont2 .picture {
-  width: 75%;
+  /* width: 75%; */
+  /* width: 38%; */
+  width: 160px;
   opacity: 0.8;
   border-radius: 50%;
   align-self: center;
@@ -481,14 +484,14 @@ footer {
 @media (max-width: 790px) {
   .home-container {
     flex-direction: column;
-    height: 100%;
+    /* height: 100%; */
     padding: 0;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
   .home-container .cont1 {
     width: 100%;
     padding: 0;
-    height: 45%;
+    /* height: 45%; */
   }
   .home-container .cont1 h1, h2 {
     font-size: 170%;
@@ -518,13 +521,15 @@ footer {
     /* width: auto; */
     /* margin: 0 auto; */
     /* border: 1px solid blue; */
-    height: 55%;
+    /* height: 55%; */
     margin: auto;
     width: auto;
+    /* border: 1px solid lime; */
   }
   .home-container .cont2 .picture {
-    width: auto;
-    height: 75%;
+    /* width: auto; */
+    /* height: 75%; */
+    /* height: 50%; */
     margin-bottom: 0;
     object-fit: contain;
   }
@@ -535,26 +540,29 @@ footer {
         /* width: auto; */
         /* margin: 0 auto; */
         /* border: 1px solid darkgreen; */
-        height: 30%;
+        /* height: 30%;
+        border: 1px solid lime; */
     }
 }
 
 .signature {
-  position: fixed;
+  /* position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   width: 100%;
   /* height: 2.8rem; */
-  border-top: 1px solid #4f5138;
+  border-top: 2px solid #4f5138;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Oregano;
-  font-size: 1rem;
+  font-size: 1.5rem;
   /* color: #4f5138; */
   color: linen;
-  background-color: #282c34;
-  /* font-weight: bold; */
+  /* background-color: #282c34; */
+  color: #282c34;
+
+  font-weight: bold;
   font-variant: small-caps;
   letter-spacing: 2px;
 }
@@ -681,10 +689,15 @@ footer {
     margin-right: auto; */
     display: grid;
     height: 100%;
-    padding: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
     /* margin: auto; */
-    border: 1px solid #4f5138;
-    border-radius: 0 0 15px 15px;
+    
+    /* border-bottom: 7px #aaa double; */
+    /* border-right: none;
+    border-left: none; */
+    /* border-radius: 0 0 15px 15px; */
+    
     /* border-top: none; */
     /* margin-bottom: 1rem; */
     /* margin-top: 1rem; */
@@ -710,13 +723,13 @@ footer {
 
 @media (max-width: 790px) {
   .text-about {
-    width: 90%;
+    width: 100%;
   }
 }
 
-.text-about:nth-child(odd) {
+/* .text-about:nth-child(odd) {
   align-self: flex-end;
-}
+} */
 
 .text-about::first-letter {
   font-weight: bold;
@@ -728,10 +741,10 @@ footer {
   line-height: 0;
 }
 
-.text-about:first-child {
+/* .text-about:first-child {
   text-align: center;
   align-self: center;
-}
+} */
 
 .hand-icons {
     white-space: nowrap;
@@ -747,6 +760,8 @@ footer {
 
 .tab-extra {
     font-weight: 600;
+    font-size: 1.4rem;
+    color: blue;
 }
 .tab-extra:hover {
     /* font-weight: 800; */
@@ -795,4 +810,23 @@ footer {
     .menu-item-format {
         margin-left: 1rem;
     }
+}
+
+.component {
+    padding: 1rem 2.5rem;
+}
+.component-large {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.titles {
+    margin: 0 1rem;
+    margin-bottom: 0.5rem;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+html {
+    scroll-behavior: smooth;
 }

@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import SocialMediasBox from "./SocialMediasBox";
 import ReCaptchaV2 from "react-google-recaptcha";
+import Footer from "./Footer.js";
 
 // general message when something bad happens
 const BadMessage = () => (
@@ -23,7 +24,8 @@ const BadMessageReCaptcha = () => (
 // screen size
 const MobileScreen = window.innerWidth > 790 ? false : true;
 
-export default function Contact() {
+export default function Contact({moveUp}) {
+    console.log("moveUP: ", moveUp);
   const [state, setState] = useState({
     name    : "",
     email   : "",
@@ -233,90 +235,95 @@ export default function Contact() {
 
 
     return(
-        <div 
-            className = "card card-contact" 
-            id        = "card"
-        >
-            <div>
-                <p className="mb-3 text-center">Please, feel free to reach out. 🤓 </p> 
+        <>
+            <h2 className="text-center mt-5 titles" onClick={moveUp}>Contact</h2>
+            <div 
+                // className = "card card-contact" 
+                className = "component card-contact" 
+                id        = "card"
+            >
+                <div>
+                    <p className="text-center">Please, feel free to reach out. 🤓 </p> 
 
-                <input 
-                    className = {`form-control form-text ${redBoxClass.name}`}
-                    placeholder       = "Your name" 
-                    data-bs-toggle    = "tooltip" 
-                    data-bs-placement = "top"
-                    data-bs-html      = "true"
-                    title             = "Insert your name"
-                    
-                    autoFocus   = { window.innerWidth > 700 && true }
-                    type        = "text"
-                    name        = "name"
-                    value       = { state.name }
-                    onChange    = { handleChange }
-                    onKeyPress  = { handleChange }
-                    ref         = { refName}
-                    disabled  = { buttonMessage === "sending message..." ? true : false }
-                />
-
-                <input 
-                    className         = {`form-control form-text ${redBoxClass.email}`}
-                    placeholder     = "Your email"
-                    data-bs-toggle  = "tooltip" 
-                    title           = "I will never share your email with anyone else."
-                    aria-describedby= "emailHelp"
-
-                    type        = "email"
-                    name        = "email"
-                    value       = { state.email }
-                    onChange    = { handleChange }
-                    onKeyPress  = { handleChange }
-                    ref         = { refEmail }
-                    disabled  = { buttonMessage === "sending message..." ? true : false }
-                />
-
-                <textarea
-                    className       = {`form-control form-textarea ${redBoxClass.message}`}
-                    placeholder     = "Please, leave your message" 
-                    data-bs-toggle  = "tooltip" 
-                    title           = "Insert your message"
-                    rows            = { MobileScreen ? 10 : 4}
-
-                    type        = "text"
-                    name        = "message"
-                    value       = { state.message }
-                    onChange    = { handleChange }
-                    // onKeyPress  = { handleChange }
-                    ref         = { refMessage }
-                    disabled    = { buttonMessage === "sending message..." ? true : false }
-                />
-
-                <div className="mt-1 mb-1 reCaptcha">
-                    <ReCaptchaV2
-                        // sitekey   ={"process.env.REACT_APP_SITEKEY"}
-                        sitekey   ={"6Ld-t5ccAAAAAGZPcHvACwQWvfbTZH-vBDD_nG9V"}
-                        onChange  ={reCaptchaChange}
-                        ref       ={ refReCaptcha }
-                        className ={`${redBoxClass.reCaptcha}`}
+                    <input 
+                        className = {`form-control form-text ${redBoxClass.name}`}
+                        placeholder       = "Your name" 
+                        data-bs-toggle    = "tooltip" 
+                        data-bs-placement = "top"
+                        data-bs-html      = "true"
+                        title             = "Insert your name"
+                        
+                        autoFocus   = { window.innerWidth > 700 && true }
+                        type        = "text"
+                        name        = "name"
+                        value       = { state.name }
+                        onChange    = { handleChange }
+                        onKeyPress  = { handleChange }
+                        ref         = { refName}
+                        disabled  = { buttonMessage === "sending message..." ? true : false }
                     />
+
+                    <input 
+                        className         = {`form-control form-text ${redBoxClass.email}`}
+                        placeholder     = "Your email"
+                        data-bs-toggle  = "tooltip" 
+                        title           = "I will never share your email with anyone else."
+                        aria-describedby= "emailHelp"
+
+                        type        = "email"
+                        name        = "email"
+                        value       = { state.email }
+                        onChange    = { handleChange }
+                        onKeyPress  = { handleChange }
+                        ref         = { refEmail }
+                        disabled  = { buttonMessage === "sending message..." ? true : false }
+                    />
+
+                    <textarea
+                        className       = {`form-control form-textarea ${redBoxClass.message}`}
+                        placeholder     = "Please, leave your message" 
+                        data-bs-toggle  = "tooltip" 
+                        title           = "Insert your message"
+                        rows            = { MobileScreen ? 10 : 4}
+
+                        type        = "text"
+                        name        = "message"
+                        value       = { state.message }
+                        onChange    = { handleChange }
+                        // onKeyPress  = { handleChange }
+                        ref         = { refMessage }
+                        disabled    = { buttonMessage === "sending message..." ? true : false }
+                    />
+
+                    <div className="mt-1 mb-1 reCaptcha">
+                        <ReCaptchaV2
+                            // sitekey   ={"process.env.REACT_APP_SITEKEY"}
+                            sitekey   ={"6Ld-t5ccAAAAAGZPcHvACwQWvfbTZH-vBDD_nG9V"}
+                            onChange  ={reCaptchaChange}
+                            ref       ={ refReCaptcha }
+                            className ={`${redBoxClass.reCaptcha}`}
+                        />
+                    </div>
+
+                    <button
+                        type      = "button"
+                        onClick   = { sendMessage }
+                        className = {`btn btn-sm ${ buttonType }`}
+                        ref       = { refButton }
+                        disabled  = { buttonMessage === "sending message..." ? true : false }
+
+                        data-bs-toggle  = "tooltip" 
+                        title           = { buttonType === "btn-warning" ? "Click to renew" : "Send your message" }
+                    >
+                        { buttonMessage }
+                    </button>
+
                 </div>
 
-                <button
-                    type      = "button"
-                    onClick   = { sendMessage }
-                    className = {`btn btn-sm ${ buttonType }`}
-                    ref       = { refButton }
-                    disabled  = { buttonMessage === "sending message..." ? true : false }
-
-                    data-bs-toggle  = "tooltip" 
-                    title           = { buttonType === "btn-warning" ? "Click to renew" : "Send your message" }
-                >
-                    { buttonMessage }
-                </button>
-
+                <SocialMediasBox />
             </div>
 
-            <SocialMediasBox />
-
-        </div>
+            <Footer />
+        </>
     );
 }

@@ -13,7 +13,7 @@ import About    from "./components/About.js";
 import Contact  from "./components/Contact.js";
 import Projects from "./components/Projects.js";
 // import Samples  from "./components/Samples.js"
-import Footer   from "./components/Footer.js";
+// import Footer   from "./components/Footer.js";
 
 function App() {
     // useEffect(() =>
@@ -29,7 +29,7 @@ function App() {
     return (
         <BrowserRouter>
             <div className="app-settings">
-                <Header />
+                {/* <Header /> */}
 
                 <div className = "body-settings" >
                     <Routes className = "body-settings">
@@ -65,7 +65,7 @@ function App() {
                     </Routes>
                 </div>
 
-                <Footer />
+                {/* <Footer /> */}
 
             </div>
         </BrowserRouter>

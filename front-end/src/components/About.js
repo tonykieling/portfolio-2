@@ -2,14 +2,17 @@ import { Link } from "react-router-dom";
 
 export default function About() {
     return(
-        <div className = "card" >
-            <div className="about">
-                <p className = "text-about">
+        // <div className = "card" >
+            // <div className="about">
+        <>
+            <h2 className="text-center mt-5 titles">More about me</h2>
+            <div className="component">
+                {/* <p className = "text-about">
                     Hi there!! 😃
-                </p>
+                </p> */}
 
                 <p className="text-about">
-                    This is Tony, a passionate web developer based in Vancouver, Canada. 
+                    A passionate web developer based in Vancouver, Canada. 
                     I enjoy working on the backend, integrations with databases, and delivering functional and high-quality web interfaces.
                 </p>
 
@@ -34,6 +37,6 @@ export default function About() {
                     I am confident that I can bring a wide range of knowledge and resources to the table which will enable me to accomplish goals and tackle various types of challenges. <span className="hand-icons">👍🖖💪✌️</span>
                 </p>
             </div>
-        </div>
+        </>
     );
 }

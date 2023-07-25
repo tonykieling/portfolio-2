@@ -1,0 +1,5 @@
+- disabled index.html gtag
+- change TK icon and give it a size
+- changed tk logo192 size
+
+- chenged content and how it is displayed

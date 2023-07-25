@@ -24,124 +24,129 @@ export default function Projects() {
   const [tabIndex, setTabIndex] = useState(0);
 
   return(
-    <div className="card" >
-        <Tabs 
-            selectedTabClassName="selected-tab"
-            selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}
-            style={{ height: "100%", display: "flex", flexDirection: "column", flex: 1}} 
-        >
-            <TabList >
-                <Tab className={"react-tabs__tab tab-extra"}>Intro</Tab>
-                <Tab className={"react-tabs__tab tab-extra"}>Clockin.js</Tab>
-                <Tab className={"react-tabs__tab tab-extra"}>Home Seeker</Tab>
-                <Tab className={"react-tabs__tab tab-extra"}>CRUD</Tab>
-                <Tab className={"react-tabs__tab tab-extra"}>TK website</Tab>
-            </TabList>
+    <>
+        <h2 className='text-center mt-2 titles'>Portfolio</h2>
+        <div className="component-large" >
+            <Tabs 
+                selectedTabClassName="selected-tab"
+                selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}
+                style={{ height: "100%", display: "flex", flexDirection: "column", flex: 1}} 
+            >
+                <TabList >
+                    <Tab className={"react-tabs__tab tab-extra"}>Intro</Tab>
+                    <Tab className={"react-tabs__tab tab-extra"}>Clockin.js</Tab>
+                    <Tab className={"react-tabs__tab tab-extra"}>Home Seeker</Tab>
+                    <Tab className={"react-tabs__tab tab-extra"}>CRUD</Tab>
+                    <Tab className={"react-tabs__tab tab-extra"}>TK website</Tab>
+                </TabList>
 
-            <TabPanel style={{overflow: "auto", height: "100%"}} >
-                <div className="tab-card d-flex flex-column">
-                    <p className="mt-4">Welcome to my project portfolio! I'm excited to show you what I've been working on - a range of projects built with some of the industry's best tools and technologies including:</p> 
-                    <div className="proj-items-container">
-                        <img src={JSLogo} className="proj-items" title="Javascript" alt=""/>
-                        <img src={CssHtmlLogo} className="proj-items" title="Html & CSS" alt=""/>
-                        <img src={NodeLogo} className="proj-items" title="Node.js" alt=""/>
-                        <img src={ReactLogo} className="proj-items" title="React JS" alt=""/>
-                        <img src={ExpressLogo} className="proj-items" title="Express JS" alt=""/>
-                        <img src={BootstrapLogo} className="proj-items" title="Bootstrap" alt=""/>
-                        <img src={ReduxLogo} className="proj-items" title="Redux" alt=""/>
-                        <img src={PostgreSQLLogo} className="proj-items" title="PostgreSQL" alt=""/>
-                        <img src={MongoDBLogo} className="proj-items" title="MongoDB Atlas" alt=""/>
-                        <img src={RecaptchaLogo} className="proj-items" title="Google Recaptcha" alt=""/>
-                        <img src={NodeMailerLogo} className="proj-items" title="Node Mailer" alt=""/>
-                        <img src={GitHubLogo} className="proj-items" title="Github" alt=""/>
+                <TabPanel style={{overflow: "auto", height: "100%"}} >
+                    <div className="tab-card ">
+                        <p className="mt-1">I'm excited to show you what I've been working on - a range of projects built with some of the industry's best tools and technologies including:</p> 
+                        <div className="proj-items-container">
+                            <img src={JSLogo} className="proj-items" title="Javascript" alt=""/>
+                            <img src={CssHtmlLogo} className="proj-items" title="Html & CSS" alt=""/>
+                            <img src={NodeLogo} className="proj-items" title="Node.js" alt=""/>
+                            <img src={ReactLogo} className="proj-items" title="React JS" alt=""/>
+                            <img src={ExpressLogo} className="proj-items" title="Express JS" alt=""/>
+                            <img src={BootstrapLogo} className="proj-items" title="Bootstrap" alt=""/>
+                            <img src={ReduxLogo} className="proj-items" title="Redux" alt=""/>
+                            <img src={PostgreSQLLogo} className="proj-items" title="PostgreSQL" alt=""/>
+                            <img src={MongoDBLogo} className="proj-items" title="MongoDB Atlas" alt=""/>
+                            <img src={RecaptchaLogo} className="proj-items" title="Google Recaptcha" alt=""/>
+                            <img src={NodeMailerLogo} className="proj-items" title="Node Mailer" alt=""/>
+                            <img src={GitHubLogo} className="proj-items" title="Github" alt=""/>
+                        </div>
+                        {/* <p className="mb-4">I'm really proud of the skills I've developed and the amazing projects I have completed. Dive right in and explore my portfolio to get a picture of my abilities!</p> */}
+                        {/* <p className="mt-5 mb-5">Some of my projects are being displayed in this section.</p>
+                        <p>Some of the tools used here and in other projects include React, Bootstrap, Sass, NodeJs, Axios, ExpressJs, Moongoose, PostgreSQL, Node-mailer, and Google reCaptcha.</p> */}
+                        <p><a href="https://github.com/tonykieling" target="_blank" rel="noreferrer">GitHub</a> is an amazing platform where I share my projects and codes.</p>
+                        {/* <p>Browse through my systems and code and if you have any questions or comments, please don't hesitate to reach out.</p> */}
                     </div>
-                    <p className="mb-4">I'm really proud of the skills I've developed and the amazing projects I have completed. Dive right in and explore my portfolio to get a picture of my abilities!</p>
-                    {/* <p className="mt-5 mb-5">Some of my projects are being displayed in this section.</p>
-                    <p>Some of the tools used here and in other projects include React, Bootstrap, Sass, NodeJs, Axios, ExpressJs, Moongoose, PostgreSQL, Node-mailer, and Google reCaptcha.</p> */}
-                    <p><a href="https://github.com/tonykieling" target="_blank" rel="noreferrer">GitHub</a> is an amazing platform where I share my projects and codes.</p>
-                    <p>Browse through my code and if you have any questions or comments, please don't hesitate to reach out.</p>
-                </div>
-            </TabPanel>
+                </TabPanel>
 
-            <TabPanel style={{overflow: "hidden", height: "100%"}} >
-                <div className="tab-card d-flex about">
-                    {/* <p>A system that allows you to have all your clients data, their clockins and invoices, in one place. It is easy to manage and track your work with them.</p>
-                    <p>And it is a free tool. 🤑</p> */}
-                    <p>Introducing an all in one system that allows you to conveniently manage and track all your clients and their related data, clockins, and invoices.</p>
-                    <p>Best of all, it's free and easy to use! 🤑</p>
-                    <a href="https://clockin.tkwebdev.ca/" target="_blank" rel="noreferrer">
-                        <p className="text-center">
-                            https://clockinjs.tkwebdev.ca
+                <TabPanel style={{overflow: "hidden", height: "100%"}} >
+                    <div className="tab-card mt-1">
+                        {/* <p>A system that allows you to have all your clients data, their clockins and invoices, in one place. It is easy to manage and track your work with them.</p>
+                        <p>And it is a free tool. 🤑</p> */}
+                        <p>Introducing an all in one system that allows you to conveniently manage and track all your clients and their related data, clockins, and invoices.</p>
+                        <p>Best of all, it's free and easy to use! 🤑</p>
+                        <a href="https://clockin.tkwebdev.ca/" target="_blank" rel="noreferrer">
+                            <p className="text-center">
+                                https://clockinjs.tkwebdev.ca
+                            </p>
+                            <div className="bice mt-3">
+                                <img
+                                    src       = { ClockinJS }
+                                    className = "bice-settings"
+                                    alt       = "This is me" 
+                                    width     = { mobileScreen ? "100%" : "50%" }
+                                />
+                            </div>
+                        </a>
+
+                    </div>
+                </TabPanel>
+
+                <TabPanel style={{overflow: "hidden", height: "100%"}} >
+                    <div className="tab-card mt-1">
+                        {/* <p>An automated system to web scrap info on Craigslist about rentals availability. I have built it to help my wife and I to find our new place to live and receive messages automatically to shortcut our searchings.</p> 
+                        <p>Mission accomplished and happy new homers! 🏠😊</p> */}
+                        <p>An automated system to web scrape information from Craigslist about rentals availability. This has helped my wife and I to find our new home, quickly and easily receiving notifications to shortcut our search.</p>
+                        <p>Mission accomplished and happy new homers! 🏠😊</p>
+                        <a href="https://home-seeker.tkwebdev.ca" target="_blank" rel="noreferrer">
+                            <p className="text-center">
+                                https://home-seeker.tkwebdev.ca
+                            </p>
+                            <div className="bice mt-3">
+                                <img
+                                    src       = { HomeSeeker }
+                                    className = "bice-settings"
+                                    alt       = "This is me" 
+                                    width     = { mobileScreen ? "100%" : "50%" }
+                                />
+                            </div>    
+                        </a>
+                    </div>
+                </TabPanel>
+
+                <TabPanel style={{overflow: "auto", height: "100%"}} >
+                    <div className="tab-card mt-1">
+                        <p>A full-stack application aimed to demonstrate the basic functioning of a computer program regarding Database.</p>
+                        <p><b>CRUD</b> stands for <b>C</b>reate, <b>R</b>ead, <b>U</b>pdate, and <b>D</b>elete. They are the 4 basic ways to proceed with data.</p>
+                        <a href="https://crud.tkwebdev.ca" target="_blank" rel="noreferrer">
+                            <p className="text-center">
+                                https://crud.tkwebdev.ca
+                            </p>
+                            <div className="bice mt-3">
+                                <img
+                                    src       = { Crud }
+                                    className = "bice-settings"
+                                    alt       = "This is me" 
+                                    width     = { mobileScreen ? "100%" : "50%" }
+                                />
+                            </div>
+                        </a>
+                    </div>
+                </TabPanel>
+
+                <TabPanel style={{overflow: "auto", height: "100%"}} >
+                    <div className="tab-card mt-1">
+                        <p className="text-center">This home page you are browsing right now is entirely my own work, created from the ground up.</p>
+                        <p className="mt-1 text-center">Any additional information, please refer to 
+                            <span 
+                                onClick={ () => setTabIndex(0)}
+                                className="intro-link"
+                            > Intro </span>
+                            or
+                            <span className="intro-link"> Contact me</span>.
                         </p>
-                        <div className="bice mt-3">
-                            <img
-                                src       = { ClockinJS }
-                                className = "bice-settings"
-                                alt       = "This is me" 
-                                width     = { mobileScreen ? "100%" : "50%" }
-                            />
-                        </div>
-                    </a>
+                    </div>
+                </TabPanel>
 
-                </div>
-            </TabPanel>
-
-            <TabPanel style={{overflow: "hidden", height: "100%"}} >
-                <div className="tab-card d-flex about">
-                    {/* <p>An automated system to web scrap info on Craigslist about rentals availability. I have built it to help my wife and I to find our new place to live and receive messages automatically to shortcut our searchings.</p> 
-                    <p>Mission accomplished and happy new homers! 🏠😊</p> */}
-                    <p>An automated system to web scrape information from Craigslist about rentals availability. This has helped my wife and I to find our new home, quickly and easily receiving notifications to shortcut our search.</p>
-                    <p>Mission accomplished and happy new homers! 🏠😊</p>
-                    <a href="https://home-seeker.tkwebdev.ca" target="_blank" rel="noreferrer">
-                        <p className="text-center">
-                            https://home-seeker.tkwebdev.ca
-                        </p>
-                        <div className="bice mt-3">
-                            <img
-                                src       = { HomeSeeker }
-                                className = "bice-settings"
-                                alt       = "This is me" 
-                                width     = { mobileScreen ? "100%" : "50%" }
-                            />
-                        </div>    
-                    </a>
-                </div>
-            </TabPanel>
-
-            <TabPanel style={{overflow: "auto", height: "100%"}} >
-                <div className="tab-card d-flex about">
-                    <p>A full-stack application aimed to demonstrate the basic functioning of a computer program regarding Database.</p>
-                    <p><b>CRUD</b> stands for <b>C</b>reate, <b>R</b>ead, <b>U</b>pdate, and <b>D</b>elete. They are the 4 basic ways to proceed with data.</p>
-                    <a href="https://crud.tkwebdev.ca" target="_blank" rel="noreferrer">
-                        <p className="text-center">
-                            https://crud.tkwebdev.ca
-                        </p>
-                        <div className="bice mt-3">
-                            <img
-                                src       = { Crud }
-                                className = "bice-settings"
-                                alt       = "This is me" 
-                                width     = { mobileScreen ? "100%" : "50%" }
-                            />
-                        </div>
-                    </a>
-                </div>
-            </TabPanel>
-
-            <TabPanel style={{overflow: "auto", height: "100%"}} >
-                <div className="tab-card d-flex flex-column pt-5">
-                    <p className="text-center">This home page you are browsing right now is entirely my own work, created from the ground up.</p>
-                    <p className="mt-4 text-center">Any additional information, please refer to 
-                        <span 
-                            onClick={ () => setTabIndex(0)}
-                            className="intro-link"
-                        > Intro</span>.
-                    </p>
-                </div>
-            </TabPanel>
-
-        </Tabs>
-    </div>
+            </Tabs>
+        </div>
+    </>
     
   );
 }

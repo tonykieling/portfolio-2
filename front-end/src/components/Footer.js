@@ -7,7 +7,7 @@ export default function Footer(){
     }
   
     return (
-        <footer className="signature" id = "footer" >
+        <footer className="signature mt-4" id = "footer" >
             Tony Kieling<span>™️ - { year() } </span>
         </footer>
     );

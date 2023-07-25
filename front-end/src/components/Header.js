@@ -25,16 +25,16 @@ function Header() {
                 </div>
                 <div className="one-3rd-2">
                     <div className= {`logo ${!burguerON ? "logo--green" : "logo--red"}`}>
-                    <img
-                        src={!burguerON ? HamburguerGreen : HamburguerRed}
-                        alt="Turn Hamburguer menu ON and OFF"
-                        title={ burguerON
-                                    ? "Turn Hamburguer Menu ON"
-                                    : "Turn Hamburguer Menu OFF"
-                        }
-                        width="100%"
-                        onClick={ () => setBurguerON(!burguerON) }
-                    />
+                        <img
+                            src={!burguerON ? HamburguerGreen : HamburguerRed}
+                            alt="Turn Hamburguer menu ON and OFF"
+                            title={ burguerON
+                                        ? "Turn Hamburguer Menu ON"
+                                        : "Turn Hamburguer Menu OFF"
+                            }
+                            width="100%"
+                            onClick={ () => setBurguerON(!burguerON) }
+                        />
                     </div>
                 </div>
             </div>
@@ -46,10 +46,11 @@ function Header() {
                             to              = "/" 
                         >
                             <img 
-                            src     = { Logo } 
-                            alt     = "TK's logo" 
-                            title   = "Home" 
-                            width   = "100%"
+                                src     = { Logo } 
+                                alt     = "TK's logo" 
+                                title   = "Home" 
+                                // width   = "100%"
+                                width= {52}
                             />
                         </Link>
                     </div>
@@ -128,7 +129,8 @@ function Header() {
                             src     = { Logo } 
                             alt     = "TK's logo" 
                             title   = "Home" 
-                            width   = "100%"
+                            // width   = "100%"
+                            width={39}
                         />
                     </Link>
                 </div>
